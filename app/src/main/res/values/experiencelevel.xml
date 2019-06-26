@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="experiencelevel">
+        <item>Select experience level required </item>
+        <item>none</item>
+        <item>less than 6 months</item>
+        <item>6 to 12 months</item>
+        <item>at least 1 year</item>
+        <item>1 to 3 years</item>
+        <item>3 to 5 years</item>
+        <item>5 to 10 years</item>
+        <item>greater than 10 years</item>
+    </string-array>
+</resources>

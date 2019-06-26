@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Jobs">
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        >
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#6c6c6c">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rel1"
+                android:background="@drawable/backgroundfindjob"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edit_query"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="150dp"
+                    android:background="@drawable/edit_round"
+                    android:drawableLeft="@drawable/magnifysearch"
+                    android:paddingLeft="10dp"
+                    android:drawablePadding="10dp"
+                    android:hint="Job title, skills, or company"
+                    />
+                <EditText
+                    android:id="@+id/edit_region"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/edit_query"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edit_round"
+                    android:drawableLeft="@drawable/mapoutline"
+                    android:paddingLeft="10dp"
+                    android:drawablePadding="10dp"
+                    android:hint="All regions"
+
+                    />
+                <Button
+                    android:layout_width="250dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/edit_region"
+                    android:text="Find Jobs"
+                    android:textAllCaps="false"
+                    android:drawableLeft="@drawable/ic_menu_send"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="10dp"
+                    android:drawablePadding="10dp"
+                    android:layout_marginTop="60dp"
+                    android:id="@+id/searchgo"
+                    android:background="@drawable/button_round"
+                    />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rel2"
+                android:layout_below="@+id/rel1"
+                android:layout_marginTop="4dp"
+                android:background="#ffffff">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/recentsearch"
+                    android:text="Your Recent Searches"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    />
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/recentsearch"
+                    android:layout_marginTop="4dp"
+                    android:id="@+id/list1"></ListView>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rel2"
+                android:background="#ffffff"
+                android:layout_marginTop="4dp"
+                android:id="@+id/rel3">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Jobs For You"
+                    android:id="@+id/txtviewjob"
+                    android:textColor="#000"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp"
+                    android:background="#ffffff"
+                    android:id="@+id/customizebtn"
+                    android:textColor="#6200FF"
+                    android:text="customize"
+                    android:textSize="10dp"
+                    android:layout_below="@+id/txtviewjob"
+
+                    />
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/customizebtn"
+                    android:layout_marginTop="4dp"
+                    android:id="@+id/recylerView3">
+
+                </android.support.v7.widget.RecyclerView>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rel4"
+                android:layout_below="@+id/rel3"
+                android:layout_marginTop="4dp"
+                android:background="#ffffff">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/text03"
+                    android:text="Jobs in Pakistan"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    />
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/list2"
+                    android:layout_below="@+id/text03"
+                    android:layout_marginTop="5dp"
+                    ></ListView>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rel4"
+                android:id="@+id/rel5"
+                android:layout_marginTop="4dp"
+                android:background="#ffffff"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Jobs by Country"
+                    android:id="@+id/ttt"
+                    android:textColor="#000"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    />
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/recylerView2"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/ttt"
+                    android:background="#ffffff"
+                    android:orientation="horizontal"></android.support.v7.widget.RecyclerView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rel6"
+                android:layout_below="@+id/rel5"
+                android:layout_marginTop="4dp"
+                android:background="#ffffff"
+                >
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/list3"
+                    android:layout_marginTop="5dp"
+                    ></ListView>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

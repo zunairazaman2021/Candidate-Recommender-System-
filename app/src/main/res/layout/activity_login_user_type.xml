@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginUserType"
+    >
+
+    <ImageView
+        android:id="@+id/bgonetype"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/frontimage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/viewtype"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bgoverlay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textView2type"
+        android:layout_width="258dp"
+        android:layout_height="169dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="40dp"
+        android:lineSpacingExtra="6dp"
+        android:text="Candidate Recommender System "
+        android:textColor="#FFF"
+        android:textSize="39sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bgonetype" />
+    <com.tomer.fadingtextview.FadingTextView
+        android:id="@+id/textViewtype"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="44dp"
+        android:lineSpacingExtra="8dp"
+        app:timeout="500"
+        android:textColor="#FFF"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2type" />
+
+
+    <Button
+        android:id="@+id/searchstarttype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:background="#0336FF"
+        android:drawableLeft="@drawable/search"
+        android:drawablePadding="1dp"
+        android:padding="10dp"
+        android:text="Search Job"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/button" />
+
+    <Button
+        android:id="@+id/buttonJobseeker"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/bgbtn"
+        android:drawableLeft="@drawable/singleperson"
+        android:padding="10dp"
+        android:text="Jobseeker"
+        android:textColor="@color/whitee"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonRecruiter"
+        app:layout_constraintTop_toBottomOf="@+id/searchstarttype" />
+
+    <Button
+        android:id="@+id/buttonRecruiter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="13dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        android:background="@drawable/bgbtn"
+        android:drawableLeft="@drawable/singleperson"
+        android:padding="10dp"
+        android:text="Recruiter"
+        android:textColor="@color/whitee"
+        app:layout_constraintEnd_toStartOf="@+id/buttonJobseeker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchstarttype"
+        />
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/frontimage"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp">
+        <TextView
+            android:id="@+id/wecaptionReg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="List your latest experience first"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:layout_marginTop="10dp"
+            />
+        <TextView
+            android:id="@+id/weheadingReg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="Experience Details"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:layout_marginTop="10dp"/>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/orgWrapperReg"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/weOrgReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Organization"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/desiWrapperReg"
+            android:layout_width="match_parent"
+            android:layout_marginTop="4dp"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/weDesignationReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Designation"/>
+        </android.support.design.widget.TextInputLayout>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/weRadioGroupReg"
+            android:orientation="horizontal"
+            android:layout_marginTop="34dp"
+            android:checkedButton="1"
+            >
+
+            <RadioButton
+                android:id="@+id/chkEmpReg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Previously Employed"
+                android:layout_marginLeft="10dp"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/chkCurrEmpReg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/chkEmpReg"
+                android:layout_marginLeft="10dp"
+                android:text="Currently Employed"
+                android:checked="false"
+                android:layout_toRightOf="@+id/chkEmpReg" />
+        </RadioGroup>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            >
+            <TextView
+                android:id="@+id/rtxtReg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="From "
+                android:layout_marginLeft="4dp"
+                />
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/dateWrapperReg"
+                android:layout_marginLeft="4dp"
+                android:layout_width="wrap_content"
+                android:layout_toEndOf="@+id/rtxtReg"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/rtxtReg">
+
+                <EditText
+                    android:id="@+id/weDateReg"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:hint="Duration"/>
+
+            </android.support.design.widget.TextInputLayout>
+            <TextView
+                android:id="@+id/wetxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="To "
+                android:layout_toEndOf="@+id/dateWrapperReg"
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@+id/dateWrapperReg" />
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/date2WrapperReg"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_toEndOf="@id/wetxt"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/wetxt">
+                <EditText
+                    android:id="@+id/weDate2Reg"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:layout_marginLeft="4dp"
+                    android:hint="Duration"/>
+
+
+            </android.support.design.widget.TextInputLayout>
+
+        </RelativeLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/roleWrapperReg"
+            android:layout_width="match_parent"
+            android:layout_marginTop="4dp"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/expRoleReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textAlignment="viewStart"
+                android:hint="Role"
+                android:minHeight="90dp"
+                android:gravity="start" />
+        </android.support.design.widget.TextInputLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/backexpReg"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttoncapsule2"
+                android:text="Back"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                /> <Button
+            android:id="@+id/saveexpReg"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttoncapsule2"
+            android:text="Save"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

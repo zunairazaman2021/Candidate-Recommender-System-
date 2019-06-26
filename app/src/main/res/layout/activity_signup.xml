@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/frontimage"
+    tools:context=".signup"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="40dp"
+            android:background="#E0E0E0">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/relative1">
+
+                <com.tomer.fadingtextview.FadingTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sign Up"
+                    android:id="@+id/titlesignup"
+                    app:timeout="1000"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:textColor="@color/darksea"
+                    android:layout_marginTop="40dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textsubtitle"
+                    android:layout_below="@+id/titlesignup"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="To continue, please create an account on Recommendation System"
+                    android:layout_marginTop="10dp"
+                    />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/fnamew"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="15dp"
+                    android:paddingLeft="15dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_below="@+id/textsubtitle"
+                    app:errorEnabled="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="300dp"
+                        android:layout_height="40dp"
+                        android:hint="First name"
+                        android:inputType="textPersonName"
+                        android:id="@+id/firstnameadd"
+                        android:fontFamily="sans-serif-light"
+                        android:textSize="15sp"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/lnamew"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="15dp"
+                    android:paddingLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/fnamew"
+                    app:errorEnabled="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="300dp"
+                        android:layout_height="40dp"
+                        android:hint="last name"
+                        android:inputType="textPersonName"
+                        android:id="@+id/lastnameadd"
+                        android:fontFamily="sans-serif-light"
+                        android:textSize="15sp"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/emailadd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="15dp"
+                    android:paddingLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/lnamew"
+                    app:errorEnabled="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="300dp"
+                        android:layout_height="40dp"
+                        android:hint="Email Address"
+                        android:inputType="textEmailAddress"
+                        android:id="@+id/emailaddjobseeker"
+                        android:fontFamily="sans-serif-light"
+                        android:textSize="15sp"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/passadd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="15dp"
+                    android:paddingLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/emailadd"
+                    app:errorEnabled="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="300dp"
+                        android:layout_height="40dp"
+                        android:hint="Password"
+                        android:id="@+id/addpassjobseeker"
+                        android:inputType="textPassword"
+                        android:fontFamily="sans-serif-light"
+                        android:textSize="15sp"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/passaddconfirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="15dp"
+                    android:paddingLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/passadd"
+                    app:errorEnabled="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="300dp"
+                        android:layout_height="40dp"
+                        android:hint="Confirm Password"
+                        android:inputType="textPassword"
+                        android:id="@+id/confirmjobseekerpass"
+                        android:fontFamily="sans-serif-light"
+                        android:textSize="15sp"
+                        />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <Button
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Create Account"
+                    android:background="@drawable/button_round"
+                    android:drawableLeft="@drawable/createkey"
+                    android:padding="10dp"
+                    android:id="@+id/creataccount"
+                    android:textColor="@color/black"
+                    android:layout_below="@id/passaddconfirm"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/alreadysignin"
+                    android:layout_below="@+id/creataccount"
+                    android:layout_marginTop="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="Already have an account?"
+                />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sign In"
+                    android:textAllCaps="true"
+                    android:textColor="@color/darksea"
+                    android:id="@+id/btnsignnn"
+                    android:layout_toEndOf="@+id/alreadysignin"
+                    android:layout_below="@+id/creataccount"
+                    android:layout_marginTop="27dp"
+                    android:fontFamily="sans-serif"
+                    android:layout_toRightOf="@+id/alreadysignin" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+    <ProgressBar
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/progressBarsignup"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:visibility="invisible"/>
+</LinearLayout>
+
+
+
+
+

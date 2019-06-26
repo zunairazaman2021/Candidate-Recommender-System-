@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ResumeManager.SkillsActivity">
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/skill1Wrapper"
+        android:layout_width="match_parent"
+        android:layout_marginTop="4dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/skSkill_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:visibility="visible"
+            android:hint="Skill 1"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/skill2Wrapper"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_marginTop="4dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/skSkill_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:visibility="invisible"
+            android:hint="Skill 2"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/skill3Wrapper"
+        android:layout_width="match_parent"
+        android:layout_marginTop="4dp"
+        android:visibility="invisible"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/skSkill_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:inputType="text"
+            android:hint="Skill 3"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/skill4Wrapper"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_marginTop="4dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/skSkill_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:visibility="invisible"
+            android:hint="Skill 4"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/skill5Wrapper"
+        android:layout_width="match_parent"
+        android:visibility="invisible"
+        android:layout_marginTop="4dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/skSkill_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:visibility="invisible"
+            android:hint="Skill 5"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/skill6Wrapper"
+        android:layout_width="match_parent"
+        android:visibility="invisible"
+        android:layout_marginTop="4dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/skSkill_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+
+            android:visibility="invisible"
+            android:hint="Skill 6"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/skill7Wrapper"
+        android:layout_width="match_parent"
+        android:visibility="invisible"
+        android:layout_marginTop="4dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/skSkill_7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:visibility="invisible"
+            android:hint="Skill 7"/>
+    </android.support.design.widget.TextInputLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/addSkill"/>
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toEndOf="@+id/addSkill"
+            android:text="Save"
+            android:id="@+id/saveSkill"
+            android:layout_toRightOf="@+id/addSkill"
+            />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.zunairazamanchaudh.candidateengine">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".spalsh">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SplashScreen" />
+        <activity android:name=".signup" />
+        <activity android:name=".RegistrationSlide" />
+        <activity
+            android:name=".JobSeekerScreen"
+            android:label="@string/title_activity_job_seeker_screen"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".WelcomeCandidate"
+            android:label="@string/title_activity_welcome_candidate"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".FilterJobs" />
+        <activity android:name=".LoginJobSeeker" />
+        <activity android:name=".EditPersonalDetails" />
+        <activity android:name=".RecruiterMainScreen.WelcomeRecruiter" />
+        <activity android:name=".RecruiterMainScreen.FilterCVsActivity" />
+        <activity android:name=".RecruiterMainScreen.JobPostVacancyActivity" />
+        <activity android:name=".LoginUserType" />
+        <activity android:name=".RecruiterMainScreen.RecruiterUserHead" />
+        <activity android:name=".RecruiterMainScreen.LoginRecruiter" />
+        <activity android:name=".RecruiterMainScreen.RegisterRecruiterActivity" />
+        <activity android:name=".RecruiterMainScreen.EditCompanyDetails" />
+
+        <!-- RESUME_MANAGER -->
+        <activity android:name=".ResumeManager.CVDashBoard" />
+        <activity android:name=".ResumeManager.SignatureActivity" />
+        <activity android:name=".ResumeManager.PhotoSignActivity" />
+        <activity android:name=".ResumeManager.ContacsDetailsActivity" />
+        <activity android:name=".ResumeManager.AcademicDetailsActivity" />
+        <activity android:name=".ResumeManager.ListOfAcademicDetailsActivity" />
+        <activity android:name=".ResumeManager.SkillsActivity" />
+        <activity android:name=".ResumeManager.InterestsActivity" />
+        <activity android:name=".ResumeManager.ProjectsActivity" />
+        <activity android:name=".ResumeManager.ListOfProjectsActivity" />
+        <activity android:name=".ResumeManager.ObjectiveActivity" />
+        <activity android:name=".ResumeManager.ReferenceActivity" />
+        <activity android:name=".ResumeManager.ExperienceActivity" />
+        <activity android:name=".ResumeManager.ListOfExperienceActivity" />
+        <activity android:name=".ResumeManager.StrenghtsActivity" />
+        <activity android:name=".ResumeManager.AwardsActivity" />
+        <activity android:name=".ResumeManager.IndustryExposureActivity" />
+        <activity android:name=".ResumeManager.HobbyADDActivity" />
+        <activity android:name=".ResumeManager.PersonalInfoActivity" />
+        <activity android:name=".ResumeManager.MainCVTitle"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileFragment">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/darkgray">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:id="@+id/relative1">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imageView21P"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edit_round"
+                    android:src="@drawable/subhan"/>
+
+                <Button
+                    android:id="@+id/button22P"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="27dp"
+                    android:background="@drawable/button_round"
+                    android:gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:text="Update Photo" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imageView21P"
+                    android:layout_marginTop="10dp"
+                    android:text="Zunaira Zaman"
+                    android:autoSizeTextType="uniform"
+                    android:layout_marginLeft="10dp"
+                    android:textAllCaps="true"
+                    android:id="@+id/nameP"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                <TextView
+                    android:id="@+id/date22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="46dp"
+                    android:text="Last updated: January 21,2018 -"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/nameP"/>
+                <TextView
+                    android:id="@+id/cvP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/date22"
+                    android:layout_marginTop="122dp"
+                    android:layout_marginLeft="30dp"
+                    android:text="Refresh Your CV"
+                    android:textColor="#0dd1c0"
+                    android:layout_toRightOf="@+id/date22"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relative1"
+                android:id="@+id/relative2"
+                android:background="#ffffff"
+                android:layout_marginTop="4dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/personal"
+                    android:text="Personal Information"
+                    android:layout_marginLeft="10dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:layout_marginTop="20dp"/>
+                <ImageButton
+                    android:id="@+id/editpersonalinfo"
+                    android:layout_height="32dp"
+                    android:layout_width="32dp"
+                    android:src="@drawable/editicon"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="20dp"
+                    />
+                />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/dobP"
+                    android:layout_below="@+id/personal"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Birthdate"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/dobP"
+                    android:layout_marginTop="4dp"
+                    android:text="October 17,1992"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/dateebirth"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nationality"
+                    android:layout_below="@+id/dateebirth"
+                    android:layout_marginTop="4dp"
+                    android:text="Nationality"
+                    android:layout_marginLeft="10dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nationality"
+                    android:layout_marginTop="4dp"
+                    android:id="@+id/national"
+                    android:layout_marginLeft="10dp"
+                    android:text="Pakistani"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rescountry"
+                    android:layout_below="@+id/national"
+                    android:layout_marginTop="4dp"
+                    android:text="Residence Country"
+                    android:layout_marginLeft="10dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rescountry"
+                    android:layout_marginTop="4dp"
+                    android:text="Pakistan"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/residence"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relative3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relative2"
+                android:background="#ffffff"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:id="@+id/personal1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Contact Information"
+                    android:layout_marginLeft="10dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+                <ImageButton
+                    android:id="@+id/editcontactinfo"
+                    android:layout_height="32dp"
+                    android:layout_width="32dp"
+                    android:src="@drawable/editicon"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="20dp"
+                    />
+
+
+                <TextView
+                    android:id="@+id/emailP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/personal1"
+                    android:layout_marginTop="4dp"
+                    android:text="Email address"
+                    android:layout_marginLeft="10dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                <TextView
+                    android:id="@+id/editEmailP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/emailP"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="15081598-015@uog.edu.pk" />
+
+                <TextView
+                    android:id="@+id/phoneP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editEmailP"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Mobile phone"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                <TextView
+                    android:id="@+id/editPhoneP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/phoneP"
+
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="+92 3030380952" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relative3"
+                android:id="@+id/relative4"
+                android:layout_marginTop="4dp"
+                android:background="#ffffff">
+                <TextView
+                    android:id="@+id/personal3"
+
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Preferred Job"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+                <ImageButton
+                    android:id="@+id/editpreferedjobinfo"
+                    android:layout_height="32dp"
+                    android:layout_width="32dp"
+                    android:src="@drawable/editicon"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="20dp"
+                    />
+                <TextView
+                    android:id="@+id/fpdesignation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@+id/personal3"
+                    android:text="Job Designation"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                <TextView
+                    android:id="@+id/fpsdesignation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fpdesignation"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Project Manager" />
+                <TextView
+                    android:id="@+id/fpcountry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_below="@+id/fpsdesignation"
+                    android:layout_marginLeft="10dp"
+                    android:text="Country"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                <TextView
+                    android:id="@+id/fpscountry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fpcountry"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Pakistan" />
+                <TextView
+                    android:id="@+id/fpcity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_below="@+id/fpscountry"
+                    android:layout_marginLeft="10dp"
+                    android:text="City"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                <TextView
+                    android:id="@+id/fpscity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fpcity"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Abbotabad" />
+
+                <TextView
+                    android:id="@+id/fpsalary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_below="@+id/fpscity"
+                    android:layout_marginLeft="10dp"
+                    android:text="Salary"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                <TextView
+                    android:id="@+id/fpssalary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fpsalary"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="80,000" />
+
+                <TextView
+                    android:id="@+id/fpindustry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_below="@+id/fpssalary"
+                    android:layout_marginLeft="10dp"
+                    android:text="Industry"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                <TextView
+                    android:id="@+id/fpsindustry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fpindustry"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="IT" />
+                <TextView
+                    android:id="@+id/fpcareer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_below="@+id/fpsindustry"
+                    android:layout_marginLeft="10dp"
+                    android:text="Career Level"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                <TextView
+                    android:id="@+id/fpscareer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fpcareer"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Beginner" />
+
+                    <TextView
+                        android:id="@+id/fpemptype"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_below="@+id/fpscareer"
+                        android:layout_marginLeft="10dp"
+                        android:text="Employement Type :"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                    <TextView
+                        android:id="@+id/fpsemptype"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/fpemptype"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="Full Time" />
+                </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relative4"
+                android:id="@+id/relative5"
+                android:layout_marginTop="4dp"
+                android:background="#ffffff">
+                <TextView
+                    android:id="@+id/personal4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Skills"
+                    android:layout_marginLeft="10dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+                <ImageButton
+                    android:id="@+id/editskillinfo"
+                    android:layout_height="32dp"
+                    android:layout_width="32dp"
+                    android:src="@drawable/editicon"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="20dp"
+                    />
+                <TextView
+                    android:id="@+id/dob4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/personal4"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="What kind of skills do you have?"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                <RelativeLayout
+                    android:id="@+id/showskills"
+                    android:layout_below="@+id/dob4"
+                    android:layout_marginTop="10dp"
+                    android:background="#ffffff"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/fpskilluser1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="10dp"
+                        android:text="Skills"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                    <TextView
+                        android:id="@+id/txtskillsuser"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/fpskilluser1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="4dp"
+                        android:text="java, android studio, github" />
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/button24"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/showskills"
+                    android:layout_marginTop="20dp"
+                    android:text="Add Skills"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/button_round"/>
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relative5"
+                android:id="@+id/relative6"
+                android:layout_marginTop="4dp"
+                android:background="#ffffff">
+                <TextView
+                    android:id="@+id/personal5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Languages"
+                    android:layout_marginLeft="10dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+                <ImageButton
+                    android:id="@+id/editlanguageinfo"
+                    android:layout_height="32dp"
+                    android:layout_width="32dp"
+                    android:src="@drawable/editicon"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="20dp"
+                    />
+
+                <TextView
+                    android:id="@+id/dob5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/personal5"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Please add the languages that you know"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                <RelativeLayout
+                    android:id="@+id/showlanguagesadded"
+                    android:background="#ffffff"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/dob5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/fplanguageuser1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="10dp"
+                        android:text="Language(s)"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                    <TextView
+                        android:id="@+id/txtlanguageuser1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/fplanguageuser1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="4dp"
+                        android:text="French, Arabic, English, Urdu" />
+
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/button25"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/showlanguagesadded"
+                    android:layout_marginTop="20dp"
+                    android:text="Add Languages"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/button_round"/>
+
+
+            </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relative6"
+            android:id="@+id/relative7"
+            android:layout_marginTop="4dp"
+            android:background="#ffffff">
+            <TextView
+                android:id="@+id/personal6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Education Details"
+                android:layout_marginLeft="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+            <ImageButton
+                android:id="@+id/editeduinfo"
+                android:layout_height="32dp"
+                android:layout_width="32dp"
+                android:src="@drawable/editicon"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="20dp"
+                />
+            <TextView
+                android:id="@+id/fpeCourse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_below="@+id/personal6"
+                android:layout_marginLeft="10dp"
+                android:text="Course :"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <TextView
+                android:id="@+id/fpeCourseout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fpeCourse"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:text="BSSE" />
+            <TextView
+                android:id="@+id/fpeInstitute"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_below="@+id/fpeCourseout"
+                android:layout_marginLeft="10dp"
+                android:text="Institue :"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <TextView
+                android:id="@+id/fpeInstituteout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fpeInstitute"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:text="University of Gujrat" />
+
+        </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relative7"
+                android:id="@+id/relative8"
+                android:layout_marginTop="4dp"
+                android:background="#ffffff">
+                <TextView
+                    android:id="@+id/personal7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Experience Details"
+                    android:layout_marginLeft="10dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+                <ImageButton
+                    android:id="@+id/editexperienceinfo"
+                    android:layout_height="32dp"
+                    android:layout_width="32dp"
+                    android:src="@drawable/editicon"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="20dp"
+                    />
+                <TextView
+                    android:id="@+id/fpedesignation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_below="@+id/personal7"
+                    android:layout_marginLeft="10dp"
+                    android:text="Designation:"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                <TextView
+                    android:id="@+id/fpedesignationout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fpedesignation"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/fpeorganization"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_below="@+id/fpedesignationout"
+                    android:layout_marginLeft="10dp"
+                    android:text="Organization/Company :"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                <TextView
+                    android:id="@+id/fpeorganizationout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fpeorganization"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="" />
+            </RelativeLayout>
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relative8"
+                android:id="@+id/relative9"
+                android:layout_marginTop="4dp"
+                android:background="#ffffff">
+                <TextView
+                    android:id="@+id/personal9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Recommendations"
+                    android:layout_marginLeft="10dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+                <ImageButton
+                    android:id="@+id/editrecomendinfo"
+                    android:layout_height="32dp"
+                    android:layout_width="32dp"
+                    android:src="@drawable/editicon"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="20dp"
+                    />
+                <TextView
+                    android:id="@+id/dob6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/personal9"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="Set Job alerts to find the best opportunities at Candidate Recommender System"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                <Button
+                    android:id="@+id/button26"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/dob6"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Set Job Alerts"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/button_round"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <ProgressBar
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/progressBarProfile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:visibility="invisible"/>
+
+</LinearLayout>

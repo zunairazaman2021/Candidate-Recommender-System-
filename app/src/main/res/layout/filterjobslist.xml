@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <data>
+        <import type="com.example.zunairazamanchaudh.candidateengine.util.BigDecimalUtil"/>
+        <import type="android.view.View"/>
+        <variable
+            name="product"
+            type="com.example.zunairazamanchaudh.candidateengine.model.JobView"/>
+        <variable
+            name="iMainActivity"
+            type="com.example.zunairazamanchaudh.candidateengine.IMainActivity"/>
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="1dp"
+
+        android:background="@color/white"
+        android:paddingLeft="10dp">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="4dp"
+            android:id="@+id/image"
+            android:src="@drawable/baseline_business_black_36"
+            />
+
+        <TextView
+            android:id="@+id/titleofjob"
+            android:layout_width="133dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@{product.title}" />
+
+        <TextView
+            android:layout_width="133dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/titleofjob"
+            android:layout_marginTop="4dp"
+            android:id="@+id/companytitle"
+            android:text="@{product.company}" />
+
+        <TextView
+            android:id="@+id/loc"
+            android:layout_width="133dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/companytitle"
+            android:layout_toRightOf="@+id/image"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="20dp"
+            android:drawableLeft="@drawable/room"
+            android:text="@{product.country}" />
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/titleofjob"
+            android:layout_marginEnd="36dp"
+            android:text="Feb 24"
+            android:drawableLeft="@drawable/access_time"
+            android:id="@+id/dat"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
+            />
+
+        <ImageButton
+            android:onClick="@{() -> iMainActivity.inflateViewProductFragment(product)}"
+            android:id="@+id/favorite_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignEnd="@+id/dat"
+            android:layout_alignParentBottom="true"
+            android:background="#00ffffff"
+            android:src="@android:drawable/btn_star"
+            android:layout_marginBottom="10dp"
+            android:layout_alignRight="@+id/dat" />
+
+    </RelativeLayout>
+</layout>

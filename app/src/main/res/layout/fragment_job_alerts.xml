@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".JobAlerts">
+<TextView
+    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+    android:layout_marginTop="10dp"
+    android:text="Alert Name"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content" />
+<EditText
+    android:id="@+id/jaName"
+    android:hint="type here"
+    android:layout_marginLeft="10dp"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content" />
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:layout_marginTop="4dp"
+        android:text="Keywords"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/jakeywords"
+        android:hint="type here"
+        android:layout_marginLeft="10dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:layout_marginTop="4dp"
+        android:text="Job Country "
+        android:layout_width="300dp"
+        android:layout_height="wrap_content" />
+    <Spinner
+        android:id="@+id/jacountry"
+        android:entries="@array/allcountries"
+        android:layout_marginLeft="10dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:layout_marginTop="4dp"
+        android:text="Job City "
+        android:layout_width="300dp"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/jacity"
+        android:hint="type here"
+        android:layout_marginLeft="10dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:layout_marginTop="4dp"
+        android:text="Job Role "
+        android:layout_width="300dp"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/jarole"
+        android:hint="type here"
+        android:layout_marginLeft="10dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="save"
+        android:background="@drawable/button_round"
+        android:id="@+id/saveJobAlert"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content" />
+</LinearLayout>

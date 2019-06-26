@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReferenceActivity">
+<TextView
+    android:text="Reference Details"
+    android:textSize="18sp"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center"
+    android:layout_marginTop="30dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/Reference1Wrapper"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/refName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textAlignment="viewStart"
+            android:hint="Name"
+            android:minHeight="90dp"
+            android:gravity="start" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/Reference2Wrapper"
+        android:layout_width="match_parent"
+        android:layout_marginTop="4dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/refDesignation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textAlignment="viewStart"
+            android:hint="Designation"
+            android:minHeight="90dp"
+            android:gravity="start" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/Reference3Wrapper"
+        android:layout_width="match_parent"
+        android:layout_marginTop="4dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/refOrg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textAlignment="viewStart"
+            android:hint="Instituition name/organization"
+            android:minHeight="90dp"
+            android:gravity="start" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/Reference4Wrapper"
+        android:layout_width="match_parent"
+        android:layout_marginTop="4dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/refEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:textAlignment="viewStart"
+            android:hint="Email id"
+            android:minHeight="90dp"
+            android:gravity="start" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/Reference5Wrapper"
+        android:layout_width="match_parent"
+        android:layout_marginTop="4dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/refMobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:textAlignment="viewStart"
+            android:hint="Mobile No"
+            android:minHeight="90dp"
+            android:gravity="start" />
+    </android.support.design.widget.TextInputLayout>
+<Button
+    android:id="@+id/saveReference"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:text="Save"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center"
+    />
+</LinearLayout>

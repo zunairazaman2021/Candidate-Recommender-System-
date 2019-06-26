@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/frontimage"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="10dp">
+        <TextView
+            android:id="@+id/adcaptionReg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Education Detail"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:layout_marginTop="10dp"
+            />
+        <TextView
+            android:id="@+id/adheading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="Academic Details"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:layout_marginTop="10dp"/>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/courseWrapper"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/adCourseReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Course/Degree"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/schoolWrapperReg"
+            android:layout_width="match_parent"
+            android:layout_marginTop="4dp"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/adschoolReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="School/College/University Name"/>
+        </android.support.design.widget.TextInputLayout>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioGroupReg"
+            android:orientation="horizontal"
+            android:layout_marginTop="34dp"
+            android:checkedButton="1"
+            >
+
+            <RadioButton
+                android:id="@+id/chkperReg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Percentage"
+                android:layout_marginLeft="10dp"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/chkgradeReg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/chkperReg"
+                android:layout_marginLeft="10dp"
+                android:text="CGPAReg"
+                android:checked="false"
+                android:layout_toRightOf="@+id/chkperReg" />
+        </RadioGroup>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/markWrapper"
+            android:layout_width="match_parent"
+            android:layout_marginTop="4dp"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/adMarkReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Mark"/>
+        </android.support.design.widget.TextInputLayout>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioGroup2Reg"
+            android:orientation="horizontal"
+            android:layout_marginTop="34dp"
+            android:checkedButton="1"
+            >
+            <RadioButton
+                android:id="@+id/chkgraduatedReg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Graduated"
+                android:layout_marginLeft="10dp"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/chkpursuingReg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/chkgraduatedReg"
+                android:text="Pursuing"
+                android:layout_marginLeft="10dp"
+                android:checked="false"
+                android:layout_toRightOf="@+id/chkgraduatedReg" />
+        </RadioGroup>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/yearWrapperReg"
+            android:layout_width="match_parent"
+            android:layout_marginTop="4dp"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/adYearReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Passing Year"/>
+        </android.support.design.widget.TextInputLayout>
+        <RelativeLayout
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/backReg"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttoncapsule2"
+                android:text="back"
+                android:layout_marginTop="4dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                />
+            <Button
+                android:id="@+id/saveEduReg"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttoncapsule2"
+                android:text="Next"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                android:layout_toEndOf="@+id/backReg"
+                android:layout_toRightOf="@+id/backReg" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

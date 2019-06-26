@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="com.example.zunairazamanchaudh.candidateengine.util.BigDecimalUtil"/>
+        <import type="com.example.zunairazamanchaudh.candidateengine.util.StringUtil"/>
+        <import type="android.view.View"/>
+
+        <variable
+            name="productView"
+            type="com.example.zunairazamanchaudh.candidateengine.model.JobViewModel"/>
+
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/basic"
+            android:background="#fff"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{productView.product.title}"
+                android:layout_marginTop="20dp"
+                android:id="@+id/titletext"
+                android:textSize="18sp"
+                android:paddingLeft="4dp"
+                android:textColor="@color/darkblue"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/darkgray"
+                android:textSize="16sp"
+                android:paddingLeft="4dp"
+                android:id="@+id/companytxt"
+                android:layout_below="@+id/titletext"
+                android:layout_marginTop="1dp"
+                android:text="@{productView.product.company}"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/experience"
+                android:drawableLeft="@drawable/briefexperiencekey"
+                android:text=" 0-2 years"
+                android:layout_below="@+id/companytxt"
+                android:paddingLeft="4dp"
+                android:layout_marginTop="1dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/vacancytxt"
+                android:text=" 2 Vacancies"
+                android:drawableLeft="@drawable/noofpeople"
+                android:layout_below="@+id/companytxt"
+                android:layout_toEndOf="@+id/experience"
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@+id/experience"
+                android:layout_marginTop="1dp"
+                android:paddingLeft="4dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{productView.product.country}"
+                android:id="@+id/contrytxt"
+                android:layout_below="@+id/experience"
+                android:layout_marginTop="1dp"
+                android:drawableLeft="@drawable/room"
+                android:drawablePadding="2dp"
+                android:paddingLeft="4dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/contrytxt"
+                android:id="@+id/mm"
+                android:layout_marginTop="1dp"
+                android:drawableLeft="@drawable/money"
+                android:text="Not Disclosed" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Desired Candidate profile"
+                android:textSize="18sp"
+                android:id="@+id/candidateview"
+                android:layout_below="@+id/mm"
+                android:textColor="@color/darkblue"
+                android:drawableLeft="@drawable/singleperson"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Any Nationality"
+                android:drawableLeft="@drawable/publicglobe"
+                android:layout_below="@+id/candidateview"
+                android:layout_marginTop="1dp"
+                android:id="@+id/nationaltxt"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/school"
+                android:text="Basic - Bachelor of technology/Engineering"
+                android:layout_below="@+id/nationaltxt"
+                android:id="@+id/edutxt"
+                android:paddingLeft="2dp"/>
+
+            <TextView
+                android:id="@+id/description_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="5"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:layout_below="@+id/edutxt"
+                android:layout_marginTop="2dp"
+                android:text="@{productView.product.description}"
+                android:drawableLeft="@drawable/bulletedlist" />
+
+            <ImageButton
+                android:id="@+id/show"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/description_text"
+                android:background="@drawable/arrowdown"
+                android:clickable="true" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:layout_below="@+id/description_text"
+                android:layout_marginTop="5dp"
+                android:layout_toLeftOf="@+id/show"
+                android:background="@color/darkgray" />
+
+            <ImageButton
+                android:id="@+id/hide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/description_text"
+                android:background="@drawable/arrowup"
+                android:clickable="true"
+                android:visibility="invisible" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view1"
+                android:layout_marginTop="10dp"
+                android:text="Job Description"
+                android:id="@+id/jds"
+                android:textColor="@color/darkblue"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="5"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_below="@+id/jds"
+                android:drawableLeft="@drawable/bulletedlist"
+                android:layout_marginTop="2dp"
+                android:text="@{productView.product.description}"
+                android:id="@+id/textdescrip"/>
+            <ImageButton
+                android:id="@+id/show2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/textdescrip"
+                android:background="@drawable/arrowdown"
+                android:clickable="true" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:layout_below="@+id/textdescrip"
+                android:layout_marginTop="5dp"
+                android:layout_toLeftOf="@+id/show"
+                android:background="@color/darkgray" />
+
+            <ImageButton
+                android:id="@+id/hide2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/textdescrip"
+                android:background="@drawable/arrowup"
+                android:clickable="true"
+                android:visibility="invisible" />
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+</layout>

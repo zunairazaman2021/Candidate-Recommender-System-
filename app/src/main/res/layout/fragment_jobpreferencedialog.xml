@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_height="500dp"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="350dp"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="350dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:text="Preferred Job"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:id="@+id/xx1"
+                android:layout_centerHorizontal="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                />
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Target Job Title"
+                android:layout_below="@+id/xx1"
+                android:layout_marginTop="20dp"
+                android:textColor="#000"
+                android:id="@+id/xx2"
+                android:paddingLeft="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                />
+            <EditText
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:textSize="10sp"
+                android:id="@+id/aa1"
+                android:paddingLeft="10dp"
+                android:layout_below="@id/x2"
+                android:text=""
+                android:hint="Add a job title"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Career Level"
+                android:layout_below="@+id/aa1"
+                android:layout_marginTop="20dp"
+                android:textColor="#000"
+                android:id="@+id/xx3"
+                android:paddingLeft="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                />
+
+            <Spinner
+                android:id="@+id/aa2"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/xx3"
+                android:entries="@array/career_array"
+                android:paddingLeft="10dp"
+                android:textColor="#000"
+                android:textSize="10sp" />
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Target Job Location"
+                android:layout_below="@+id/aa2"
+                android:layout_marginTop="20dp"
+                android:textColor="#000"
+                android:id="@+id/xx4"
+                android:paddingLeft="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                />
+
+            <Spinner
+                android:id="@+id/aa3"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/xx4"
+                android:entries="@array/country_array"
+                android:paddingLeft="10dp"
+                android:textColor="#000"
+                android:textSize="10sp" />
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Career Industry"
+                android:layout_below="@+id/aa3"
+                android:layout_marginTop="20dp"
+                android:textColor="#000"
+                android:id="@+id/xx5"
+                android:paddingLeft="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                />
+
+            <Spinner
+                android:id="@+id/aa4"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/xx5"
+                android:entries="@array/industry_array"
+                android:paddingLeft="10dp"
+                android:textColor="#000"
+                android:textSize="10sp" />
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Employement Type"
+                android:layout_below="@+id/aa4"
+                android:layout_marginTop="20dp"
+                android:textColor="#000"
+                android:id="@+id/xx6"
+                android:paddingLeft="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                />
+
+            <Spinner
+                android:id="@+id/aa5"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/xx6"
+                android:entries="@array/emptype_array"
+                android:paddingLeft="10dp"
+                android:textColor="#000"
+                android:textSize="10sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Target Job Role"
+                android:layout_below="@+id/aa5"
+                android:layout_marginTop="20dp"
+                android:textColor="#000"
+                android:id="@+id/xx7"
+                android:paddingLeft="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                />
+
+            <Spinner
+                android:id="@+id/aa6"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/xx7"
+                android:entries="@array/industry_array"
+                android:paddingLeft="10dp"
+                android:textColor="#000"
+                android:textSize="10sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Target Monthly Salary"
+                android:layout_below="@+id/aa6"
+                android:layout_marginTop="20dp"
+                android:textColor="#000"
+                android:id="@+id/xx8"
+                android:paddingLeft="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                />
+            <Spinner
+                android:id="@+id/aa7"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/xx8"
+                android:entries="@array/salary_arr"
+                android:paddingLeft="10dp"
+                android:textColor="#000"
+                android:textSize="10sp" />
+
+           <Button
+               android:id="@+id/savepreferenceDB"
+               android:layout_below="@+id/aa7"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_round"
+                    android:text="Save"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                    android:fontFamily="sans-serif"
+                    />
+             </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

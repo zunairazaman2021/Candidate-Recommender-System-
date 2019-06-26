@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="emptype_array">
+        <item>select one</item>
+        <item>Commission</item>
+        <item>Contract</item>
+        <item>Freelancer</item>
+        <item>Full Time</item>
+        <item>Internship</item>
+        <item>Part Time Employee</item>
+        <item>Temporary Employee</item>
+        <item>Volunteer</item>
+    </string-array>
+</resources>

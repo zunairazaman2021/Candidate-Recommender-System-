@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <data>
+        <import type="com.example.zunairazamanchaudh.candidateengine.util.StringfromDate"/>
+        <import type="com.example.zunairazamanchaudh.candidateengine.util.BigDecimalUtil"/>
+        <import type="com.example.zunairazamanchaudh.candidateengine.util.StringTwoNamesOne"/>
+        <import type="android.view.View"/>
+        <variable
+            name="cv"
+            type="com.example.zunairazamanchaudh.candidateengine.RecruiterMainScreen.modelRecruiter.CVsview"/>
+        <variable
+            name="iMainActivityRecruiter"
+            type="com.example.zunairazamanchaudh.candidateengine.RecruiterMainScreen.IMainActivityRecruiter"/>
+    </data>
+    <RelativeLayout
+
+        android:onClick="@{() -> iMainActivityRecruiter.inflateViewCVFragment(cv)}"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:paddingLeft="10dp">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="4dp"
+            android:id="@+id/imageOwner"
+            android:tint="@color/darkblue"
+            android:src="@drawable/outline_account48dp"
+            />
+        <TextView
+            android:id="@+id/ownerName"
+            android:textColor="@color/black"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@{cv.name}" />
+
+        <TextView
+            android:id="@+id/ownerDesignation"
+            android:layout_width="wrap_content"
+            android:drawableLeft="@drawable/briefexperiencekey"
+            android:layout_marginTop="4dp"
+            android:layout_alignLeft="@+id/ownerName"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_below="@+id/ownerName"
+            android:layout_centerHorizontal="true"
+            android:text="@{StringTwoNamesOne.convertTwoStringsIntoOne(cv.designation,cv.organization)}" />
+
+        <TextView
+            android:id="@+id/ownerCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ownerDesignation"
+            android:drawableLeft="@drawable/room"
+            android:layout_marginTop="4dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            android:text="@{StringTwoNamesOne.mergeIntoOne(cv.city,cv.country)}"
+            android:layout_alignLeft="@+id/ownerName" />
+        <TextView
+            android:id="@+id/ownerExperienceFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageOwner"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/black"
+            android:drawableLeft="@drawable/access_time"
+            android:text="@{StringfromDate.convertDateToDisplayTime(cv.durationFrom)}" />
+        <TextView
+            android:id="@+id/space"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  -  "
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/imageOwner"
+            android:layout_toEndOf="@+id/ownerExperienceFrom"
+            android:layout_toRightOf="@+id/ownerExperienceFrom" />
+        <TextView
+            android:id="@+id/ownerExperienceTo"
+            android:text="@{StringfromDate.convertDateToDisplayTime(cv.DurationTo)}"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/space"
+            android:layout_below="@+id/imageOwner"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/space" />
+        <ImageButton
+            android:id="@+id/favorite_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignEnd="@+id/ownerDesignation"
+            android:layout_alignParentBottom="true"
+            android:background="#00ffffff"
+            android:src="@android:drawable/btn_star"
+            android:layout_alignRight="@+id/ownerDesignation" />
+    </RelativeLayout>
+</layout>

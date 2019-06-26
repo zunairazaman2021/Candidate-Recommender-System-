@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="arrayownershiptypes">
+        <item>Sole Proprietorship</item>
+        <item>Partnership</item>
+        <item>Limited partnership </item>
+        <item>Limited Liability Company (LLC) </item>
+        <item>Corporation (for-profit)</item>
+        <item>Nonprofit Corporation (not-for-profit)</item>
+        <item>Cooperative</item>
+    </string-array>
+</resources>

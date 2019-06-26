@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#23A7DB</color>
+    <color name="colorPrimaryDark">#6c6c6c</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="whitee">#ffffff</color>
+    <color name="bluedark">#3700B3</color>
+    <color name="blue">#6200EE</color>
+    <!--ResumeManagerColors-->
+
+    <!--<color name="colorPrimaryDark">#0f5998</color>
+    <color name="colorAccent">#4075a2</color>
+    <color name="colorNavIcon">#dae9f6</color>
+    <color name="colorNavText">#01294b</color>
+
+    <color name="colorPrimary">#202324</color>
+    -->
+    <color name="ColorPrimary">#202324</color>
+    <color name="BorderLineColor">#B8B9B1</color>
+    <color name="CanvasBackground">#ffffff</color>
+
+    <color name="blue1">#66a3ff</color>
+    <color name="blue2">#0033cc</color>
+    <color name="blue3">#00c4cc</color>
+    <color name="blue4">#00aab1</color>
+    <color name="blue5">#007f85</color>
+    <color name="linkBlue">#4d94ff</color>
+    <color name="colorNavIcon">#dae9f6</color>
+    <color name="colorNavText">#01294b</color>
+    <color name="sub_btn_background">#424a52</color>
+    <color name="sub_btn_line">#00c68c</color>
+    <color name="sub_btn_ripple">#eff0f2</color>
+    <color name="sub_btn_tick">#eff0f2</color>
+    <color name="white">#ffffff</color>
+    <color name="gray">#627676</color>
+    <color name="yellow">#eef26c</color>
+    <color name="black">#000000</color>
+    <color name="pink">#E91E63</color>
+    <color name="darksea">#004D40</color>
+    <color name="darkgray">#6c6c6c</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="gradstart">#19AABB</color>
+
+    <color name="darkGrey">#a6a6a6 </color>
+
+    <color name="Grey">#c3c3c3 </color>
+
+    <color name="mediumLightGrey">#d9d9d9 </color>
+
+    <color name="lightGrey">#f2f2f2 </color>
+
+    <color name="DarkGrey">#4d4d4d </color>
+
+    <color name="Black">#000 </color>
+
+    <color name="RatingBar">#ff9900</color>
+
+    <color name="lightOrange">#ffebcc</color>
+
+    <color name="mediumLightOrange">#ffcc80</color>
+
+    <color name="orange">#ffad33</color>
+
+    <color name="darkOrange">#ff9900</color>
+    <color name="darkblue">#1A237E</color>
+
+
+    <color name="gradStop">#23A7DB</color>
+    <color name="lightgray">#E0E0E0</color>
+
+</resources>

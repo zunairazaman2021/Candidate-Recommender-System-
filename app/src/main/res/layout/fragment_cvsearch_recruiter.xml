@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cvsearchfoto"
+    >
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+        >
+            <TextView
+                android:id="@+id/titlescreenCV"
+                android:text="Hire talent the easy way"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:layout_centerHorizontal="true"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rel1Recruiter"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edit_queryRecruite"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="150dp"
+                    android:background="@drawable/edit_round"
+                    android:drawableLeft="@drawable/magnifysearch"
+                    android:paddingLeft="10dp"
+                    android:drawablePadding="10dp"
+                    android:hint="Job title, skills, etc"
+                    />
+                <EditText
+                    android:id="@+id/edit_regionRecruite"
+                    android:layout_width="300dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/edit_queryRecruite"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edit_round"
+                    android:drawableLeft="@drawable/mapoutline"
+                    android:paddingLeft="10dp"
+                    android:drawablePadding="10dp"
+                    android:hint="All regions"
+
+                    />
+                <Button
+                    android:layout_width="250dp"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/edit_regionRecruite"
+                    android:text="Search CV's"
+                    android:textAllCaps="false"
+                    android:drawableLeft="@drawable/ic_menu_send"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="10dp"
+                    android:drawablePadding="10dp"
+                    android:layout_marginTop="60dp"
+                    android:id="@+id/searchgoRecruiter"
+                    android:background="@drawable/button_round"
+                    />
+
+            </RelativeLayout>
+        <TextView
+            android:id="@+id/cvTitles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rel1Recruiter"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
+            android:layout_centerHorizontal="true"
+            android:text="Popular CV Searches"/>
+
+            <Button
+                android:id="@+id/cvtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/cvTitles"
+                android:layout_marginStart="81dp"
+                android:gravity="center"
+                android:text="Sales"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="81dp" />
+            <Button
+                android:id="@+id/cvtitle2"
+                android:text="Developers"
+                android:layout_below="@+id/cvTitles"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/cvtitle1" />
+
+            <Button
+                android:id="@+id/cvtitle3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="88dp"
+                android:layout_marginStart="120dp"
+                android:gravity="center"
+                android:text="Accountant"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="120dp" />
+
+
+        </RelativeLayout>
+    </LinearLayout>

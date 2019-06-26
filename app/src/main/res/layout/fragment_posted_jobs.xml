@@ -1,0 +1,58 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+       <import type="com.example.zunairazamanchaudh.candidateengine.RecruiterMainScreen.modelRecruiter.JobPostedview"/>
+        <import type="java.util.List"/>
+        <variable
+            name="jobposts"
+            type="List&lt;JobPostedview>"/>
+    </data>
+
+<RelativeLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v4.widget.NestedScrollView
+        android:overScrollMode="never"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jobs"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        />
+ <Spinner
+     android:id="@+id/postedjobstatus"
+     android:layout_marginTop="10dp"
+     style="@android:style/Widget.Holo.Light.Spinner"
+     android:layout_width="match_parent"
+     android:spinnerMode="dialog"
+     android:entries="@array/jobstatus"
+     android:layout_height="wrap_content">
+ </Spinner>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recyclerv_view_postedjobs"
+                app:jobPostedList="@{jobposts}">
+            </android.support.v7.widget.RecyclerView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/plus_job"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:src="@drawable/plusicon"
+        android:layout_margin="16dp" />
+</LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</RelativeLayout>
+</layout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/nav_dashboardRecruiter"
+        android:icon="@drawable/home"
+        android:title="Dashboard" />
+
+    <item
+        android:id="@+id/jobsRecruiter"
+        android:icon="@drawable/clipboard"
+        android:title="Jobs"
+        />
+
+    <item
+        android:id="@+id/CVRecruiter"
+        android:icon="@drawable/eyeview"
+        android:title="CV Folders"
+        />
+    <item
+        android:id="@+id/searchCVRecruiter"
+        android:icon="@drawable/search"
+        android:title="Search CVs" />
+
+    <item
+        android:id="@+id/qrscanRecruiter"
+        android:icon="@drawable/qrcodescan"
+        android:title="QR Scanner"
+        />
+    <item
+        android:id="@+id/ChangePasswordRecruiter"
+        android:icon="@drawable/lock"
+        android:title="Change Password"
+        />
+    <item
+        android:id="@+id/help_circleRecruiter"
+        android:icon="@drawable/helpcircle"
+        android:title="Help and Feedback"
+        />
+
+    <item
+        android:id="@+id/sign_outRecruiter"
+        android:icon="@drawable/accountsignout"
+        android:title="Sign out"
+        />
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_shareRecruiter"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_sendRecruiter"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>

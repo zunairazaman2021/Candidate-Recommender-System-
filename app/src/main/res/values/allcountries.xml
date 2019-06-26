@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="allcountries">
+        <item>Select Country </item>
+        <item>America</item>
+        <item>Bahrain</item>
+        <item>Dubai</item>
+        <item>India</item>
+        <item>Pakistan</item>
+        <item>Kuwait</item>
+        <item>Saudia Arabia</item>
+    </string-array>
+</resources>

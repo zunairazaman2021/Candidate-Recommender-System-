@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_searchcv"
+        android:icon="@drawable/searchiconpng"
+        android:title="@string/searchcv" />
+
+    <item
+        android:id="@+id/navigation_jobsposted"
+        android:icon="@drawable/workoutlinesimple"
+        android:title="@string/jobsposted" />
+
+    <item
+        android:id="@+id/navigation_postJob"
+        android:icon="@drawable/create_new_folder_black"
+        android:title="@string/postnewjob" />
+
+    <item
+        android:id="@+id/navigation_cvfolder"
+        android:icon="@drawable/foldericon"
+        android:title="@string/cvfolders" />
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/accountcircleblack"
+        android:title="@string/myrecruiter" />
+
+</menu>

@@ -1,0 +1,125 @@
+<resources>
+    <string name="app_name">Candidate Engine</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_job_seeker_screen">JobSeekerScreen</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_welcome_candidate">Welcome Candidate</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="intent_product">intent_product</string>
+    <string name="intent_cv_user">intent_cv_user</string>
+
+    <string name="fragment_view_product">View Job </string>
+    <string name="fragment_filter">View Filter </string>
+    <string name="fragment_filter_cv">View Filter CV</string>
+
+    <string name="action_settingsRecruiter">Settings</string>
+    <string name="searchcv">Search CV</string>
+    <string name="jobsposted">Jobs</string>
+    <string name="postnewjob">Add Job</string>
+    <string name="cvfolders">CV folder</string>
+    <string name="myrecruiter">Profile</string>
+
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="resend_verification_email">Resend Verification Email</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="register">Register</string>
+    <string name="sign_in">Sign In</string>
+    <string name="password">Password</string>
+    <string name="tabian_consulting_logo">Tabian Consulting Logo</string>
+    <string name="email_registration">Email Registration</string>
+    <string name="email">Email</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="employee_dashboard">Employee Dashboard</string>
+    <string name="this_week_s_initiatives">This week\'s initiatives</string>
+    <string name="employee_schedule">Employee Schedule</string>
+    <string name="company_culture">Company Culture</string>
+    <string name="tabian_consulting_sales_chart">Tabian Consulting Sales Chart</string>
+    <string name="cancel">CANCEL</string>
+    <string name="confirm">CONFIRM</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="sign_out">Sign out</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="current_password">Current Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="first_and_last_name">First and last name</string>
+    <string name="save">Save</string>
+    <string name="change_password">Change Password</string>
+    <string name="primary_phone_contact">Primary phone contact #</string>
+    <string name="chat">Chat</string>
+
+
+    <!--ResumeManager-->
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_profile">Profile</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hobbies"><![CDATA[FOI,CSS,Str&Hob]]></string>
+    <string name="title_industry">IV,Ach,Curr</string>
+    <string name="contactInfo">Contact Info</string>
+    <string name="title_academ">Academic</string>
+    <string name="wxperience">Work Exp</string>
+    <string name="title_project">Project</string>
+    <string name="title_academic_detail"><u>List your highest level of education first</u></string>
+
+    <string name="hint_sign">Get Signature</string>
+    <string name="sign_here_title">Sign Here</string>
+    <string name="hint_cancel">Cancel</string>
+    <string name="hint_clear">Clear</string>
+    <string name="hint_save">Save</string>
+    <string name="bill_details_title">Bill Details</string>
+    <string name="date">Date</string>
+    <string name="date_data">16 Mar 2017</string>
+    <string name="order_no">Order Number</string>
+    <string name="order_no_data">10798565</string>
+    <string name="buyers_name">Buyer\'s Name</string>
+    <string name="buyers_name_data">Umesh</string>
+    <string name="buyers_address">Buyer\'s Address</string>
+    <string name="buyers_address_data">Pratap Nagar</string>
+    <string name="contact_no">Contact Number</string>
+    <string name="contact_no_data">0000000000</string>
+    <string name="total_amount">Total Amount</string>
+    <string name="total_amount_data">Rs 1500</string>
+    <string name="checkbox_text">I have Successfully Received the product</string>
+    <string name="get_signature_text">Get Signature</string>
+
+
+    <!-- Firebase Database Nodes -->
+    <string name="dbnode_users">users</string>
+    <string name="dbnode_chatrooms">chatrooms</string>
+    <string name="dbnode_departments">departments</string>
+    <string name="dbnode_server">server</string>
+    <string name="dbnode_jobpreference">jobpreference</string>
+    <string name="dbnode_experience">experience</string>
+    <string name="dbnode_education">education</string>
+    <string name="dbnode_skills">skills</string>
+    <string name="dbnode_languages">languages</string>
+    <string name="dbnode_jobalerts">jobalerts</string>
+    <string name="dbnode_addressDetails">addressDetails</string>
+    <string name="dbnode_Recruiterusers">RecruiterUser</string>
+    <string name="dbnode_Company">company</string>
+    <string name="dbnode_JobPost">JobPost</string>
+
+</resources>

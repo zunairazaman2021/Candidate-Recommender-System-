@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="career_array">
+        <item>Select one</item>
+        <item>Student/Internship</item>
+        <item>Fresh Graduate</item>
+        <item>Entry Level</item>
+        <item>Mid Career</item>
+        <item>Senior Executive</item>
+        <item>Management</item>
+        <item>Director/Head</item>
+    </string-array>
+</resources>

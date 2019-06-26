@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/open_job"
+        android:title="open job" />
+    <item android:id="@+id/close_job"
+        android:title="close job" />
+    <item android:id="@+id/pause_job"
+        android:title="pause job" />
+</menu>

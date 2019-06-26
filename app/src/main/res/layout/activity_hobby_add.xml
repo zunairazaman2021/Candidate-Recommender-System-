@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ResumeManager.HobbyADDActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Other Activities"
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp"/>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/hobby1Wrapper"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/hobby1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:visibility="visible"
+            android:hint="Activity 1"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/hobby2Wrapper"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_marginTop="4dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/hobby2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:visibility="invisible"
+            android:hint="Activity 2"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/hobby3Wrapper"
+        android:layout_width="match_parent"
+        android:layout_marginTop="4dp"
+        android:visibility="invisible"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/hobby3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:inputType="text"
+            android:hint="Activity 3"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/hobby4Wrapper"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_marginTop="4dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/hobby4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:visibility="invisible"
+            android:hint="Activity 4"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/hobby5Wrapper"
+        android:layout_width="match_parent"
+        android:visibility="invisible"
+        android:layout_marginTop="4dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/hobby5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:visibility="invisible"
+            android:hint="Activity 5"/>
+    </android.support.design.widget.TextInputLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Add"
+            android:id="@+id/addHobby"/>
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toEndOf="@+id/addHobby"
+            android:text="Save"
+            android:id="@+id/saveHobby"
+            android:layout_toRightOf="@+id/addHobby"
+            /></RelativeLayout>
+</LinearLayout>

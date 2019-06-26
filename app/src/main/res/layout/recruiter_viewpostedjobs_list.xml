@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <data>
+        <import type="com.example.zunairazamanchaudh.candidateengine.util.BigDecimalUtil"/>
+        <import type="com.example.zunairazamanchaudh.candidateengine.util.StringCandidatesUtil"/>
+        <import type="com.example.zunairazamanchaudh.candidateengine.util.StringMoneyUtil"/>
+
+        <import type="android.view.View"/>
+        <variable
+            name="jobpost"
+            type="com.example.zunairazamanchaudh.candidateengine.RecruiterMainScreen.modelRecruiter.JobPostedview"/>
+        <variable
+            name="iMainActivityPostedJob"
+            type="com.example.zunairazamanchaudh.candidateengine.RecruiterMainScreen.JobBoardFolder.IMainActivityPostedJob"/>
+    </data>
+<LinearLayout
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/pjTitle"
+        android:text="@{jobpost.jobTitle}"
+        android:layout_marginLeft="10dp"
+        android:layout_width="300dp"
+        android:textStyle="bold"
+        android:layout_height="wrap_content" />
+     <ImageButton
+         android:layout_marginTop="10dp"
+         android:id="@+id/option_job"
+         android:layout_width="32dp"
+         android:layout_height="32dp"
+         android:layout_marginRight="10dp"
+         android:layout_alignParentRight="true"
+         android:src="@drawable/baseline_more_horiz_black" />
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/pjCity"
+        android:text="@{jobpost.city}"
+        android:layout_marginTop="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:paddingLeft="4dp"
+        android:drawableLeft="@drawable/mapoutline"/>
+    <TextView
+        android:id="@+id/pjmoney"
+        android:text="@{StringMoneyUtil.salaryIntoToString(jobpost.salary)}"
+        android:paddingLeft="4dp"
+        android:drawableLeft="@drawable/money"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="4dp"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/pjvacancy"
+        android:paddingLeft="4dp"
+        android:text="@{StringCandidatesUtil.convertCandidateIntoToString(jobpost.noOfVacancies)}"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:drawableLeft="@drawable/singleperson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+</layout>

@@ -1,0 +1,110 @@
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+<android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarfilterjob"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/white"
+        android:titleTextColor="#000">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/keyboardbackmove"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jobs available"
+            android:layout_gravity="center"
+            android:textColor="@color/darkblue"
+            android:textSize="18sp"
+            android:layout_marginLeft="30dp"
+            android:textStyle="bold"
+            android:id="@+id/toolbar_title" />
+
+            <Button
+                android:id="@+id/filterbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="filter"
+                android:layout_marginLeft="70dp"
+                android:backgroundTint="@color/white"
+                android:fallbackLineSpacing="false"
+                android:textColor="@color/darkblue"
+                />
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        >
+
+        <fr.ganfra.materialspinner.MaterialSpinner
+            android:id="@+id/spin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/filtertime"
+            app:ms_arrowColor="#0000FF"
+            app:ms_arrowSize="16dp"
+            app:ms_floatingLabelColor="#A9A9A9"
+            app:ms_floatingLabelText="Find jobs posted during particular time"
+            app:ms_hint="Please Choose time"
+            app:ms_hintColor="#000000"
+
+            app:ms_multiline="true"></fr.ganfra.materialspinner.MaterialSpinner>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create a job Alert"
+            android:gravity="left"
+            android:id="@+id/jobalert"
+            android:drawableLeft="@drawable/notificationnofill"
+            />
+
+        <Switch
+            style="@style/MySwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:checked="false"
+            android:layout_toEndOf="@+id/jobalert"
+            android:layout_marginLeft="120dp"
+            android:switchTextAppearance="@style/MySwitch"
+            android:id="@+id/sww"
+            android:layout_toRightOf="@+id/jobalert" />
+
+    </RelativeLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp">
+    <FrameLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/somefiltercontent">
+    </FrameLayout>
+</RelativeLayout>
+</LinearLayout>
+</layout>

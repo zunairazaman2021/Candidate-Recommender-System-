@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".RecruiterMainScreen.EditCompanyDetails">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Company Details"
+                android:textSize="25sp"
+                android:textColor="@color/Black"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:id="@+id/textEmailReg"/>
+            <EditText
+                android:id="@+id/input_companyName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:inputType="text"
+                android:hint="Company Name "/>
+            <EditText
+                android:id="@+id/input_jobRole"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:inputType="text"
+                android:hint="Job Role "/>
+            <EditText
+                android:id="@+id/input_ceoName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:inputType="text"
+                android:hint="CEO Name "/>
+            <EditText
+                android:id="@+id/input_hodHRdepartment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:inputType="text"
+                android:hint="Head HR department "/>
+            <EditText
+                android:id="@+id/input_groupOfCompany"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:inputType="text"
+                android:hint="Group of Company "/>
+            <EditText
+                android:id="@+id/input_industryName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:inputType="text"
+                android:hint="Industry Name "/>
+            <Spinner
+                android:id="@+id/input_ownershipType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:entries="@array/arrayownershiptypes"
+              />
+            <EditText
+                android:id="@+id/input_companyDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:inputType="text"
+                android:minHeight="70dp"
+                android:hint="Company Description "/>
+
+            <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_updateCompanyInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Save"
+        android:background="@drawable/blue_button"/>
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_cancelUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Cancel"
+                android:background="@drawable/blue_button"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ProgressBar
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/progressBarCompany"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:visibility="invisible"/>
+</RelativeLayout>

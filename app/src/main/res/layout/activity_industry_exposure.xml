@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResumeManager.IndustryExposureActivity"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Industrial Exposure"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        android:textColor="#000"
+        />
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/industry1Wrapper"
+        android:layout_width="match_parent"
+        android:visibility="visible"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/industry1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:visibility="visible"
+            android:hint="Industry Exposure 1" />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/industry2Wrapper"
+        android:layout_width="match_parent"
+        android:visibility="invisible"
+        android:layout_marginTop="4dp"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/industry2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:visibility="invisible"
+            android:hint="Industry Exposure 2" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/industry3Wrapper"
+        android:layout_width="match_parent"
+        android:visibility="invisible"
+        android:layout_marginTop="4dp"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/industry3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:visibility="invisible"
+            android:hint="Industry Exposure 3" />
+    </android.support.design.widget.TextInputLayout>
+    <RelativeLayout
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <Button
+        android:text="Add"
+    android:layout_width="150dp"
+    android:layout_height="wrap_content"
+    android:id="@+id/btnaddIndustry"/>
+    <Button
+        android:text="Save"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnsaveIndustry"
+        android:layout_marginLeft="4dp"
+        android:layout_toEndOf="@+id/btnaddIndustry"
+        android:layout_toRightOf="@+id/btnaddIndustry" />
+    </RelativeLayout>
+
+</LinearLayout>

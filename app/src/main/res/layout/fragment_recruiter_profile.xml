@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never">
+   <LinearLayout
+       android:background="@color/darkgray"
+       android:orientation="vertical"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+         <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:id="@+id/relative1">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageViewRecruiter"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/edit_round"
+                android:src="@drawable/subhan"/>
+
+            <Button
+                android:id="@+id/buttonFotoRecruiter"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="37dp"
+                android:background="@drawable/button_round"
+                android:gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="Update Photo" />
+             <ImageButton
+                 android:id="@+id/editrecruiterinfo"
+                 android:layout_height="32dp"
+                 android:layout_width="32dp"
+                 android:src="@drawable/editicon"
+                 android:layout_alignParentRight="true"
+                 android:layout_marginTop="35dp"
+                 />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imageViewRecruiter"
+                android:layout_marginTop="10dp"
+                android:text="Essa"
+                android:autoSizeTextType="uniform"
+                android:layout_marginLeft="10dp"
+                android:textAllCaps="true"
+                android:id="@+id/nameRecruiter"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+            <TextView
+                android:id="@+id/show_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/nameRecruiter"/>
+            <TextView
+                android:id="@+id/show_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:layout_marginBottom="10dp"
+                android:layout_below="@+id/show_phone"/>
+
+        </RelativeLayout>
+       <RelativeLayout
+           android:layout_marginTop="4dp"
+           android:background="@color/white"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:id="@+id/headCompany"
+               android:text="About Company"
+               android:layout_marginLeft="10dp"
+               android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+               android:layout_marginTop="20dp"/>
+           <ImageButton
+               android:id="@+id/editCompanyinfo"
+               android:layout_height="32dp"
+               android:layout_width="32dp"
+               android:src="@drawable/editicon"
+               android:layout_alignParentRight="true"
+               android:layout_marginTop="20dp"
+               />
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/companyName"
+               android:layout_below="@+id/headCompany"
+               android:layout_marginLeft="10dp"
+               android:layout_marginTop="10dp"
+               android:text="Company Name : "
+               android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+               />
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/companyName"
+               android:layout_marginTop="4dp"
+               android:text=""
+               android:layout_marginLeft="10dp"
+               android:id="@+id/show_companyName"
+               />
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/jobRole"
+               android:layout_below="@+id/show_companyName"
+               android:layout_marginLeft="10dp"
+               android:layout_marginTop="4dp"
+               android:text="Job Role : "
+               android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+               />
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/jobRole"
+               android:layout_marginTop="4dp"
+               android:text=""
+               android:layout_marginLeft="10dp"
+               android:id="@+id/show_jobRole"
+               />
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/ceoName"
+               android:layout_below="@+id/show_jobRole"
+               android:layout_marginLeft="10dp"
+               android:layout_marginTop="4dp"
+               android:text="CEO Name : "
+               android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+               />
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/ceoName"
+               android:layout_marginTop="4dp"
+               android:text=""
+               android:layout_marginLeft="10dp"
+               android:id="@+id/show_ceoName"
+               />
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/headHRdepartment"
+               android:layout_below="@+id/show_ceoName"
+               android:layout_marginLeft="10dp"
+               android:layout_marginTop="4dp"
+               android:text="Head HR department : "
+               android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+               />
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/headHRdepartment"
+               android:layout_marginTop="4dp"
+               android:text=""
+               android:layout_marginLeft="10dp"
+               android:id="@+id/show_headHRdepartment"
+               />
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/groupOfCompany"
+               android:layout_below="@+id/show_headHRdepartment"
+               android:layout_marginLeft="10dp"
+               android:layout_marginTop="4dp"
+               android:text="Group of Company : "
+               android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+               />
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/groupOfCompany"
+               android:layout_marginTop="4dp"
+               android:text=""
+               android:layout_marginLeft="10dp"
+               android:id="@+id/show_groupOfCompany"
+               />
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/industryName"
+               android:layout_below="@+id/show_groupOfCompany"
+               android:layout_marginLeft="10dp"
+               android:layout_marginTop="4dp"
+               android:text="Industry of Name : "
+               android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+               />
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/industryName"
+               android:layout_marginTop="4dp"
+               android:text=""
+               android:layout_marginLeft="10dp"
+               android:id="@+id/show_industryName"
+               />
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/ownershipType"
+               android:layout_below="@+id/show_industryName"
+               android:layout_marginLeft="10dp"
+               android:layout_marginTop="4dp"
+               android:text="Ownership Type : "
+               android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+               />
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/ownershipType"
+               android:layout_marginTop="4dp"
+               android:text=""
+               android:layout_marginLeft="10dp"
+               android:id="@+id/show_ownershiptype"
+               />
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/companyDescription"
+               android:layout_below="@+id/show_ownershiptype"
+               android:layout_marginLeft="10dp"
+               android:layout_marginTop="4dp"
+               android:text="Company Description : "
+               android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+               />
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/companyDescription"
+               android:layout_marginTop="4dp"
+               android:text=""
+               android:layout_marginLeft="10dp"
+               android:id="@+id/show_companyDescription"
+               android:layout_marginBottom="20dp"
+               />
+
+       </RelativeLayout>
+
+   </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <ProgressBar
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/progressBarProfileViewR"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:visibility="invisible"/>
+</LinearLayout>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "827982081067",
+    "firebase_url": "https://datarecommender-f1246.firebaseio.com",
+    "project_id": "datarecommender-f1246",
+    "storage_bucket": "datarecommender-f1246.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:827982081067:android:9561b15bd4c83634",
+        "android_client_info": {
+          "package_name": "com.example.zunairazamanchaudh.candidateengine"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "827982081067-pvjt2rf5inpq7pk6cmi36lu2suk0ctb2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByc_33zyTnOPKk4bD5BajlfkTZn2AROiM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "827982081067-pvjt2rf5inpq7pk6cmi36lu2suk0ctb2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

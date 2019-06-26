@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <data>
+        <import type="com.example.zunairazamanchaudh.candidateengine.util.StringfromDate"/>
+        <import type="com.example.zunairazamanchaudh.candidateengine.util.BigDecimalUtil"/>
+        <import type="com.example.zunairazamanchaudh.candidateengine.util.StringTwoNamesOne"/>
+        <import type="android.view.View"/>
+        <variable
+            name="cv"
+            type="com.example.zunairazamanchaudh.candidateengine.RecruiterMainScreen.modelRecruiter.CVsview"/>
+        <variable
+            name="iMainActivityRecruiter"
+            type="com.example.zunairazamanchaudh.candidateengine.RecruiterMainScreen.IMainActivityRecruiter"/>
+    </data>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<ImageButton
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:id="@+id/cvfoldimage"
+    android:tint="@color/darkblue"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:src="@drawable/foldericon"/>
+    <TextView
+        android:text="@{cv.cvTitle}"
+        android:id="@+id/cvfolderTitle"
+        android:layout_marginLeft="10dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_toEndOf="@+id/cvfoldimage"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="4dp"
+        android:layout_toRightOf="@+id/cvfoldimage" />
+    <TextView
+        android:id="@+id/cvfolderNumberofCVs"
+        android:text="12 CVs"
+        android:layout_marginLeft="10dp"
+        android:textSize="15sp"
+        android:layout_below="@+id/cvfolderTitle"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/lightGrey"
+        android:layout_toEndOf="@+id/cvfoldimage"
+        android:layout_alignParentRight="true"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/cvfoldimage" />
+</RelativeLayout>
+</layout>

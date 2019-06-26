@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/frontimage"
+    tools:context=".JobPreferencefrag">
+    <ScrollView
+        android:background="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Preferred Job"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:textColor="#000"
+                android:id="@+id/x1"
+                android:layout_centerHorizontal="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Target Job Title"
+                android:layout_below="@+id/x1"
+                android:layout_marginTop="20dp"
+                android:textColor="#000"
+                android:id="@+id/x2"
+                android:paddingLeft="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="10sp"
+                android:id="@+id/a1"
+                android:paddingLeft="10dp"
+                android:layout_below="@id/x2"
+                android:text=""
+                android:hint="Add a job designation"
+                android:textColor="#000"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Career Level"
+                android:layout_below="@+id/a1"
+                android:layout_marginTop="20dp"
+                android:textColor="#000"
+                android:id="@+id/x3"
+                android:paddingLeft="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                />
+
+            <Spinner
+                android:id="@+id/a2"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/x3"
+                android:entries="@array/career_array"
+                android:paddingLeft="10dp"
+                android:textColor="#000"
+                android:textSize="10sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Target Job Location"
+                android:layout_below="@+id/a2"
+                android:layout_marginTop="20dp"
+                android:textColor="#000"
+                android:id="@+id/x4"
+                android:paddingLeft="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                />
+
+            <Spinner
+                android:id="@+id/a3"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/x4"
+                android:entries="@array/country_array"
+                android:paddingLeft="10dp"
+                android:textColor="#000"
+                android:textSize="10sp" />
+            <EditText
+
+                android:id="@+id/cityjb"
+                android:hint="Input prefered job city"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/a3"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Career Industry"
+                android:layout_below="@+id/cityjb"
+                android:layout_marginTop="20dp"
+                android:textColor="#000"
+                android:id="@+id/x5"
+                android:paddingLeft="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                />
+
+            <Spinner
+                android:id="@+id/a4"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/x5"
+                android:entries="@array/industry_array"
+                android:paddingLeft="10dp"
+                android:textColor="#000"
+                android:textSize="10sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Employement Type"
+                android:layout_below="@+id/a4"
+                android:layout_marginTop="20dp"
+                android:textColor="#000"
+                android:id="@+id/x6"
+                android:paddingLeft="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                />
+
+            <Spinner
+                android:id="@+id/a5"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/x6"
+                android:entries="@array/emptype_array"
+                android:paddingLeft="10dp"
+                android:textColor="#000"
+                android:textSize="10sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Target Job Role"
+                android:layout_below="@+id/a5"
+                android:layout_marginTop="20dp"
+                android:textColor="#000"
+                android:id="@+id/x7"
+                android:paddingLeft="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                />
+
+            <Spinner
+                android:id="@+id/a6"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/x7"
+                android:entries="@array/industry_array"
+                android:paddingLeft="10dp"
+                android:textColor="#000"
+                android:textSize="10sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Target Monthly Salary"
+                android:layout_below="@+id/a6"
+                android:layout_marginTop="20dp"
+                android:textColor="#000"
+                android:id="@+id/x8"
+                android:paddingLeft="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                />
+
+            <Spinner
+                android:id="@+id/a7"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@id/x8"
+                android:entries="@array/salary_arr"
+                android:paddingLeft="10dp"
+                android:textColor="#000"
+                android:textSize="10sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/relai3"
+                android:layout_below="@+id/a7"
+                android:layout_marginTop="5dp"
+                android:layout_alignParentBottom="true">
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/button_round"
+                    android:text="Back"
+                    android:textAllCaps="true"
+                    android:id="@+id/btnprev3"
+                    android:textColor="@color/white"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                    android:fontFamily="sans-serif"
+                    />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Submit"
+                    android:textAllCaps="true"
+                    android:id="@+id/btnnext3"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/white"
+                    android:fontFamily="sans-serif"
+                    android:background="@drawable/button_round"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                    />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

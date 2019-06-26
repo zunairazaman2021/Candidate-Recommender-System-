@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecruiterMainScreen.JobBoardFolder.WelcomeAddJob">
+<RelativeLayout
+    android:background="@drawable/meetingpaper"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+</RelativeLayout>
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="90dp">
+    <TextView
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:textColor="#424242"
+        android:textStyle="italic"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:text="You're one step closer to better hiring!"
+        android:textFontWeight="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="15dp"
+        android:background="#F9FBE7"
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+        <Button
+            android:id="@+id/addJobposting"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="+ Add Jobs"
+            android:textColor="#00E5FF"
+            android:layout_width="300dp"
+            android:layout_height="90dp"
+            android:background="@drawable/layoutborder"/>
+    </RelativeLayout>
+
+</LinearLayout>

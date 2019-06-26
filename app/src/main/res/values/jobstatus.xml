@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="jobstatus">
+        <item>Open Jobs</item>
+        <item>Paused Jobs</item>
+        <item>Closed Jobs</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="filtertime">
+        <item>Any time</item>
+        <item>Recent Jobs</item>
+        <item>Past 24 hours</item>
+        <item>Past week</item>
+        <item>Past month</item>
+    </string-array>
+</resources>
