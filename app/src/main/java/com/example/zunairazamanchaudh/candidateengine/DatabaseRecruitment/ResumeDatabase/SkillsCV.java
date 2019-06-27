@@ -1,6 +1,7 @@
 package com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.ResumeDatabase;
 
 public class SkillsCV {
+    private String cv_id;
     private String skill_id;
     private String skillName;
     public SkillsCV(){}
@@ -23,5 +24,13 @@ public class SkillsCV {
 
     public void setSkillName(String skillName) {
         this.skillName = skillName;
+    }
+
+    public String getCv_id() {
+        return cv_id;
+    }
+
+    public void setCv_id(String cv_id) {
+        this.cv_id = cv_id;
     }
 }

@@ -1,8 +1,9 @@
 package com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.ResumeDatabase;
 
 public class Interests {
-    String interest_id;
-    String InterestName;
+    private String interest_id;
+    private String InterestName;
+    private String cv_id;
     public Interests(){
     }
 
@@ -24,5 +25,13 @@ public class Interests {
 
     public void setInterestName(String interestName) {
         InterestName = interestName;
+    }
+
+    public String getCv_id() {
+        return cv_id;
+    }
+
+    public void setCv_id(String cv_id) {
+        this.cv_id = cv_id;
     }
 }

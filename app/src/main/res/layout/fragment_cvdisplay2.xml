@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                >
+
+                <fr.ganfra.materialspinner.MaterialSpinner
+                    android:id="@+id/spinCV2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/filtertime"
+                    app:ms_arrowColor="#0000FF"
+                    app:ms_arrowSize="16dp"
+                    app:ms_floatingLabelColor="#A9A9A9"
+                    app:ms_floatingLabelText="Find CV posted during particular time"
+                    app:ms_hint="Please Choose time"
+                    app:ms_hintColor="#000000"
+
+                    app:ms_multiline="true"></fr.ganfra.materialspinner.MaterialSpinner>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Create a CV Alert"
+                    android:gravity="left"
+                    android:id="@+id/cv2alert"
+                    android:drawableLeft="@drawable/notificationnofill"
+                    />
+                <Switch
+                    style="@style/MySwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:checked="false"
+                    android:layout_toEndOf="@+id/cv2alert"
+                    android:layout_marginLeft="120dp"
+                    android:switchTextAppearance="@style/MySwitch"
+                    android:id="@+id/swwCV2"
+                    android:layout_toRightOf="@+id/cv2alert" />
+
+            </RelativeLayout>
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/filtercv2Recycler">
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</RelativeLayout>

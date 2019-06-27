@@ -3,6 +3,7 @@ package com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.Resum
 public class Strengths {
 private String strength_id;
 private String strength_name;
+private String cv_id;
 public Strengths(){}
 
     public Strengths(String strength_name) {
@@ -23,5 +24,13 @@ public Strengths(){}
 
     public void setStrength_name(String strength_name) {
         this.strength_name = strength_name;
+    }
+
+    public String getCv_id() {
+        return cv_id;
+    }
+
+    public void setCv_id(String cv_id) {
+        this.cv_id = cv_id;
     }
 }

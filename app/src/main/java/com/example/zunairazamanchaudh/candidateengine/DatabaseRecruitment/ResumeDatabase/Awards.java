@@ -3,6 +3,7 @@ package com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.Resum
 public class Awards {
     private String award_id;
     private String award_name;
+    private String cv_id;
     public Awards(){}
 
     public Awards(String award_name) {
@@ -23,5 +24,13 @@ public class Awards {
 
     public void setAward_name(String award_name) {
         this.award_name = award_name;
+    }
+
+    public String getCv_id() {
+        return cv_id;
+    }
+
+    public void setCv_id(String cv_id) {
+        this.cv_id = cv_id;
     }
 }

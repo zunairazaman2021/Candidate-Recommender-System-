@@ -64,7 +64,8 @@
         <activity android:name=".ResumeManager.IndustryExposureActivity" />
         <activity android:name=".ResumeManager.HobbyADDActivity" />
         <activity android:name=".ResumeManager.PersonalInfoActivity" />
-        <activity android:name=".ResumeManager.MainCVTitle"></activity>
+        <activity android:name=".ResumeManager.MainCVTitle" />
+        <activity android:name=".RecruiterMainScreen.JobBoardFolder.UserProfileView2"></activity>
     </application>
 
 </manifest>

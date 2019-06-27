@@ -1,7 +1,7 @@
 package com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.ResumeDatabase;
 
 public class Reference {
-   String reference_id,refname,refdesignation,refOrg,refEmail,refMobile;
+   private String reference_id,refname,refdesignation,refOrg,refEmail,refMobile;
    public Reference(){}
 
     public Reference(String refname, String refdesignation, String refOrg, String refEmail, String refMobile) {

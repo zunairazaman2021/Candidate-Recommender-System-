@@ -1,13 +1,22 @@
 package com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.ResumeDatabase;
 
 public class Personalinfo {
-    String persnlInfo_id,nationality,maritalstatus,dob;
+   private String persnlInfo_id,nationality,maritalstatus,dob,custom;
     public Personalinfo(){}
 
-    public Personalinfo(String nationality, String maritalstatus, String dob) {
+    public Personalinfo(String nationality, String maritalstatus, String dob,String custom) {
         this.nationality = nationality;
         this.maritalstatus = maritalstatus;
         this.dob = dob;
+        this.custom=custom;
+    }
+
+    public String getCustom() {
+        return custom;
+    }
+
+    public void setCustom(String custom) {
+        this.custom = custom;
     }
 
     public void setPersnlInfo_id(String persnlInfo_id) {

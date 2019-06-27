@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content" />
             <ImageView
                 android:layout_alignParentRight="true"
-                android:src="@drawable/person"
+                android:src="@drawable/crs2icon"
                 android:layout_width="82dp"
                 android:layout_height="82dp" />
         </RelativeLayout>
@@ -94,6 +94,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
+                        android:tint="#B00020"
                         android:src="@drawable/baseline_perm_identity"/>
                     <TextView
                         android:layout_marginTop="12dp"
@@ -124,6 +125,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
+                        android:tint="#795548"
                         android:src="@drawable/baseline_school"/>
                     <TextView
                         android:layout_marginTop="12dp"
@@ -154,6 +156,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
+                        android:tint="#004D40"
                         android:src="@drawable/baseline_card_travel"/>
                     <TextView
                         android:layout_marginTop="12dp"
@@ -184,6 +187,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
+                        android:tint="#B00020"
                         android:src="@drawable/baseline_group_work"/>
                     <TextView
                         android:layout_marginTop="12dp"
@@ -214,6 +218,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
+                        android:tint="#FF9100"
                         android:src="@drawable/baseline_flash_skills"/>
                     <TextView
                         android:layout_marginTop="12dp"
@@ -244,6 +249,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
+                        android:tint="@color/blue1"
                         android:src="@drawable/baseline_thumb_up"/>
                     <TextView
                         android:layout_marginTop="12dp"
@@ -274,6 +280,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
+                        android:tint="#880E4F"
                         android:src="@drawable/baseline_domain"/>
                     <TextView
                         android:layout_marginTop="12dp"
@@ -304,6 +311,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
+                        android:tint="#FFEB3B"
                         android:src="@drawable/baseline_card_membership"/>
                     <TextView
                         android:layout_marginTop="12dp"
@@ -334,6 +342,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
+                        android:tint="#33691E"
                         android:src="@drawable/baseline_brightness_hobbies"/>
                     <TextView
                         android:layout_marginTop="12dp"
@@ -364,6 +373,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
+                        android:tint="#8D6E63"
                         android:src="@drawable/baseline_calendar_today"/>
                     <TextView
                         android:layout_marginTop="12dp"
@@ -394,6 +404,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
+                        android:tint="#43A047"
                         android:src="@drawable/baseline_human_active"/>
                     <TextView
                         android:layout_marginTop="12dp"
@@ -424,6 +435,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
+                        android:tint="#00B0FF"
                         android:src="@drawable/baseline_group_work"/>
                     <TextView
                         android:layout_marginTop="12dp"
@@ -454,6 +466,7 @@
                     <ImageView
                         android:layout_width="24dp"
                         android:layout_height="24dp"
+                        android:tint="#FF8A65"
                         android:src="@drawable/baseline_photo"/>
                     <TextView
                         android:layout_marginTop="12dp"

@@ -7,15 +7,16 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.ResumeDatabase.ProjectDetails;
 import com.example.zunairazamanchaudh.candidateengine.R;
 
 import java.util.ArrayList;
 
 public class ProjectsAdapter extends BaseAdapter{
-    private ArrayList<Projects> dataSet;
+    private ArrayList<ProjectDetails> dataSet;
     Context mContext;
 
-    public ProjectsAdapter(ArrayList<Projects> dataSet, Context mContext) {
+    public ProjectsAdapter(ArrayList<ProjectDetails> dataSet, Context mContext) {
         this.dataSet = dataSet;
         this.mContext = mContext;
     }
@@ -26,7 +27,7 @@ public class ProjectsAdapter extends BaseAdapter{
     }
 
     @Override
-    public Projects getItem(int position) {
+    public ProjectDetails getItem(int position) {
         return dataSet.get(position);
     }
 
@@ -47,7 +48,7 @@ public class ProjectsAdapter extends BaseAdapter{
         }else{
             viewHolder=(ProjectsAdapter.ViewHolderProjects)convertView.getTag();
         }
-        Projects projectsitem=getItem(position);
+        ProjectDetails projectsitem=getItem(position);
 
         viewHolder.txtprojectTitle.setText(projectsitem.getTitle());
 

@@ -56,6 +56,19 @@
         android:layout_gravity="center_horizontal|bottom"
         android:textColor="@android:color/white"
         android:text="@string/get_signature_text" />
+        <Button
+            android:id="@+id/uploadSign"
+            android:layout_below="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/black"
+            android:padding="@dimen/button_padding"
+            android:layout_marginLeft="20dp"
+            android:layout_toEndOf="@+id/getSign"
+            android:layout_gravity="center_horizontal|bottom"
+            android:textColor="@android:color/white"
+            android:text="Upload Sign"
+            android:layout_toRightOf="@+id/getSign" />
     </RelativeLayout>
 
     <Button

@@ -8,20 +8,28 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.ResumeDatabase.Academic;
+import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.ResumeDatabase.workExperienceCV;
 import com.example.zunairazamanchaudh.candidateengine.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 public class ListOfAcademicDetailsActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private ArrayList<Courses> courses=new ArrayList<Courses>();
+    private ArrayList<Academic> courses=new ArrayList<Academic>();
     private Context context;
     private ListView list;
     private Button btnAdd;
 public ListOfAcademicDetailsActivity(){
 
 }
-    public ListOfAcademicDetailsActivity(Context context, ArrayList<Courses> courses) {
+    public ListOfAcademicDetailsActivity(Context context, ArrayList<Academic> courses) {
         this.context=context;
         this.courses=courses;
     }
@@ -29,12 +37,38 @@ public ListOfAcademicDetailsActivity(){
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_of_academic_details);
-        ArrayList<Courses> coursesArrayList = new ArrayList<Courses>();
-        coursesArrayList.add(new Courses("BSSE", "UOG", "A+", 2019));
-        coursesArrayList.add(new Courses("BSSE", "UOG", "A+", 2019));
-        coursesArrayList.add(new Courses("BSSE", "UOG", "A+", 2019));
-        AcademicAdapter adapter=new AcademicAdapter(this,coursesArrayList);
-        list.setAdapter(adapter);
+
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference()
+                .child(String.valueOf(R.string.dbnode_education_Resume))
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+
+                    Academic mExp = dataSnapshot.getValue(Academic.class);
+
+                    courses.add(mExp);
+                }
+
+                //WorkExperienceAdapter workExperienceAdapter = new WorkExperienceAdapter(workExperiences, ListOfExperienceActivity.this);
+                //listexp.setAdapter(workExperienceAdapter);
+                AcademicAdapter adapter=new AcademicAdapter(ListOfAcademicDetailsActivity.this,courses);
+                list.setAdapter(adapter);
+
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+//                progressDialog.dismiss();
+
+            }
+        });
+
+
 
     }
 

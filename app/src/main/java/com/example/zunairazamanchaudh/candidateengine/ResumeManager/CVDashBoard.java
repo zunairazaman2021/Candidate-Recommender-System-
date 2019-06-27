@@ -216,7 +216,7 @@ default:
                  returnFoto = data.getStringExtra("keyPhoto");
             returnSign = data.getStringExtra("keySign");
                 // set text view with string
-                Toast.makeText(this,"Saved : "+returnFoto,Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"Saved : "+returnSign,Toast.LENGTH_SHORT).show();
             }
         }
         else if (requestCode == Ref_ACTIVITY_REQUEST_CODE) {
@@ -557,7 +557,7 @@ default:
             mDoc.add(new Paragraph("Email : "+returnString3,FontFactory.getFont(FontFactory.TIMES_BOLD,6,Font.NORMAL,BaseColor.DARK_GRAY  )));
             mDoc.add(new Paragraph("Mobile : "+returnString4,FontFactory.getFont(FontFactory.TIMES_BOLD,6,Font.NORMAL,BaseColor.DARK_GRAY  )));
             mDoc.add(new Paragraph("----------------------------------------------------------------------------------------------------------------------------------"));
-        if(returnSign!=null) {
+        if(returnSign!="") {
             addSignImage(mDoc);
         }
             mDoc.close();
@@ -612,16 +612,14 @@ default:
         // Image img = Image.getInstance("res/drawable/zoya.jpg");
         // Adding image to the document
         try {
-            img.setAbsolutePosition(100f, 550f);
+         //   img.setAbsolutePosition(0f, 0f);
             //Scale to new height and new width of image
-            img.setAbsolutePosition(473f, 750f);
-            img.scaleAbsolute(100f,250f);
-           // img.setFixedPosition(100, 250);
+            img.setAbsolutePosition(70, 140);
+            img.scaleAbsolute(80,70);
             document.add(img);
         } catch (DocumentException e) {
             e.printStackTrace();
         }
-
     }
 
     private static void addMetaData(Document document) {

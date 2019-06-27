@@ -1,8 +1,9 @@
 package com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.ResumeDatabase;
 
 public class Hobby {
-    String hobby_id;
-    String hobby_name;
+    private String hobby_id;
+    private String hobby_name;
+    private String cv_id;
     public Hobby(){}
 
     public Hobby(String hobby_name) {
@@ -23,5 +24,13 @@ public class Hobby {
 
     public void setHobby_name(String hobby_name) {
         this.hobby_name = hobby_name;
+    }
+
+    public String getCv_id() {
+        return cv_id;
+    }
+
+    public void setCv_id(String cv_id) {
+        this.cv_id = cv_id;
     }
 }

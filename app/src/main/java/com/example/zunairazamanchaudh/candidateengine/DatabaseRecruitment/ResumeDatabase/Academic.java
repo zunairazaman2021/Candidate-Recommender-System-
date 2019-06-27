@@ -6,12 +6,31 @@ public class Academic {
     private String instituition;
     private String grade;
     private int passingYear;
+    private boolean statuscompletion;
+    private String cv_id;
     public Academic(){}
-    public Academic(String name, String instituition, String grade, int passingYear) {
+    public Academic(String name, String instituition, String grade, int passingYear,boolean statuscompletion) {
         this.name = name;
         this.instituition = instituition;
         this.grade = grade;
         this.passingYear = passingYear;
+        this.statuscompletion=statuscompletion;
+    }
+
+    public boolean isStatuscompletion() {
+        return statuscompletion;
+    }
+
+    public void setStatuscompletion(boolean statuscompletion) {
+        this.statuscompletion = statuscompletion;
+    }
+
+    public String getCv_id() {
+        return cv_id;
+    }
+
+    public void setCv_id(String cv_id) {
+        this.cv_id = cv_id;
     }
 
     public void setCourse_id(String course_id) {

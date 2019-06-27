@@ -8,16 +8,17 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 
+import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.ResumeDatabase.Academic;
 import com.example.zunairazamanchaudh.candidateengine.R;
 
 import java.util.ArrayList;
 
 public class AcademicAdapter extends BaseAdapter {
 
-    private ArrayList<Courses> dataSet;
+    private ArrayList<Academic> dataSet;
     Context mContext;
 
-    protected AcademicAdapter(Context context, ArrayList<Courses> arrayList) {
+    protected AcademicAdapter(Context context, ArrayList<Academic> arrayList) {
         this.dataSet=arrayList;
        this.mContext=context;
     }
@@ -28,7 +29,7 @@ public class AcademicAdapter extends BaseAdapter {
     }
 
     @Override
-    public Courses getItem(int position) {
+    public Academic getItem(int position) {
         return dataSet.get(position);
     }
 
@@ -48,7 +49,7 @@ public class AcademicAdapter extends BaseAdapter {
         }else{
             viewHolder=(ViewHolder)convertView.getTag();
         }
-        Courses coursesitem=getItem(position);
+        Academic coursesitem=getItem(position);
 
         viewHolder.txtcourse.setText(coursesitem.getName());
 

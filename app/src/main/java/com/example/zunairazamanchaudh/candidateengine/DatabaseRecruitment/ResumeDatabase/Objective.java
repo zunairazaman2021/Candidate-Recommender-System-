@@ -1,7 +1,7 @@
 package com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.ResumeDatabase;
 
 public class Objective {
-  String obj_id,Objective,objDate,objPlace;
+ private String obj_id,Objective,objDate,objPlace;
   public Objective(){}
 
     public Objective(String objective, String objDate, String objPlace) {

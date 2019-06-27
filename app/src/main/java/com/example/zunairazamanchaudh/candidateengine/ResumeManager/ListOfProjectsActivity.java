@@ -7,12 +7,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.ResumeDatabase.Academic;
+import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.ResumeDatabase.ProjectDetails;
 import com.example.zunairazamanchaudh.candidateengine.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 public class ListOfProjectsActivity extends AppCompatActivity implements View.OnClickListener {
-    private ArrayList<Projects> projects=new ArrayList<Projects>();
+    private ArrayList<ProjectDetails> projects=new ArrayList<ProjectDetails>();
     private ListView listProject;
     private Button btnAddProject;
 
@@ -22,9 +30,37 @@ public class ListOfProjectsActivity extends AppCompatActivity implements View.On
         setContentView(R.layout.activity_list_of_projects);
         btnAddProject=(Button)findViewById(R.id.btnaddProjects);
         listProject=(ListView)findViewById(R.id.listProjectDetails);
-        projects.add(new Projects("Candidate Recommender System", "UOG", "1 year", "Project Manager", 3));
-        ProjectsAdapter projectsAdapter=new ProjectsAdapter(projects,this);
-        listProject.setAdapter(projectsAdapter);
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference()
+                .child(String.valueOf(R.string.dbnode_projects_Resume))
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+
+                for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+
+                    ProjectDetails mExp = dataSnapshot.getValue(ProjectDetails.class);
+
+                    projects.add(mExp);
+                }
+
+                //WorkExperienceAdapter workExperienceAdapter = new WorkExperienceAdapter(workExperiences, ListOfExperienceActivity.this);
+                //listexp.setAdapter(workExperienceAdapter);
+                ProjectsAdapter adapter=new ProjectsAdapter(projects,ListOfProjectsActivity.this);
+                listProject.setAdapter(adapter);
+
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+//                progressDialog.dismiss();
+
+            }
+        });
+
+
         btnAddProject.setOnClickListener(this);
 
     }

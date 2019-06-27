@@ -4,6 +4,7 @@ public class ProjectDetails {
     private String project_id;
     private String title,description,duration,role;
     private int teamsize;
+    private String cv_id;
     public ProjectDetails(){ }
 
     public ProjectDetails(String title, String description, String duration, String role, int teamsize) {
@@ -12,6 +13,14 @@ public class ProjectDetails {
         this.duration = duration;
         this.role = role;
         this.teamsize = teamsize;
+    }
+
+    public String getCv_id() {
+        return cv_id;
+    }
+
+    public void setCv_id(String cv_id) {
+        this.cv_id = cv_id;
     }
 
     public void setProject_id(String project_id) {

@@ -83,7 +83,7 @@ public class WelcomeRecruiter extends AppCompatActivity implements IMainActivity
             switch (item.getItemId()) {
                 case R.id.navigation_searchcv:
                     toolbar.setTitle("Search CV");
-                  fragment2=new CVDisplay();
+                  fragment2=new CVDisplay2();
                     ft2 = getSupportFragmentManager().beginTransaction();
                     ft2.replace(R.id.main_contentRecruiter, fragment2);
                     ft2.addToBackStack(null);

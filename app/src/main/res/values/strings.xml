@@ -121,5 +121,13 @@
     <string name="dbnode_Recruiterusers">RecruiterUser</string>
     <string name="dbnode_Company">company</string>
     <string name="dbnode_JobPost">JobPost</string>
+    <string name="dbnode_MyResume">MyResume</string>
+    <string name="dbnode_contactdetails_Resume">contactdetails_Resume</string>
+    <string name="dbnode_personalinfo_Resume">personalinfo_Resume</string>
+    <string name="dbnode_experience_Resume">experience_Resume</string>
+    <string name="dbnode_education_Resume">education_Resume</string>
+    <string name="dbnode_projects_Resume">projects_Resume</string>
+    <string name="dbnode_objective_Resume">objective_Resume</string>
+    <string name="dbnode_ReferenceDetails_Resume">ReferenceDetails_Resume</string>
 
 </resources>

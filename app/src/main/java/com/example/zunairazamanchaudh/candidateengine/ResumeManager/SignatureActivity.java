@@ -164,7 +164,7 @@ public class SignatureActivity extends AppCompatActivity {
                 v.draw(canvas);
 
                 // Convert the output file to Image such as .png
-                bitmap.compress(Bitmap.CompressFormat.PNG, 90, mFileOutStream);
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 90, mFileOutStream);
                 Intent intent = new Intent(SignatureActivity.this, PhotoSignActivity.class);
                 intent.putExtra("imagePath", StoredPath);
                 startActivity(intent);

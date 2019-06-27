@@ -6,19 +6,28 @@ public class workExperienceCV {
     private String experience_id;
     private String organization,designation,role;
     private boolean emploaymentStatus;
-    private Date FromExp;
-    private Date ToExp;
+    private String FromExp;
+    private String ToExp;
+    private String cv_id;
     public workExperienceCV(){
     }
 
     public workExperienceCV(String organization, String designation, String role,
-                            boolean emploaymentStatus, Date fromExp, Date toExp) {
+                            boolean emploaymentStatus, String fromExp, String toExp) {
         this.organization = organization;
         this.designation = designation;
         this.role = role;
         this.emploaymentStatus = emploaymentStatus;
         FromExp = fromExp;
         ToExp = toExp;
+    }
+
+    public String getCv_id() {
+        return cv_id;
+    }
+
+    public void setCv_id(String cv_id) {
+        this.cv_id = cv_id;
     }
 
     public void setExperience_id(String experience_id) {
@@ -41,11 +50,11 @@ public class workExperienceCV {
         this.emploaymentStatus = emploaymentStatus;
     }
 
-    public void setFromExp(Date fromExp) {
+    public void setFromExp(String fromExp) {
         FromExp = fromExp;
     }
 
-    public void setToExp(Date toExp) {
+    public void setToExp(String toExp) {
         ToExp = toExp;
     }
 
@@ -69,11 +78,11 @@ public class workExperienceCV {
         return emploaymentStatus;
     }
 
-    public Date getFromExp() {
+    public String getFromExp() {
         return FromExp;
     }
 
-    public Date getToExp() {
+    public String getToExp() {
         return ToExp;
     }
 }

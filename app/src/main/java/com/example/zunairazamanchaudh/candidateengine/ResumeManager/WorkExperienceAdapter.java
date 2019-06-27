@@ -7,15 +7,16 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.ResumeDatabase.workExperienceCV;
 import com.example.zunairazamanchaudh.candidateengine.R;
 
 import java.util.ArrayList;
 
 public class WorkExperienceAdapter extends BaseAdapter {
-    private ArrayList<WorkExperience> dataSet;
+    private ArrayList<workExperienceCV> dataSet;
     Context mContext;
 
-    public WorkExperienceAdapter(ArrayList<WorkExperience> dataSet, Context mContext) {
+    public WorkExperienceAdapter(ArrayList<workExperienceCV> dataSet, Context mContext) {
         this.dataSet = dataSet;
         this.mContext = mContext;
     }
@@ -26,7 +27,7 @@ public class WorkExperienceAdapter extends BaseAdapter {
     }
 
     @Override
-    public WorkExperience getItem(int position) {
+    public workExperienceCV getItem(int position) {
         return dataSet.get(position);
     }
 
@@ -47,7 +48,7 @@ public class WorkExperienceAdapter extends BaseAdapter {
         }else{
             viewHolder=(WorkExperienceAdapter.ViewHolderExperience)convertView.getTag();
         }
-        WorkExperience workExperienceitem=getItem(position);
+        workExperienceCV workExperienceitem=getItem(position);
 
         viewHolder.txtExperience.setText(workExperienceitem.getOrganization());
 
@@ -57,7 +58,5 @@ public class WorkExperienceAdapter extends BaseAdapter {
     public class ViewHolderExperience{
         public TextView txtExperience;
     }
-
-
     }
 

@@ -1,9 +1,9 @@
 package com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.ResumeDatabase;
 
 public class CVTitle {
-    String cv_id;
-    String cv_title;
-    String createdon;
+    private String cv_id;
+    private String cv_title;
+    private String createdon;
     private String firstname;
     private String lastname;
     private String profile_image;
@@ -12,12 +12,16 @@ public class CVTitle {
     private String phone;
     private String email;
     private String nationality;
+    private String city;
+    private String country;
+    private String state;
+    private String zipcode;
     public CVTitle(){}
 
-    public CVTitle(String cv_title, String createdon, String firstname, String lastname,
-                   String profile_image, String security_level,
+    public CVTitle(String cv_title, String createdon, String firstname,
+                   String lastname, String profile_image, String security_level,
                    String dob, String phone, String email,
-                   String nationality) {
+                   String nationality, String city, String country, String state, String zipcode) {
         this.cv_title = cv_title;
         this.createdon = createdon;
         this.firstname = firstname;
@@ -28,6 +32,42 @@ public class CVTitle {
         this.phone = phone;
         this.email = email;
         this.nationality = nationality;
+        this.city = city;
+        this.country = country;
+        this.state = state;
+        this.zipcode = zipcode;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public void setZipcode(String zipcode) {
+        this.zipcode = zipcode;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public String getZipcode() {
+        return zipcode;
     }
 
     public void setFirstname(String firstname) {

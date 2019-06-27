@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
 import android.view.View;
@@ -11,8 +12,21 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
+import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.ResumeDatabase.Personalinfo;
+import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.ResumeDatabase.workExperienceCV;
 import com.example.zunairazamanchaudh.candidateengine.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -48,6 +62,8 @@ public class ExperienceActivity extends AppCompatActivity implements View.OnClic
         adRole=(EditText)findViewById(R.id.expRole);
         chkEmployee=(RadioButton)findViewById(R.id.chkEmp);
         chkCurrentEmp=(RadioButton)findViewById(R.id.chkCurrEmp);
+        getexperiencedetails();
+
         final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
             //    myCalendar = Calendar.getInstance();
             @Override
@@ -99,7 +115,6 @@ public class ExperienceActivity extends AppCompatActivity implements View.OnClic
             }
         });
 
-
     }
 
     public void updateLabel() {
@@ -112,27 +127,12 @@ public class ExperienceActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.ViewExpDetails:
-                ArrayList<WorkExperience> experienceArrayList = new ArrayList<WorkExperience>();
-                SimpleDateFormat dateformat3 = new SimpleDateFormat("dd/MM/yyyy");
-                try {
-                    Date date1 = dateformat3.parse("17/7/2000");
-                    Date date2 = dateformat3.parse("17/12/2001");
-                    experienceArrayList.add(new WorkExperience("Tesco", "Marketing Manager", "Served as marketing manager at Tesco companies", true, date1, date2));
-                    experienceArrayList.add(new WorkExperience("Tesco", "Marketing Manager", "Served as marketing manager at Tesco companies", true, date1, date2));
-                    experienceArrayList.add(new WorkExperience("Tesco", "Marketing Manager", "Served as marketing manager at Tesco companies", true, date1, date2));
-                   /* getFragmentManager()
-                            .beginTransaction()
-                            .replace(R.id.fragment_container, new ListWorkExperienceDetails(getActivity(), experienceArrayList))
-                            .commit();
-                    //    fragment=new ListofAcademicDetailsFragment(getActivity().getApplicationContext());
-*/
-                    break;
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-
+                Intent ee=new Intent(ExperienceActivity.this,ListOfExperienceActivity.class);
+                startActivity(ee);
+         break;
 
             case R.id.saveExpDetails:
+                saveexpDetailsCV();
                 Intent e=new Intent();
                 e.putExtra("expOrg",weOrg.getText().toString());
                 e.putExtra("expDesignation",weDesignation.getText().toString());
@@ -148,6 +148,87 @@ public class ExperienceActivity extends AppCompatActivity implements View.OnClic
                 break;
 
         }
+    }
+
+
+
+
+    private void getexperiencedetails(){
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+
+        Query query1 = reference.child(getString(R.string.dbnode_experience_Resume))
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .limitToFirst(1);
+        query1.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if(dataSnapshot.getValue()!=null){
+                    //this loop will return a single result
+                    for(DataSnapshot singleSnapshot: dataSnapshot.getChildren()){
+                        workExperienceCV user=singleSnapshot.getValue(workExperienceCV.class);
+                        weDesignation.setText(user.getDesignation());
+                        weOrg.setText(user.getOrganization());
+                        adRole.setText(user.getRole());
+                        Datefrom.setText(user.getFromExp());
+                        Dateto.setText(user.getToExp());
+                        Boolean status=user.isEmploaymentStatus();
+                        if(status==false){
+                            chkEmployee.setChecked(true);
+                        }else {
+                            chkCurrentEmp.setChecked(true);
+                        }
+
+                    }}else {}
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        //  editEmailP.setText(FirebaseAuth.getInstance().getCurrentUser().getEmail());
+    }
+
+    private void saveexpDetailsCV(){
+        final workExperienceCV sauser=new workExperienceCV();
+        sauser.setDesignation(weDesignation.getText().toString());
+        if(chkEmployee.isChecked()){
+            sauser.setEmploaymentStatus(false);
+        }else{
+            sauser.setEmploaymentStatus(true);
+        }
+        sauser.setOrganization(weOrg.getText().toString());
+        sauser.setRole(adRole.getText().toString());
+        sauser.setFromExp(Datefrom.getText().toString());
+        sauser.setToExp(Dateto.getText().toString());
+        sauser.setCv_id(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        DatabaseReference mDatabase=FirebaseDatabase.getInstance().getReference();
+        String key=mDatabase.child("JobSeekerexperiences").push().getKey();
+
+        mDatabase.child("JobSeekerexperiences")
+                .child(key)
+                .setValue(sauser);
+
+        FirebaseDatabase.getInstance().getReference()
+                .child("experience_Resume")
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .child(key)
+                .setValue(sauser).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                String id=FirebaseAuth.getInstance().getCurrentUser().getUid();
+                //   Intent i=new Intent(ContacsDetailsActivity.this,CVDashBoard.class);
+                //   startActivity(i);
+                Toast.makeText(ExperienceActivity.this,"Experience details saved!",Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+
+                Toast.makeText(ExperienceActivity.this,"something went wrong",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
 
