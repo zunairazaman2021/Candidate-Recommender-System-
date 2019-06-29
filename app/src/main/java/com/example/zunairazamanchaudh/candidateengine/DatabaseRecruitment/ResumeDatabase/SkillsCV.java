@@ -6,7 +6,8 @@ public class SkillsCV {
     private String skillName;
     public SkillsCV(){}
 
-    public SkillsCV(String skillName) {
+    public SkillsCV(String skillName,String cv_id) {
+        this.cv_id=cv_id;
         this.skillName = skillName;
     }
 

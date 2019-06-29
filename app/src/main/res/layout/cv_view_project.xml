@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/lime1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/vfProject"
+            android:text="Project Title : "
+            android:textColor="@color/bluelike1"
+            android:textStyle="bold"
+            android:layout_marginTop="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/vProject"
+            android:text="null"
+            android:textColor="@color/black1"
+            android:textStyle="italic"
+            android:layout_toRightOf="@+id/vfProject"
+            android:layout_toEndOf="@+id/vfProject"
+            android:layout_marginLeft="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/vfProjectRole"
+            android:text="Role: "
+            android:textColor="@color/bluelike1"
+            android:textStyle="bold"
+            android:layout_below="@+id/vfProject"
+            android:layout_marginTop="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/vProjectRole"
+            android:text="null"
+            android:textColor="@color/black1"
+            android:textStyle="italic"
+            android:layout_below="@+id/vProject"
+            android:layout_toRightOf="@+id/vfProjectRole"
+            android:layout_toEndOf="@+id/vfProjectRole"
+            android:layout_marginLeft="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/vfDescription"
+            android:text="Description : "
+            android:textColor="@color/bluelike1"
+            android:textStyle="bold"
+            android:layout_below="@+id/vfProjectRole"
+            android:layout_marginTop="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/vDescription"
+            android:text="null"
+            android:textColor="@color/black1"
+            android:textStyle="italic"
+            android:layout_below="@+id/vfProjectRole"
+            android:layout_toRightOf="@+id/vfDescription"
+            android:layout_toEndOf="@+id/vfDescription"
+            android:layout_marginLeft="1dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+     </RelativeLayout>
+</LinearLayout>

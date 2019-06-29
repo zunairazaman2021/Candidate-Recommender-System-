@@ -6,8 +6,9 @@ private String strength_name;
 private String cv_id;
 public Strengths(){}
 
-    public Strengths(String strength_name) {
-        this.strength_name = strength_name;
+    public Strengths(String strength_name,String cv_id) {
+    this.cv_id=cv_id;
+    this.strength_name = strength_name;
     }
 
     public String getStrength_id() {

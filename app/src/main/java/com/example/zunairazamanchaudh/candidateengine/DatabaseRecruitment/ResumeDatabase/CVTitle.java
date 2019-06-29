@@ -16,12 +16,13 @@ public class CVTitle {
     private String country;
     private String state;
     private String zipcode;
+    private String useridd;
     public CVTitle(){}
 
     public CVTitle(String cv_title, String createdon, String firstname,
                    String lastname, String profile_image, String security_level,
                    String dob, String phone, String email,
-                   String nationality, String city, String country, String state, String zipcode) {
+                   String nationality, String city, String country, String state, String zipcode,String useridd) {
         this.cv_title = cv_title;
         this.createdon = createdon;
         this.firstname = firstname;
@@ -36,6 +37,15 @@ public class CVTitle {
         this.country = country;
         this.state = state;
         this.zipcode = zipcode;
+        this.useridd=useridd;
+    }
+
+    public String getUseridd() {
+        return useridd;
+    }
+
+    public void setUseridd(String useridd) {
+        this.useridd = useridd;
     }
 
     public void setCity(String city) {

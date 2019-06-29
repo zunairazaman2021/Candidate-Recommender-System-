@@ -118,6 +118,7 @@ Button btn;
         String strDate = mdformat.format(calendar.getTime());
         sauser.setCreatedon(strDate);
         sauser.setCv_title(editTitle.getText().toString());
+        sauser.setUseridd(FirebaseAuth.getInstance().getCurrentUser().getUid());
         DatabaseReference mDatabase= FirebaseDatabase.getInstance().getReference();
         getUser();
         final String user_id=FirebaseAuth.getInstance().getCurrentUser().getUid();

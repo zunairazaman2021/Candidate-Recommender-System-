@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/lime1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:background="@color/lime1"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/vfCourse"
+            android:text="Course: "
+            android:textColor="@color/bluelike1"
+            android:textStyle="bold"
+            android:layout_marginTop="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/vCourse"
+            android:text="null"
+            android:textColor="@color/black1"
+            android:textStyle="italic"
+            android:layout_toRightOf="@+id/vfCourse"
+            android:layout_toEndOf="@+id/vfCourse"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/vfInstitute"
+            android:text="Institute: "
+            android:textColor="@color/bluelike1"
+            android:textStyle="bold"
+            android:layout_marginTop="1dp"
+            android:layout_below="@id/vfCourse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/vInstitute"
+            android:text="null"
+            android:textColor="@color/black1"
+            android:textStyle="italic"
+            android:layout_below="@+id/vfCourse"
+            android:layout_toRightOf="@+id/vfInstitute"
+            android:layout_toEndOf="@+id/vfInstitute"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/vfGrade"
+            android:text="Grade: "
+            android:textColor="@color/bluelike1"
+            android:textStyle="bold"
+            android:layout_marginTop="1dp"
+            android:layout_below="@id/vfInstitute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/vGrade"
+            android:text="null"
+            android:textColor="@color/black1"
+            android:textStyle="italic"
+            android:layout_below="@+id/vfInstitute"
+            android:layout_toRightOf="@+id/vfGrade"
+            android:layout_toEndOf="@+id/vfGrade"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/vfPassingYear"
+            android:text="Completion Year: "
+            android:textColor="@color/bluelike1"
+            android:textStyle="bold"
+            android:layout_marginTop="1dp"
+            android:layout_marginLeft="50dp"
+            android:layout_below="@+id/vfInstitute"
+            android:layout_toEndOf="@+id/vGrade"
+            android:layout_toRightOf="@+id/vGrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/vPassingYear"
+            android:text="null"
+            android:textColor="@color/black1"
+            android:textStyle="italic"
+            android:layout_below="@+id/vfInstitute"
+            android:layout_toRightOf="@+id/vfPassingYear"
+            android:layout_toEndOf="@+id/vfPassingYear"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+</LinearLayout>

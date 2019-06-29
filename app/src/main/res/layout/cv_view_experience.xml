@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/lime1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:background="@color/lime1"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/vfDesignation"
+            android:text="Designation: "
+            android:textColor="@color/bluelike1"
+            android:textStyle="bold"
+            android:layout_marginTop="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/vDesignation"
+            android:text="null"
+            android:textColor="@color/black1"
+            android:textStyle="italic"
+            android:layout_toRightOf="@+id/vfDesignation"
+            android:layout_toEndOf="@+id/vfDesignation"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/vfOrganization"
+            android:text="Organization: "
+            android:textColor="@color/bluelike1"
+            android:textStyle="bold"
+            android:layout_marginTop="1dp"
+            android:layout_below="@id/vfDesignation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/vOrganization"
+            android:text="null"
+            android:textColor="@color/black1"
+            android:textStyle="italic"
+            android:layout_below="@+id/vfDesignation"
+            android:layout_toRightOf="@+id/vfOrganization"
+            android:layout_toEndOf="@+id/vfOrganization"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/vfRole"
+            android:text="Role: "
+            android:textColor="@color/bluelike1"
+            android:textStyle="bold"
+            android:layout_marginTop="1dp"
+            android:layout_below="@id/vfOrganization"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/vRole"
+            android:text="null"
+            android:textColor="@color/black1"
+            android:textStyle="italic"
+            android:layout_below="@+id/vfOrganization"
+            android:layout_toRightOf="@+id/vfRole"
+            android:layout_toEndOf="@+id/vfRole"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/vfExperience"
+            android:text="Experience : "
+            android:textColor="@color/bluelike1"
+            android:textStyle="bold"
+            android:layout_marginTop="1dp"
+            android:layout_below="@+id/vfRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/vExperience"
+            android:text="null"
+            android:textColor="@color/black1"
+            android:textStyle="italic"
+            android:layout_below="@+id/vfRole"
+            android:layout_toRightOf="@+id/vfExperience"
+            android:layout_toEndOf="@+id/vfExperience"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+</LinearLayout>

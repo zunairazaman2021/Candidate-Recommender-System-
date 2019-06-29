@@ -7,7 +7,8 @@ public class Interests {
     public Interests(){
     }
 
-    public Interests(String interestName) {
+    public Interests(String interestName,String cv_id) {
+        this.cv_id=cv_id;
         InterestName = interestName;
     }
 

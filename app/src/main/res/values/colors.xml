@@ -6,6 +6,21 @@
     <color name="whitee">#ffffff</color>
     <color name="bluedark">#3700B3</color>
     <color name="blue">#6200EE</color>
+    <color name="yellow1">#FFD600</color>
+    <color name="orange1">#FF6D00</color>
+    <color name="brown1">#795548</color>
+    <color name="green1">#2E7D32</color>
+    <color name="lemon1">#EEFF41</color>
+    <color name="bluelike1">#00B0FF</color>
+    <color name="purple1">#C51162</color>
+    <color name="purple2">#880E4F</color>
+    <color name="pink1">#F06292</color>
+    <color name="red1">#D50000</color>
+    <color name="redlight1">#EF9A9A</color>
+    <color name="gray1">#BDBDBD</color>
+    <color name="lime1">#F9FBE7</color>
+    <color name="black1">#000000</color>
+
     <!--ResumeManagerColors-->
 
     <!--<color name="colorPrimaryDark">#0f5998</color>

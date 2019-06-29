@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
+    android:id="@+id/reltiveClick"
     android:layout_width="match_parent"
     android:layout_height="150dp"
     android:paddingRight="10dp"
@@ -70,4 +71,13 @@
         android:src="@android:drawable/btn_star"
         android:layout_alignParentRight="true"
         android:layout_marginRight="35dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:visibility="invisible"
+        android:layout_marginTop="4dp"
+        android:id="@+id/userid"
+        android:layout_below="@+id/ownerExperienceFrom2"
+        />
 </RelativeLayout>

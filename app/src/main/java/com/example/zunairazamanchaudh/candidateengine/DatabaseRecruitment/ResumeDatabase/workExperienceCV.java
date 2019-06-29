@@ -13,13 +13,14 @@ public class workExperienceCV {
     }
 
     public workExperienceCV(String organization, String designation, String role,
-                            boolean emploaymentStatus, String fromExp, String toExp) {
+                            boolean emploaymentStatus, String fromExp, String toExp,String cv_id) {
         this.organization = organization;
         this.designation = designation;
         this.role = role;
         this.emploaymentStatus = emploaymentStatus;
         FromExp = fromExp;
         ToExp = toExp;
+        this.cv_id=cv_id;
     }
 
     public String getCv_id() {

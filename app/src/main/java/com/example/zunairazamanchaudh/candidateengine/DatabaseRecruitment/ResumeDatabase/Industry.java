@@ -7,8 +7,9 @@ public class Industry {
     public Industry(){
     }
 
-    public Industry(String industry_name) {
+    public Industry(String industry_name,String cv_id) {
         this.Industry_name = industry_name;
+        this.cv_id=cv_id;
     }
 
     public void setIndustry_id(String industry_id) {

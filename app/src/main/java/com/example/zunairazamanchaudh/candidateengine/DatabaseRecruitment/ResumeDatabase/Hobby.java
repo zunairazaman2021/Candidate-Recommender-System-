@@ -6,7 +6,8 @@ public class Hobby {
     private String cv_id;
     public Hobby(){}
 
-    public Hobby(String hobby_name) {
+    public Hobby(String hobby_name,String cv_id) {
+        this.cv_id=cv_id;
         this.hobby_name = hobby_name;
     }
 

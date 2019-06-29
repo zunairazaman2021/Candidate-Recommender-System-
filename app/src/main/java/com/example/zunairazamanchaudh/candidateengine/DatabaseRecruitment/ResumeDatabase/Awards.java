@@ -6,7 +6,8 @@ public class Awards {
     private String cv_id;
     public Awards(){}
 
-    public Awards(String award_name) {
+    public Awards(String award_name,String cv_id) {
+        this.cv_id=cv_id;
         this.award_name = award_name;
     }
 

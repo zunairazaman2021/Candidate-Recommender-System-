@@ -7,12 +7,13 @@ public class ProjectDetails {
     private String cv_id;
     public ProjectDetails(){ }
 
-    public ProjectDetails(String title, String description, String duration, String role, int teamsize) {
+    public ProjectDetails(String title, String description, String duration, String role, int teamsize,String cv_id) {
         this.title = title;
         this.description = description;
         this.duration = duration;
         this.role = role;
         this.teamsize = teamsize;
+        this.cv_id=cv_id;
     }
 
     public String getCv_id() {

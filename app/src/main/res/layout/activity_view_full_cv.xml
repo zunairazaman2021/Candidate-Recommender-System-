@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResumeManager.ViewFullCV">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/lime1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/vCVTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CV Title"
+            android:gravity="center_horizontal"
+            android:textStyle="italic"
+            android:textColor="@color/red1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            />
+        <TextView
+            android:id="@+id/vfName"
+            android:text="Name : "
+            android:textColor="@color/bluelike1"
+            android:textStyle="bold"
+            android:layout_below="@+id/vCVTitle"
+            android:layout_marginTop="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/vName"
+            android:text="null"
+            android:textColor="@color/black1"
+            android:textStyle="italic"
+            android:layout_below="@+id/vCVTitle"
+            android:layout_toRightOf="@+id/vfName"
+            android:layout_toEndOf="@+id/vfName"
+            android:layout_marginLeft="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/vfAddress"
+            android:text="Address: "
+            android:textColor="@color/bluelike1"
+            android:textStyle="bold"
+            android:layout_below="@+id/vfName"
+            android:layout_marginTop="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/vAddress"
+            android:text="null"
+            android:textColor="@color/black1"
+            android:textStyle="italic"
+            android:layout_below="@+id/vName"
+            android:layout_toRightOf="@+id/vfAddress"
+            android:layout_toEndOf="@+id/vfAddress"
+            android:layout_marginLeft="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/vfcitycountry"
+            android:text="Location : "
+            android:textColor="@color/bluelike1"
+            android:textStyle="bold"
+            android:layout_below="@+id/vfAddress"
+            android:layout_marginTop="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/vcitycountry"
+            android:text="null"
+            android:textColor="@color/black1"
+            android:textStyle="italic"
+            android:layout_below="@+id/vAddress"
+            android:layout_toRightOf="@+id/vfcitycountry"
+            android:layout_toEndOf="@+id/vfcitycountry"
+            android:layout_marginLeft="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/vfPhone"
+            android:text="Phone : "
+            android:textColor="@color/bluelike1"
+            android:textStyle="bold"
+            android:layout_below="@+id/vfcitycountry"
+            android:layout_marginTop="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/vPhone"
+            android:text="null"
+            android:textColor="@color/black1"
+            android:textStyle="italic"
+            android:layout_below="@+id/vfcitycountry"
+            android:layout_toRightOf="@+id/vfPhone"
+            android:layout_toEndOf="@+id/vfPhone"
+            android:layout_marginLeft="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/vfEmail"
+            android:text="Email : "
+            android:textColor="@color/bluelike1"
+            android:textStyle="bold"
+            android:layout_below="@+id/vfPhone"
+            android:layout_marginTop="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/vEmail"
+            android:text="null"
+            android:textColor="@color/black1"
+            android:textStyle="italic"
+            android:layout_below="@+id/vfPhone"
+            android:layout_toRightOf="@+id/vfPhone"
+            android:layout_toEndOf="@+id/vfPhone"
+            android:layout_marginLeft="1dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"/>
+    </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/lime1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@color/green1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:text="Objective"
+                android:textStyle="italic"
+                android:id="@+id/vfObjective"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/vObjective"
+                android:layout_marginTop="5dp"
+                android:text="null"
+                android:layout_below="@+id/vfObjective"
+                android:textColor="@color/black1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/lime1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@color/brown1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:text="Education Details"
+                android:textStyle="italic"
+                android:id="@+id/vfEducation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <android.support.v7.widget.RecyclerView
+                android:layout_marginBottom="10dp"
+                android:layout_below="@+id/vfEducation"
+                android:layout_marginTop="10dp"
+                android:id="@+id/vEducationRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/lime1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@color/blue1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:text="Experience Details"
+                android:textStyle="italic"
+                android:id="@+id/vfExperience"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <android.support.v7.widget.RecyclerView
+                android:layout_marginBottom="10dp"
+                android:layout_below="@+id/vfExperience"
+                android:layout_marginTop="10dp"
+                android:id="@+id/vfExperienceRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/lime1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+            android:textColor="@color/yellow1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="Skills Details"
+            android:textStyle="italic"
+            android:id="@+id/vfSkillsDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+            <android.support.v7.widget.RecyclerView
+                android:layout_marginBottom="10dp"
+                android:layout_below="@+id/vfSkillsDetail"
+                android:layout_marginTop="10dp"
+                android:id="@+id/vfSkillsRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/lime1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@color/purple1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:text="Project Details"
+                android:textStyle="italic"
+                android:id="@+id/vfProjectDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <android.support.v7.widget.RecyclerView
+                android:layout_marginBottom="10dp"
+                android:layout_below="@+id/vfProjectDetail"
+                android:layout_marginTop="10dp"
+                android:id="@+id/vfProjectRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/lime1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@color/red1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:text="Hobbies Details"
+                android:textStyle="italic"
+                android:id="@+id/vfHobbiesDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textColor="@color/green1"
+                android:text="Hobbies"
+                android:textStyle="italic"
+                android:id="@+id/vfHobbies"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/vfHobbiesDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/vHobby"
+                android:layout_marginTop="5dp"
+                android:text="null"
+                android:layout_below="@+id/vfHobbiesDetail"
+                android:layout_toRightOf="@+id/vfHobbies"
+                android:layout_toEndOf="@id/vfHobbies"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/black1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/lime1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@color/red1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:text="Interest Details"
+                android:textStyle="italic"
+                android:id="@+id/vfInterestDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textColor="@color/green1"
+                android:text="Intersts"
+                android:textStyle="italic"
+                android:id="@+id/vfInterest"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/vfInterestDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/vInterest"
+                android:layout_marginTop="5dp"
+                android:text="null"
+                android:layout_below="@+id/vfInterestDetail"
+                android:layout_toRightOf="@+id/vfInterest"
+                android:layout_toEndOf="@id/vfInterest"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/black1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/lime1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@color/red1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:text="Award/Certification Details"
+                android:textStyle="italic"
+                android:id="@+id/vfAwardDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textColor="@color/green1"
+                android:text="Awards/Certifications"
+                android:textStyle="italic"
+                android:id="@+id/vfAward"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/vfAwardDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/vAward"
+                android:layout_marginTop="5dp"
+                android:text="null"
+                android:layout_below="@+id/vfAwardDetail"
+                android:layout_toRightOf="@+id/vfAward"
+                android:layout_toEndOf="@id/vfAward"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/black1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/lime1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@color/red1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:text="Personal Strengths"
+                android:textStyle="italic"
+                android:id="@+id/vfStrengthDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textColor="@color/green1"
+                android:text="Strength"
+                android:textStyle="italic"
+                android:id="@+id/vfStrength"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/vfStrengthDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/vStrength"
+                android:layout_marginTop="5dp"
+                android:text="null"
+                android:layout_below="@+id/vfStrengthDetail"
+                android:layout_toRightOf="@+id/vfStrength"
+                android:layout_toEndOf="@id/vfStrength"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/black1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@color/lime1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@color/purple1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:text="Industry Details"
+                android:textStyle="italic"
+                android:id="@+id/vfIndustryDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <android.support.v7.widget.RecyclerView
+                android:layout_marginBottom="10dp"
+                android:layout_below="@+id/vfIndustryDetail"
+                android:layout_marginTop="10dp"
+                android:id="@+id/vfIndustryRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/lime1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/vfReferenceDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reference"
+                android:layout_marginLeft="10dp"
+                android:textStyle="italic"
+                android:textColor="@color/green1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                />
+            <TextView
+                android:id="@+id/vfRefName"
+                android:text="Name : "
+                android:textColor="@color/bluelike1"
+                android:textStyle="bold"
+                android:layout_below="@+id/vfReferenceDetail"
+                android:layout_marginTop="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/vRefName"
+                android:text="null"
+                android:textColor="@color/black1"
+                android:textStyle="italic"
+                android:layout_below="@+id/vfReferenceDetail"
+                android:layout_toRightOf="@+id/vfRefName"
+                android:layout_toEndOf="@+id/vfRefName"
+                android:layout_marginLeft="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/vfRefDesignation"
+                android:text="Designation: "
+                android:textColor="@color/bluelike1"
+                android:textStyle="bold"
+                android:layout_below="@+id/vfRefName"
+                android:layout_marginTop="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/vRefDesignation"
+                android:text="null"
+                android:textColor="@color/black1"
+                android:textStyle="italic"
+                android:layout_below="@+id/vfRefName"
+                android:layout_toRightOf="@+id/vfRefDesignation"
+                android:layout_toEndOf="@+id/vfRefDesignation"
+                android:layout_marginLeft="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/vfRefOrg"
+                android:text="Organization: "
+                android:textColor="@color/bluelike1"
+                android:textStyle="bold"
+                android:layout_below="@+id/vfRefDesignation"
+                android:layout_marginTop="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/vRefOrg"
+                android:text="null"
+                android:textColor="@color/black1"
+                android:textStyle="italic"
+                android:layout_below="@+id/vfRefDesignation"
+                android:layout_toRightOf="@+id/vfRefOrg"
+                android:layout_toEndOf="@+id/vfRefOrg"
+                android:layout_marginLeft="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/vfRefPhone"
+                android:text="Phone : "
+                android:textColor="@color/bluelike1"
+                android:textStyle="bold"
+                android:layout_below="@+id/vfRefOrg"
+                android:layout_marginTop="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/vRefPhone"
+                android:text="null"
+                android:textColor="@color/black1"
+                android:textStyle="italic"
+                android:layout_below="@+id/vfRefOrg"
+                android:layout_toRightOf="@+id/vfRefPhone"
+                android:layout_toEndOf="@+id/vfRefPhone"
+                android:layout_marginLeft="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/vfRefEmail"
+                android:text="Email : "
+                android:textColor="@color/bluelike1"
+                android:textStyle="bold"
+                android:layout_below="@+id/vfRefPhone"
+                android:layout_marginTop="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/vRefEmail"
+                android:text="null"
+                android:textColor="@color/black1"
+                android:textStyle="italic"
+                android:layout_below="@+id/vfRefPhone"
+                android:layout_toRightOf="@+id/vfRefEmail"
+                android:layout_toEndOf="@+id/vfRefEmail"
+                android:layout_marginLeft="1dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"/>
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>
+</LinearLayout>

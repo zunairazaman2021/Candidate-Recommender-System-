@@ -9,12 +9,13 @@ public class Academic {
     private boolean statuscompletion;
     private String cv_id;
     public Academic(){}
-    public Academic(String name, String instituition, String grade, int passingYear,boolean statuscompletion) {
+    public Academic(String name, String instituition, String grade, int passingYear,boolean statuscompletion,String cv_id) {
         this.name = name;
         this.instituition = instituition;
         this.grade = grade;
         this.passingYear = passingYear;
         this.statuscompletion=statuscompletion;
+        this.cv_id=cv_id;
     }
 
     public boolean isStatuscompletion() {
