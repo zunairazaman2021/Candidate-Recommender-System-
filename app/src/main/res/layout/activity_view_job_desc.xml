@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ViewJobDescActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarfilterjob"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/white"
+        android:titleTextColor="#000">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+            <Button
+                android:id="@+id/keybackview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboardbackmove"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Job Description"
+                android:layout_gravity="center"
+                android:textColor="@color/darkblue"
+                android:textSize="18sp"
+                android:layout_marginLeft="30dp"
+                android:textStyle="bold"
+                android:id="@+id/toolbar_desctitle" />
+
+            <Button
+                android:id="@+id/applyhere"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apply Here"
+                android:layout_marginLeft="70dp"
+                android:backgroundTint="@color/white"
+                android:fallbackLineSpacing="false"
+                android:textColor="@color/darkblue"
+                />
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+<LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@color/linkBlue"
+                    android:text="View Job Publisher"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/viewRecruiter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/basic22"
+            android:background="#fff"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_marginTop="20dp"
+                android:id="@+id/titletext22"
+                android:textSize="18sp"
+                android:paddingLeft="4dp"
+                android:textColor="@color/darkblue"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/darkgray"
+                android:textSize="16sp"
+                android:paddingLeft="4dp"
+                android:id="@+id/companytxt22"
+                android:layout_below="@+id/titletext22"
+                android:layout_marginTop="1dp"
+                android:text=""/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/experience22"
+                android:drawableLeft="@drawable/briefexperiencekey"
+                android:text=" "
+                android:layout_below="@+id/companytxt22"
+                android:paddingLeft="4dp"
+                android:layout_marginTop="1dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/vacancytxt22"
+                android:text=" "
+                android:drawableLeft="@drawable/noofpeople"
+                android:layout_below="@+id/companytxt22"
+                android:layout_toEndOf="@+id/experience22"
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@+id/experience22"
+                android:layout_marginTop="1dp"
+                android:paddingLeft="4dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/contrytxt22"
+                android:layout_below="@+id/experience22"
+                android:layout_marginTop="1dp"
+                android:drawableLeft="@drawable/room"
+                android:drawablePadding="2dp"
+                android:paddingLeft="4dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/contrytxt22"
+                android:id="@+id/mm22"
+                android:layout_marginTop="1dp"
+                android:drawableLeft="@drawable/money"
+                android:text="Not Disclosed" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Desired Candidate profile"
+                android:textSize="18sp"
+                android:id="@+id/candidateview22"
+                android:layout_below="@+id/mm22"
+                android:textColor="@color/darkblue"
+                android:drawableLeft="@drawable/singleperson"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Any Nationality"
+                android:drawableLeft="@drawable/publicglobe"
+                android:layout_below="@+id/candidateview22"
+                android:layout_marginTop="1dp"
+                android:id="@+id/nationaltxt22"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/school"
+                android:text="Basic - Bachelor of technology/Engineering"
+                android:layout_below="@+id/nationaltxt22"
+                android:id="@+id/edutxt22"
+                android:paddingLeft="2dp"/>
+
+            <TextView
+                android:id="@+id/description_text22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="5"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:layout_below="@+id/edutxt22"
+                android:layout_marginTop="2dp"
+                android:text=""
+                android:drawableLeft="@drawable/bulletedlist" />
+
+            <ImageButton
+                android:id="@+id/showv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/description_text22"
+                android:background="@drawable/arrowdown"
+                android:clickable="true" />
+
+            <View
+                android:id="@+id/view1v2"
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:layout_below="@+id/description_text22"
+                android:layout_marginTop="5dp"
+                android:layout_toLeftOf="@+id/showv2"
+                android:background="@color/darkgray" />
+
+            <ImageButton
+                android:id="@+id/hidev2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/description_text22"
+                android:background="@drawable/arrowup"
+                android:clickable="true"
+                android:visibility="invisible" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view1v2"
+                android:layout_marginTop="10dp"
+                android:text="Job Description"
+                android:id="@+id/jdsv2"
+                android:textColor="@color/darkblue"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="5"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_below="@+id/jdsv2"
+                android:drawableLeft="@drawable/bulletedlist"
+                android:layout_marginTop="2dp"
+                android:text=""
+                android:id="@+id/textdescripv2"/>
+            <ImageButton
+                android:id="@+id/show2v2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/textdescripv2"
+                android:background="@drawable/arrowdown"
+                android:clickable="true" />
+
+            <View
+                android:id="@+id/view2v2"
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:layout_below="@+id/textdescripv2"
+                android:layout_marginTop="5dp"
+                android:layout_toLeftOf="@+id/showv2"
+                android:background="@color/darkgray" />
+
+            <ImageButton
+                android:id="@+id/hide2v2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/textdescripv2"
+                android:background="@drawable/arrowup"
+                android:clickable="true"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

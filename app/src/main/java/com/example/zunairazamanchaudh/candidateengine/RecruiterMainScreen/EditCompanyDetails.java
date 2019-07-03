@@ -33,8 +33,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class EditCompanyDetails extends AppCompatActivity implements OnClickListener{
 Button btnupdate,btncancel;
-EditText companyName,jobRole,CEO,headHR,groupOfCompany,industryName,description;
-Spinner ownershipType;
+EditText companyName,jobRole,CEO,headHR,groupOfCompany,industryName,description,city;
+Spinner ownershipType,country;
 ProgressBar mProgress;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +44,8 @@ ProgressBar mProgress;
         companyName=(EditText)findViewById(R.id.input_companyName);
         jobRole=(EditText)findViewById(R.id.input_jobRole);
         CEO=(EditText)findViewById(R.id.input_ceoName);
+        city=(EditText)findViewById(R.id.input_companycity);
+        country=(Spinner)findViewById(R.id.input_country);
         groupOfCompany=(EditText)findViewById(R.id.input_groupOfCompany);
         headHR=(EditText)findViewById(R.id.input_hodHRdepartment);
         industryName=(EditText)findViewById(R.id.input_industryName);
@@ -154,12 +156,25 @@ ProgressBar mProgress;
                     .child("industryName")
                     .setValue(industryName.getText().toString());
         }
+        if(!city.getText().toString().equals("")) {
+            reference.child(getString(R.string.dbnode_Company))
+                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                    .child("city")
+                    .setValue(city.getText().toString());
+        }
 
         if(!ownershipType.getSelectedItem().toString().equals("")) {
             reference.child(getString(R.string.dbnode_Company))
                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                     .child("ownershipType")
                     .setValue(ownershipType.getSelectedItem().toString());
+        }
+
+        if(!country.getSelectedItem().toString().equals("Select Country")) {
+            reference.child(getString(R.string.dbnode_Company))
+                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                    .child("country")
+                    .setValue(country.getSelectedItem().toString());
         }
         Toast.makeText(EditCompanyDetails.this, "saved", Toast.LENGTH_SHORT).show();
         }
@@ -184,6 +199,27 @@ ProgressBar mProgress;
                         groupOfCompany.setText(jpuser.getGroupOfCompany());
                         headHR.setText(jpuser.getHeadHRdepartment());
                         industryName.setText(jpuser.getIndustryName());
+                        city.setText(jpuser.getCity());
+                        String cc=jpuser.getCountry();
+                        if(country.getItemAtPosition(0).toString()==cc){
+                            country.setSelection(0);
+                        }else if(country.getItemAtPosition(1).toString()==cc){
+                            country.setSelection(1);
+                        }else if(country.getItemAtPosition(2).toString()==cc){
+                            country.setSelection(2);
+                        }else if(country.getItemAtPosition(3).toString()==cc){
+                            country.setSelection(3);
+                        }else if(country.getItemAtPosition(4).toString()==cc){
+                            country.setSelection(4);
+                        }else if(country.getItemAtPosition(5).toString()==cc){
+                            country.setSelection(5);
+                        }else if(country.getItemAtPosition(6).toString()==cc){
+                            country.setSelection(6);
+                        }else if(country.getItemAtPosition(7).toString()==cc){
+                            country.setSelection(7);
+                        }else{
+                            country.setSelection(8);
+                        }
                 //        ownershipType.setText(jpuser.getOwnershipType());
                         String match=jpuser.getOwnershipType();
 
@@ -226,6 +262,8 @@ ProgressBar mProgress;
          sauser.setIndustryName(industryName.getText().toString());
          sauser.setOwnershipType(ownershipType.getSelectedItem().toString());
          sauser.setCompanyDescription(description.getText().toString());
+         sauser.setCountry(country.getSelectedItem().toString());
+         sauser.setCity(city.getText().toString());
          sauser.setRecruiteruser_id(FirebaseAuth.getInstance().getCurrentUser().getUid());
          FirebaseDatabase.getInstance().getReference()
                  .child("company")

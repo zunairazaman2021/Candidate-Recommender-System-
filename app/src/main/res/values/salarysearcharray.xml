@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="salarysearcharray">
+        <item>Select Salary </item>
+        <item>5000-5999</item>
+        <item>6000-6999</item>
+        <item>7000-7999</item>
+        <item>8000-8999</item>
+        <item>10000-19999</item>
+        <item>20000-29999</item>
+        <item>30000-49999</item>
+        <item>50000-69999</item>
+        <item>70000-100000</item>
+        <item>100000-199999</item>
+        <item>200000-299999</item>
+        <item>300000+</item>
+    </string-array>
+</resources>

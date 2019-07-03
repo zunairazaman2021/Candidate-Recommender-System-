@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import com.example.zunairazamanchaudh.candidateengine.Adapters.RecyclercountryAdapter;
@@ -61,12 +62,15 @@ public class Jobs extends android.support.v4.app.Fragment {
         initRecyclerView3();
     }
     RecyclerView re;
+    EditText editquery,editregion;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_jobs, container, false);
         recyclerView=view.findViewById(R.id.recylerView2);
+        editquery=(EditText)view.findViewById(R.id.edit_query);
+        editregion=(EditText)view.findViewById(R.id.edit_region);
         re=view.findViewById(R.id.recylerView3);
         ListView lv= view.findViewById(R.id.list1);
         ListView lv1=view.findViewById(R.id.list2);
@@ -86,6 +90,8 @@ public class Jobs extends android.support.v4.app.Fragment {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(getActivity(),FilterJobs.class);
+                i.putExtra("jobskill",editquery.getText().toString());
+                i.putExtra("editreqion",editregion.getText().toString());
                 startActivity(i);
             }
         });

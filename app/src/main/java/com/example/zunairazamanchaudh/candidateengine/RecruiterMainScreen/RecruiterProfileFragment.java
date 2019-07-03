@@ -42,7 +42,7 @@ ProgressBar mProgressbarprofile;
 CircleImageView imageViewRecruiter;
 Button btnuploadRecruiter;
 ImageView editRecruiter,editcompanyInfo;
-TextView nameRecruiter,showphone,showemail;
+TextView nameRecruiter,showphone,showemail,showplace;
 TextView showcompanyName,showjobrole,showceoname,showheadHR,
         showgroupOfCompany,showIndustryname,showownershipType,showCompanydescription;
     public RecruiterProfileFragment() {
@@ -67,6 +67,7 @@ TextView showcompanyName,showjobrole,showceoname,showheadHR,
         showphone=(TextView)view.findViewById(R.id.show_phone);
         showemail=(TextView)view.findViewById(R.id.show_email);
         //company views
+        showplace=(TextView)view.findViewById(R.id.show_place);
         showcompanyName=(TextView)view.findViewById(R.id.show_companyName);
         showjobrole=(TextView)view.findViewById(R.id.show_jobRole);
         showceoname=(TextView)view.findViewById(R.id.show_ceoName);
@@ -168,6 +169,7 @@ TextView showcompanyName,showjobrole,showceoname,showheadHR,
                         showheadHR.setText(jpuser.getHeadHRdepartment());
                         showIndustryname.setText(jpuser.getIndustryName());
                         showownershipType.setText(jpuser.getOwnershipType());
+                        showplace.setText(jpuser.getCity()+", "+jpuser.getCountry());
                         showCompanydescription.setText(jpuser.getCompanyDescription());
                     }
                 }else{}

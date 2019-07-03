@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.zunairazamanchaudh.candidateengine.Adapters.FilterAdapter;
-import com.example.zunairazamanchaudh.candidateengine.databinding.ActivityFilterJobsBinding;
 import com.example.zunairazamanchaudh.candidateengine.databinding.FragmentRecommendedJobsBinding;
 import com.example.zunairazamanchaudh.candidateengine.databinding.FragmentSearchBinding;
 import com.example.zunairazamanchaudh.candidateengine.model.JobView;

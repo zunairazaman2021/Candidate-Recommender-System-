@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="industrytypes">
+        <item>Select Industry </item>
+        <item>Accounting</item>
+        <item>Advertising</item>
+        <item>Architecture</item>
+        <item>Airlines</item>
+        <item>Banking</item>
+        <item>Computer/Software</item>
+    </string-array>
+</resources>

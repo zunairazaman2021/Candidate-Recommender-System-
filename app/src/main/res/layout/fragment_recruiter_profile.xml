@@ -241,11 +241,31 @@
                android:layout_marginLeft="10dp"
                android:id="@+id/show_ownershiptype"
                />
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/place"
+               android:layout_below="@+id/show_ownershiptype"
+               android:layout_marginLeft="10dp"
+               android:layout_marginTop="4dp"
+               android:text="Location : "
+               android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+               />
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/place"
+               android:layout_marginTop="4dp"
+               android:text=""
+               android:layout_marginLeft="10dp"
+               android:id="@+id/show_place"
+               />
            <TextView
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:id="@+id/companyDescription"
-               android:layout_below="@+id/show_ownershiptype"
+               android:layout_below="@+id/show_place"
                android:layout_marginLeft="10dp"
                android:layout_marginTop="4dp"
                android:text="Company Description : "

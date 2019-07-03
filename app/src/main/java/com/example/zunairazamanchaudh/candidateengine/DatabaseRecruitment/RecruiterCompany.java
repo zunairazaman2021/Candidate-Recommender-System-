@@ -4,12 +4,12 @@ public class RecruiterCompany {
     String companyid;
     String recruiteruser_id;
     String companyName,jobRole,ceoName,headHRdepartment,
-            groupOfCompany,companyDescription,industryName,ownershipType;
+            groupOfCompany,companyDescription,industryName,ownershipType,city,country;
     public RecruiterCompany(){
     }
     public RecruiterCompany(String recruiteruser_id, String companyName, String jobRole, String ceoName,
                             String headHRdepartment, String groupOfCompany, String companyDescription,
-                            String industryName, String ownershipType) {
+                            String industryName, String ownershipType,String city,String country) {
         this.recruiteruser_id = recruiteruser_id;
         this.companyName = companyName;
         this.jobRole = jobRole;
@@ -19,6 +19,24 @@ public class RecruiterCompany {
         this.companyDescription = companyDescription;
         this.industryName = industryName;
         this.ownershipType = ownershipType;
+        this.city=city;
+        this.country=country;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public String getCity() {
+        return city;
     }
 
     public void setCompanyid(String companyid) {

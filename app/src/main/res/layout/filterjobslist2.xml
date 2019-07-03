@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:paddingRight="10dp"
+    android:layout_marginTop="1dp"
+    android:background="@color/white"
+    android:id="@+id/JobDetailrel1j"
+    android:paddingLeft="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="4dp"
+        android:tint="@color/purple1"
+        android:id="@+id/image2"
+        android:src="@drawable/baseline_business_black_36"
+        />
+    <TextView
+        android:id="@+id/jobpostedbyid"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="id"
+        android:visibility="visible"
+        android:layout_below="@+id/image2"/>
+<TextView
+    android:layout_below="@+id/jobpostedbyid"
+    android:id="@+id/jobid"
+    android:layout_width="120dp"
+    android:text="jobid"
+    android:visibility="visible"
+    android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/titleofjob2"
+        android:layout_width="133dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="" />
+
+    <TextView
+        android:layout_width="133dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/titleofjob2"
+        android:layout_marginTop="4dp"
+        android:id="@+id/companytitle2"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/loc2"
+        android:layout_width="133dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/companytitle2"
+        android:layout_toRightOf="@+id/image2"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="20dp"
+        android:drawableLeft="@drawable/room"
+        android:text="" />
+    <TextView
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/titleofjob2"
+        android:layout_marginEnd="36dp"
+        android:text="Feb 24"
+        android:drawableLeft="@drawable/access_time"
+        android:id="@+id/dat2"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        />
+
+    <ImageButton
+        android:id="@+id/favorite_button2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignEnd="@+id/dat2"
+        android:layout_alignParentBottom="true"
+        android:background="#00ffffff"
+        android:src="@android:drawable/btn_star"
+        android:layout_marginBottom="10dp"
+        android:layout_alignRight="@+id/dat2" />
+
+</RelativeLayout>

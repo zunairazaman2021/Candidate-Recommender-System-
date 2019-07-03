@@ -66,7 +66,10 @@
         <activity android:name=".ResumeManager.PersonalInfoActivity" />
         <activity android:name=".ResumeManager.MainCVTitle" />
         <activity android:name=".RecruiterMainScreen.JobBoardFolder.UserProfileView2" />
-        <activity android:name=".ResumeManager.ViewFullCV"></activity>
+        <activity android:name=".ResumeManager.ViewFullCV" />
+        <activity android:name=".AdvancedSearchJobActivity" />
+        <activity android:name=".ViewJobDescActivity" />
+        <activity android:name=".RecruiterProfileUI"></activity>
     </application>
 
 </manifest>

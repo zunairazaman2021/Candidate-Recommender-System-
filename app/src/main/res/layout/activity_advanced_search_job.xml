@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AdvancedSearchJobActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarfilterjob"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/white"
+        android:titleTextColor="#000">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+            <Button
+                android:id="@+id/backToFilterJob"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/keyboardbackmove"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                android:layout_gravity="center"
+                android:textColor="@color/darkblue"
+                android:textSize="18sp"
+                android:layout_marginLeft="30dp"
+                android:textStyle="bold"
+                android:id="@+id/toolbar_title" />
+
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:errorEnabled="true"
+        android:gravity="center">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Job title, skill or company"
+            android:inputType="text"
+            android:id="@+id/filtername"
+            android:fontFamily="sans-serif-light"
+            android:textSize="15sp"
+            />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:errorEnabled="true"
+        android:gravity="center">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Job city"
+            android:inputType="text"
+            android:id="@+id/filtercity"
+            android:fontFamily="sans-serif-light"
+            android:textSize="15sp"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            android:gravity="center">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="company"
+                android:inputType="text"
+                android:id="@+id/filtercompany"
+                android:fontFamily="sans-serif-light"
+                android:textSize="15sp"
+                />
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            android:gravity="center">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="Salary"
+                android:inputType="number"
+                android:id="@+id/filtersalary"
+                android:fontFamily="sans-serif-light"
+                android:textSize="15sp"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+        <fr.ganfra.materialspinner.MaterialSpinner
+            android:id="@+id/filtergender"
+            android:entries="@array/genederarray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></fr.ganfra.materialspinner.MaterialSpinner>
+
+        <fr.ganfra.materialspinner.MaterialSpinner
+            android:id="@+id/filterexperience"
+            android:entries="@array/experiencelevel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></fr.ganfra.materialspinner.MaterialSpinner>
+
+        <fr.ganfra.materialspinner.MaterialSpinner
+            android:id="@+id/filterjobtype"
+            android:entries="@array/jobtype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></fr.ganfra.materialspinner.MaterialSpinner>
+
+        <fr.ganfra.materialspinner.MaterialSpinner
+            android:id="@+id/filterindustry"
+            android:entries="@array/industrytypes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></fr.ganfra.materialspinner.MaterialSpinner>
+
+        <fr.ganfra.materialspinner.MaterialSpinner
+            android:id="@+id/filtercareer"
+            android:entries="@array/careerlevel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></fr.ganfra.materialspinner.MaterialSpinner>
+        <Button
+            android:text="Search Jobs"
+            android:id="@+id/filtersearchjob"
+            android:background="@color/blue1"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

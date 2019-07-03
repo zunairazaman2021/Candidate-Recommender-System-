@@ -1,10 +1,7 @@
 package com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment;
 
-import java.util.Date;
-
-public class JobPost {
+public class Post {
     String jobpost_id;
-    String creator_id;
     String createdOn;
     String jobdescription,candidateDescription;
     String companyName,yourName,city,country,experience;
@@ -12,15 +9,16 @@ public class JobPost {
     int noOfvacancie;
     double salary;
     Boolean status;
-
-    public JobPost(){}
-
-    public JobPost(String jobpost_id,String creator_id, String createdOn, String jobdescription, String candidateDescription,
-                   String companyName, String yourName, String city, String country, String experience,
-                   String jobtype, String genderPreference, String phone, String jobtitle, String minDegree,
-                   String maxDegree, String skills, String nationality, int noOfvacancie, double salary, Boolean status) {
+    String creator_id;
+    public Post(){
+    }
+    public Post(String jobpost_id,String creator_id,String createdOn, String jobdescription, String candidateDescription,
+                String companyName, String yourName, String city, String country, String experience,
+                String jobtype, String genderPreference, String phone, String jobtitle,
+                String minDegree, String maxDegree,
+                String skills, String nationality, int noOfvacancie, double salary, Boolean status) {
         this.jobpost_id=jobpost_id;
-        this.creator_id = creator_id;
+        this.creator_id=creator_id;
         this.createdOn = createdOn;
         this.jobdescription = jobdescription;
         this.candidateDescription = candidateDescription;
@@ -42,12 +40,16 @@ public class JobPost {
         this.status = status;
     }
 
-    public void setJobpost_id(String jobpost_id) {
-        this.jobpost_id = jobpost_id;
+    public String getCreator_id() {
+        return creator_id;
     }
 
     public void setCreator_id(String creator_id) {
         this.creator_id = creator_id;
+    }
+
+    public void setJobpost_id(String jobpost_id) {
+        this.jobpost_id = jobpost_id;
     }
 
     public void setCreatedOn(String createdOn) {
@@ -128,10 +130,6 @@ public class JobPost {
 
     public String getJobpost_id() {
         return jobpost_id;
-    }
-
-    public String getCreator_id() {
-        return creator_id;
     }
 
     public String getCreatedOn() {

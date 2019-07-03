@@ -360,11 +360,11 @@ hideSoftKeyboard();
 
         DatabaseReference mDatabase=FirebaseDatabase.getInstance().getReference();
         String key=mDatabase.child("Posts").push().getKey();
+        sauser.setJobpost_id(key);
         String user_id=FirebaseAuth.getInstance().getCurrentUser().getUid();
           mDatabase.child("Posts")
                   .child(key)
                   .setValue(sauser);
-
         FirebaseDatabase.getInstance().getReference()
                 .child("JobPost")
                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
