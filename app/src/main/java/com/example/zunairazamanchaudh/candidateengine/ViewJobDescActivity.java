@@ -12,8 +12,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.zunairazamanchaudh.candidateengine.Adapters.DisplayResumeAdapters.FilterAdapter2;
+import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.JobApplication;
 import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.JobPost;
 import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.Post;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -48,14 +54,14 @@ public class ViewJobDescActivity extends AppCompatActivity {
         keybackview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
             }
         });
         applyhere=(Button)findViewById(R.id.applyhere);
         applyhere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+            alreadyapplied();
+           //applyForJob();
             }
         });
         titletext2=(TextView)findViewById(R.id.titletext22);
@@ -150,5 +156,56 @@ public class ViewJobDescActivity extends AppCompatActivity {
                 progressDialog.dismiss();
             }
         });
+    }
+    private void applyForJob(){
+        JobApplication ja=new JobApplication();
+        ja.setApplicationstatus("submitted");
+        ja.setCv_id(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        ja.setJob_id(jobid);
+        ja.setRecruiter_id(creatorid);
+        DatabaseReference mDatabase=FirebaseDatabase.getInstance().getReference();
+        String key=mDatabase.child("AllApplications").push().getKey();
+        ja.setApplication_id(key);
+        String user_id=FirebaseAuth.getInstance().getCurrentUser().getUid();
+        mDatabase.child("AllApplications")
+                .child(key)
+                .setValue(ja);
+        FirebaseDatabase.getInstance().getReference()
+                .child("jobApplication")
+                .child(creatorid)
+                .child(jobid)
+                .child(key)
+                .setValue(ja).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Toast.makeText(ViewJobDescActivity.this,"Successfully applied for job vacancy",Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(ViewJobDescActivity.this,"Could not apply for Job vacancy",Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    private void alreadyapplied(){
+        DatabaseReference mDatabase=FirebaseDatabase.getInstance().getReference();
+       Query query= mDatabase.child("jobApplication").child(creatorid).child(jobid).orderByChild("cv_id")
+                .equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
+       query.addListenerForSingleValueEvent(new ValueEventListener() {
+           @Override
+           public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+               if(dataSnapshot!=null){
+                   applyhere.setText("Applied");
+                   applyhere.setClickable(false);
+                   Toast.makeText(ViewJobDescActivity.this,"You have already applied for this job vacancy",Toast.LENGTH_SHORT).show();
+               }if(dataSnapshot==null){
+                   applyForJob();
+               }
+           }
+           @Override
+           public void onCancelled(@NonNull DatabaseError databaseError) {
+
+           }
+       });
     }
 }

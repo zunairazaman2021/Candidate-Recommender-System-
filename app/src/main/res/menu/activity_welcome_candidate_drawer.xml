@@ -2,18 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-
     <item
         android:id="@+id/nav_camera"
         android:icon="@drawable/home"
         android:title="My CRS Home" />
-
     <item
         android:id="@+id/searchjob"
         android:icon="@drawable/search"
         android:title="Search Jobs"
         />
-
     <item
         android:id="@+id/whoviewedcv"
         android:icon="@drawable/eyeview"
@@ -33,14 +30,19 @@
         android:icon="@drawable/briefcase"
         android:title="CV Manager" />
     <item
+        android:id="@+id/qrscan"
+        android:icon="@drawable/clipboard"
+        android:title="Cover Letter"
+        />
+    <item
         android:id="@+id/my_jobs"
         android:icon="@drawable/checkboxoutline"
         android:title="My Jobs"
         />
     <item
-        android:id="@+id/qrscan"
-        android:icon="@drawable/qrcodescan"
-        android:title="QR Scanner"
+        android:id="@+id/my_application"
+        android:icon="@drawable/checkboxoutline"
+        android:title="My Job Application"
         />
     <item
         android:id="@+id/ChangePassword"

@@ -153,7 +153,11 @@ public class WelcomeCandidate extends AppCompatActivity
             startActivity(ii);
 
 
-        } else if (id == R.id.nav_share) {
+        }else if (id == R.id.qrscan) {
+            Intent ii=new Intent(WelcomeCandidate.this, CoverLetterActivity.class);
+            startActivity(ii);
+        }
+        else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
 

@@ -9,7 +9,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/crs2icon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -69,7 +69,9 @@
         <activity android:name=".ResumeManager.ViewFullCV" />
         <activity android:name=".AdvancedSearchJobActivity" />
         <activity android:name=".ViewJobDescActivity" />
-        <activity android:name=".RecruiterProfileUI"></activity>
+        <activity android:name=".RecruiterProfileUI" />
+        <activity android:name=".CoverLetterActivity" />
+        <activity android:name=".ViewRecruiterFollowersList"></activity>
     </application>
 
 </manifest>

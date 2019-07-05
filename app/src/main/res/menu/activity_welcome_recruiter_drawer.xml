@@ -25,6 +25,11 @@
         android:title="Search CVs" />
 
     <item
+        android:id="@+id/jobapplications"
+        android:icon="@drawable/clipboard"
+        android:title="Job Applications"
+        />
+    <item
         android:id="@+id/qrscanRecruiter"
         android:icon="@drawable/qrcodescan"
         android:title="QR Scanner"

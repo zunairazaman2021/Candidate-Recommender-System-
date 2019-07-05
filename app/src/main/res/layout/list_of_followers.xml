@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/reltiveClick"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:paddingRight="10dp"
+    android:layout_marginTop="1dp"
+    android:background="@color/white"
+    android:paddingLeft="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="4dp"
+        android:id="@+id/image2Owner"
+        android:tint="@color/darkblue"
+        android:src="@drawable/outline_account48dp"
+        />
+    <TextView
+        android:id="@+id/ownerName2"
+        android:textColor="@color/black"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="" />
+    <TextView
+        android:id="@+id/ownerCity2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ownerName2"
+        android:drawableLeft="@drawable/room"
+        android:layout_marginTop="4dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:text=""
+        android:layout_alignLeft="@+id/ownerName2" />
+    <TextView
+        android:id="@+id/ownerExperienceFrom2"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image2Owner"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/black"
+        android:drawableLeft="@drawable/access_time"
+        android:text="" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:visibility="invisible"
+        android:layout_marginTop="4dp"
+        android:id="@+id/userid"
+        android:layout_below="@+id/ownerExperienceFrom2"
+        />
+</RelativeLayout>

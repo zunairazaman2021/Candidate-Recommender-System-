@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CoverLetterActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cover Letter"
+                android:textColor="@color/blue1"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
+           <TextView
+               android:text="Date : "
+               android:textColor="@color/darkgray"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+            <EditText
+                android:text="07-03-2019"
+                android:id="@+id/datetoday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="Name "
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/clname"
+                android:hint="Mr. John / The Manager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="Company Name"
+                android:textStyle="bold"
+                android:textColor="@color/darkgray"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/clcompanyname"
+                android:hint="ABC Corporation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="Address "
+                android:textColor="@color/darkgray"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/claddress"
+                android:hint="ABC Corporation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/darkgray" />
+            <TextView
+                android:textColor="@color/darkgray"
+                android:textStyle="bold"
+                android:text="Body"
+                android:layout_marginTop="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:id="@+id/clbody"
+                android:text="Subject:Write the appropriate subject\n\nDear\n\nI am writing in reply to the classified ad you posted seeking to fill the position of (position name) at (company name).
+                \nHaving earned my master of Arts degree in Academic Advising from XYZ University.I understand the importance for informed academic counselling and program planning in a higher education environment.
+                \nI have also experienced, first hand, the comforting effect of being able to contact an advisor who genuinely cares for the professional grwoth and success of students.
+                \nPrior to my graduate studies, during my career as an electrician, I was selected Chairman of the Executive Board which sat as the union's representatives to the apprenticeship advisory board.In this capacity, I was able to be an effective advisor to apprentices who were experiencing scholastic problems which threatened their future in the industry.
+                \nI particularly enjoyed working with older apprentices who were seeking a career change and had problems adjusting to the obligations of work, school, and family life.
+                \n I believe that both my educational background in Academic Advising and my work-related duties of counseling and advising students enrolled in learning programs qualifies me for consideration for the position of Graduate student advisor.I look forward to discussing how my skills can be of value to ABC College as it prepares to move into the new millennium.
+                \nThank you for your time, consideration, and forthcoming response.\n\nSincerely,\n"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:id="@+id/views"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/darkgray" />
+            <Button
+                android:background="@color/bluelike1"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/savecl"
+                android:text="Save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
