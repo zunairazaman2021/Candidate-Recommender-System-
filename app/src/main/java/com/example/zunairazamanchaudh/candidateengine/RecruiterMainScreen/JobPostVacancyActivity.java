@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import jp.wasabeef.richeditor.RichEditor;
 
+import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.JobApplication;
 import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.JobPost;
 import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.RecruiterCompany;
 import com.example.zunairazamanchaudh.candidateengine.R;
@@ -31,6 +32,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -320,6 +322,7 @@ hideSoftKeyboard();
                 break;
         }
     }
+    String key;
     private void saveJobPostVacancy(){
          JobPost sauser=new JobPost();
          sauser.setCompanyName(companyname.getText().toString());
@@ -359,7 +362,7 @@ hideSoftKeyboard();
          sauser.setCreator_id(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
         DatabaseReference mDatabase=FirebaseDatabase.getInstance().getReference();
-        String key=mDatabase.child("Posts").push().getKey();
+        key=mDatabase.child("Posts").push().getKey();
         sauser.setJobpost_id(key);
         String user_id=FirebaseAuth.getInstance().getCurrentUser().getUid();
           mDatabase.child("Posts")
@@ -373,6 +376,21 @@ hideSoftKeyboard();
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 String id=FirebaseAuth.getInstance().getCurrentUser().getUid();
+               JobApplication jb=new JobApplication();
+               jb.setCv_id("000");
+               jb.setJob_id(key);
+               jb.setRecruiter_id(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                String keyapp=FirebaseDatabase.getInstance().getReference().child("AllApplications").push().getKey();
+                jb.setApplication_id(key);
+                final String user_id=FirebaseAuth.getInstance().getCurrentUser().getUid();
+                FirebaseDatabase.getInstance().getReference().child("AllApplications")
+                        .child(keyapp)
+                        .setValue(jb);
+
+                FirebaseDatabase.getInstance().getReference()
+                        .child("jobApplication")
+                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                        .child(key).child(keyapp).setValue(jb);
                 //   redirectjbpreferenceFragment();
                 Intent i=new Intent(JobPostVacancyActivity.this,WelcomeRecruiter.class);
                 startActivity(i);

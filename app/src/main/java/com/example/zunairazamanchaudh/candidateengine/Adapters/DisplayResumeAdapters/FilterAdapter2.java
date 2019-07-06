@@ -80,6 +80,7 @@ String jid,cid;
      Intent i=new Intent(mContext, ViewJobDescActivity.class);
      i.putExtra("z_jobid", holder.jobbid.getText().toString());
      i.putExtra("z_createrid",holder.postedbbyid.getText().toString());
+     i.putExtra("applied_creator","");
            //     Toast.makeText(mContext,jid+"  "+cid,Toast.LENGTH_LONG).show();
      mContext.startActivity(i);
                // fragment.setArguments(bundle);

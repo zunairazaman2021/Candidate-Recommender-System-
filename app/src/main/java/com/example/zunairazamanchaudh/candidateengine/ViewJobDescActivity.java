@@ -12,9 +12,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.zunairazamanchaudh.candidateengine.Adapters.DisplayResumeAdapters.FilterAdapter2;
+import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.AdressJobseeker;
 import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.JobApplication;
 import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.JobPost;
 import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.Post;
+import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.users;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -27,6 +29,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.CountDownLatch;
+
 public class ViewJobDescActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     String jobid,creatorid;
@@ -34,6 +42,25 @@ public class ViewJobDescActivity extends AppCompatActivity {
     ImageButton show, hide,show1,hide1;
     Button keybackview,applyhere,viewRecruiter;
     TextView titletext2,companytxt2,experience2,vacancytxt2,contrytxt2,mm2,nationaltxt2,edutxt2;
+
+
+    //jobapplication user
+
+    private String firstname;
+    private String lastname;
+    private String profile_image;
+    private String security_level;
+    private String dob;
+    private String phone;
+    private String email;
+    private String nationality;
+    //user address
+    private String city;
+    private String country;
+    private String state;
+    private String zipcode;
+    //jobapplication jobPost
+    private String companyName,yourName,jcity,jcountry,status;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,8 +87,21 @@ public class ViewJobDescActivity extends AppCompatActivity {
         applyhere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            alreadyapplied();
-           //applyForJob();
+         //  alreadyapplied();
+          applyForJob();
+    //      String s=applyhere.getText().toString();
+
+          /* if(s.equals("Apply Here")){
+              Intent i=new Intent(ViewJobDescActivity.this,CoverLetterActivity.class);
+              jobid=getIntent().getStringExtra("z_jobid");
+              creatorid=getIntent().getStringExtra("z_createrid");
+              i.putExtra("ah_jobid",jobid);
+              i.putExtra("ah_createrid",creatorid);
+              startActivity(i);
+              finish();
+          }else{
+              Toast.makeText(ViewJobDescActivity.this,"You have already applied zunaira",Toast.LENGTH_SHORT).show();
+          }*/
             }
         });
         titletext2=(TextView)findViewById(R.id.titletext22);
@@ -130,18 +170,19 @@ public class ViewJobDescActivity extends AppCompatActivity {
                 .child("Posts");
         //Query query=dref.orderByKey().equalTo("Li1ky71Op4jvgAtH6nb");
         Query query=dref.orderByChild("jobpost_id").equalTo(jobid);
-          dref.addListenerForSingleValueEvent(new ValueEventListener() {
+        //Query query=dref.child(creatorid).child(jobid);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot dataSnapshot2 : dataSnapshot.getChildren()){
                     JobPost mjobs = dataSnapshot2.getValue(JobPost.class);
-                  titletext2.setText(mjobs.getJobtitle());
+                   titletext2.setText(mjobs.getJobtitle());
                    companytxt2.setText(mjobs.getCompanyName());
                    experience2.setText(mjobs.getExperience());
                    String no=String.valueOf(mjobs.getNoOfvacancie());
-                  vacancytxt2.setText(no + " no of vacancies available");
-                  contrytxt2.setText(mjobs.getCity() + ", " + mjobs.getCountry());
-                  String salary = String.valueOf(mjobs.getSalary());
+                   vacancytxt2.setText(no + " no of vacancies available");
+                   contrytxt2.setText(mjobs.getCity() + ", " + mjobs.getCountry());
+                   String salary = String.valueOf(mjobs.getSalary());
                    mm2.setText(salary + " budget per month");
                    nationaltxt2.setText(mjobs.getNationality());
                    edutxt2.setText(mjobs.getMaxDegree() + " to " + mjobs.getMinDegree());
@@ -157,55 +198,160 @@ public class ViewJobDescActivity extends AppCompatActivity {
             }
         });
     }
+String key;
+
+
+    //////////////////////////////////////////////////////
+
+
+
+    /* DatabaseReference rr=FirebaseDatabase.getInstance().getReference().child("jobApplication");
+     rr.addValueEventListener(new ValueEventListener() {
+         @Override
+         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+             for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
+                 JobApplication jj=dataSnapshot1.getValue(JobApplication.class);
+                 String jjr=jj.getRecruiter_id();
+                 if(jjr!=null && jjr.equals(creatorid)){
+                     if(jj.getJob_id().equals(jobid)){
+                     if(jj.getCv_id().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
+                     applyhere.setText("Applied");
+                     applyhere.setClickable(false);
+                     }else{
+                         Intent i=new Intent(ViewJobDescActivity.this,CoverLetterActivity.class);
+                         jobid=getIntent().getStringExtra("z_jobid");
+                         creatorid=getIntent().getStringExtra("z_createrid");
+                         i.putExtra("ah_jobid",jobid);
+                         i.putExtra("ah_createrid",creatorid);
+                         startActivity(i);
+                         finish();
+
+                     }
+                     }else{
+                         Intent i=new Intent(ViewJobDescActivity.this,CoverLetterActivity.class);
+                         jobid=getIntent().getStringExtra("z_jobid");
+                         creatorid=getIntent().getStringExtra("z_createrid");
+                         i.putExtra("ah_jobid",jobid);
+                         i.putExtra("ah_createrid",creatorid);
+                         startActivity(i);
+                         finish();
+
+                     }
+                 }else{
+                     Intent i=new Intent(ViewJobDescActivity.this,CoverLetterActivity.class);
+                     jobid=getIntent().getStringExtra("z_jobid");
+                     creatorid=getIntent().getStringExtra("z_createrid");
+                     i.putExtra("ah_jobid",jobid);
+                     i.putExtra("ah_createrid",creatorid);
+                     startActivity(i);
+                     finish();
+
+                 }
+             }
+         }
+
+         @Override
+         public void onCancelled(@NonNull DatabaseError databaseError) {
+
+         }
+     });*/
     private void applyForJob(){
-        JobApplication ja=new JobApplication();
-        ja.setApplicationstatus("submitted");
-        ja.setCv_id(FirebaseAuth.getInstance().getCurrentUser().getUid());
-        ja.setJob_id(jobid);
-        ja.setRecruiter_id(creatorid);
-        DatabaseReference mDatabase=FirebaseDatabase.getInstance().getReference();
-        String key=mDatabase.child("AllApplications").push().getKey();
-        ja.setApplication_id(key);
-        String user_id=FirebaseAuth.getInstance().getCurrentUser().getUid();
-        mDatabase.child("AllApplications")
-                .child(key)
-                .setValue(ja);
-        FirebaseDatabase.getInstance().getReference()
-                .child("jobApplication")
-                .child(creatorid)
-                .child(jobid)
-                .child(key)
-                .setValue(ja).addOnCompleteListener(new OnCompleteListener<Void>() {
+
+        DatabaseReference mdb=FirebaseDatabase.getInstance().getReference()
+                .child("jobApplication").child(creatorid).child(jobid);
+        DatabaseReference mdbb=FirebaseDatabase.getInstance().getReference()
+                .child("jobApplication").child(creatorid).child(jobid);
+        final Query querymdb= mdb.orderByChild("cv_id")
+                .equalTo("123");
+
+       mdbb.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                Toast.makeText(ViewJobDescActivity.this,"Successfully applied for job vacancy",Toast.LENGTH_SHORT).show();
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot!=null){
+                    for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
+                        JobApplication j=dataSnapshot1.getValue(JobApplication.class);
+                        String cv=j.getCv_id().toString();
+                        if(cv.equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
+                            applyhere.setText("Applied");
+                            applyhere.setClickable(false);
+                            Toast.makeText(ViewJobDescActivity.this,"You already applied for this job",Toast.LENGTH_SHORT).show();
+                        }else {
+                            Toast.makeText(ViewJobDescActivity.this,"You apply here congo",Toast.LENGTH_SHORT).show();
+                            Intent i=new Intent(ViewJobDescActivity.this,ApplyHere.class);
+                            jobid=getIntent().getStringExtra("z_jobid");
+                            creatorid=getIntent().getStringExtra("z_createrid");
+                            i.putExtra("ah_jobid",jobid);
+                            i.putExtra("ah_createrid",creatorid);
+                            startActivity(i);
+                            finish();
+                        }
+                        }
+                  //  Toast.makeText(ViewJobDescActivity.this,"You already applied for this job",Toast.LENGTH_SHORT).show();
+                    //applyForJob();
+
+                }
+                //  Toast.makeText(ViewJobDescActivity.this,"You have already applied for this job vacancy",Toast.LENGTH_SHORT).show();
+        //        done.countDown();
+             nay=1;
             }
-        }).addOnFailureListener(new OnFailureListener() {
+
             @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(ViewJobDescActivity.this,"Could not apply for Job vacancy",Toast.LENGTH_SHORT).show();
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
-    }
-    private void alreadyapplied(){
-        DatabaseReference mDatabase=FirebaseDatabase.getInstance().getReference();
-       Query query= mDatabase.child("jobApplication").child(creatorid).child(jobid).orderByChild("cv_id")
-                .equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
-       query.addListenerForSingleValueEvent(new ValueEventListener() {
-           @Override
-           public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-               if(dataSnapshot!=null){
-                   applyhere.setText("Applied");
-                   applyhere.setClickable(false);
-                   Toast.makeText(ViewJobDescActivity.this,"You have already applied for this job vacancy",Toast.LENGTH_SHORT).show();
-               }if(dataSnapshot==null){
-                   applyForJob();
-               }
-           }
-           @Override
-           public void onCancelled(@NonNull DatabaseError databaseError) {
+        //try {
+          //  done.await(); //it will wait till the response is received from firebase.
+        //} catch(InterruptedException e) {
+          //  e.printStackTrace();
+       // }
+        // Toast.makeText(ViewJobDescActivity.this,"You have already applied for this job vacancy",Toast.LENGTH_SHORT).show();
 
-           }
-       });
+         }
+    int nay=0;
+    ProgressDialog progressDialogz;
+    private void alreadyapplied(){
+        progressDialogz = new ProgressDialog(this);
+
+        progressDialogz.setMessage("Loading ...");
+
+        progressDialogz.show();
+
+        DatabaseReference mDatabase=FirebaseDatabase.getInstance().getReference();
+        //Query q=mDatabase.child("jobApplication").child(creatorid).child(jobid).orderByChild("cv_id")
+          //      .equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        Query q=mDatabase.child("AllApplications").orderByChild("job_id").equalTo(jobid);
+
+        q.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot!=null){
+                   for(DataSnapshot d: dataSnapshot.getChildren()){
+                       JobApplication ja=d.getValue(JobApplication.class);
+                       if(ja.getCv_id().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())) {
+                           nay=1;
+                           Toast.makeText(ViewJobDescActivity.this, "Id exists " + ja.getCv_id(), Toast.LENGTH_LONG).show();
+                       }else{
+                           Toast.makeText(ViewJobDescActivity.this,"false you can apply ",Toast.LENGTH_LONG).show();
+                       }
+                   }
+                }else if(dataSnapshot==null){
+                    Toast.makeText(ViewJobDescActivity.this,"jobid does not exists ",Toast.LENGTH_LONG).show();
+                    //applyForJob();
+                }
+                progressDialogz.dismiss();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                progressDialogz.dismiss();
+                Toast.makeText(ViewJobDescActivity.this,"There is"+databaseError,Toast.LENGTH_LONG).show();
+            }
+        });
+        if(nay==0){
+            Toast.makeText(ViewJobDescActivity.this,"0 you can apply ",Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(ViewJobDescActivity.this,"1  cannot apply ",Toast.LENGTH_LONG).show();
+        }
     }
 }

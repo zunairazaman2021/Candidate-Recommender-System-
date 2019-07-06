@@ -71,7 +71,8 @@
         <activity android:name=".ViewJobDescActivity" />
         <activity android:name=".RecruiterProfileUI" />
         <activity android:name=".CoverLetterActivity" />
-        <activity android:name=".ViewRecruiterFollowersList"></activity>
+        <activity android:name=".ViewRecruiterFollowersList" />
+        <activity android:name=".ApplyHere"></activity>
     </application>
 
 </manifest>

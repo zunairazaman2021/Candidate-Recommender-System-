@@ -99,14 +99,15 @@ String creatorid;
         imagebutton4followme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            followForJob();
-           // alreadyfollowing();
+           // followForJob();
+            alreadyfollowing();
             }
         });
         showSpecificJobs();
         showsimpleDetails();
         alreadyfollowinginit();
         getfollowerdata();
+        getNoofFollowers();
     }
     private void showsimpleDetails(){
 

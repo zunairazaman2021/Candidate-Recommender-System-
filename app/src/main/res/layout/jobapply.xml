@@ -42,7 +42,7 @@
                 android:gravity="left"
                 android:text="Pakistan"
                 android:paddingLeft="5dp"
-                android:textColor="#000" />
+                android:textColor="@color/green1" />
 
             <TextView
                 android:id="@+id/txt2"
@@ -55,7 +55,7 @@
                 android:paddingLeft="5dp"
                 android:gravity="right"
                 android:text="Job Name"
-                android:textColor="#000" />
+                android:textColor="@color/blue3" />
 
 
             <TextView
@@ -70,17 +70,22 @@
                 android:paddingLeft="5dp"
                 android:textAllCaps="true"
                 android:text="My Rank:  8/9"
+                android:visibility="invisible"
                 android:layout_alignParentLeft="true" />
+            <TextView
+                android:visibility="invisible"
+                android:id="@+id/creatorid"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="creator"/>
 
             <TextView
                 android:id="@+id/txt3"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
-
                 android:layout_alignParentEnd="true"
                 android:layout_alignTop="@+id/txt4"
                 android:layout_marginEnd="57dp"
-
                 android:text="Date Applied: January 21,2019"
                 android:layout_alignParentRight="true"
                 android:textColor="#1A237E"
@@ -106,7 +111,7 @@
                 android:layout_height="20dp"
                 android:layout_below="@+id/txt3"
                 android:text="More detail"
-                android:textColor="#000"
+                android:textColor="@color/bluelike1"
                 android:layout_marginTop="4dp"
                 android:id="@+id/moredetailbtn"
                 android:textAppearance="@style/TextAppearance.AppCompat.Button"

@@ -156,6 +156,8 @@ public class WelcomeCandidate extends AppCompatActivity
         }else if (id == R.id.qrscan) {
             Intent ii=new Intent(WelcomeCandidate.this, CoverLetterActivity.class);
             startActivity(ii);
+        }else if(id==R.id.my_application){
+
         }
         else if (id == R.id.nav_share) {
 
