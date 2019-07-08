@@ -14,7 +14,6 @@ public class Fraginsidetab extends FragmentPagerAdapter {
         super(fm);
         this.fragmentList1=fragmentList1;
         this.titleList1=titleList1;
-
     }
     @Override
     public Fragment getItem(int i) {

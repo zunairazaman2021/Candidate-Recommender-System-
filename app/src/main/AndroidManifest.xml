@@ -72,7 +72,12 @@
         <activity android:name=".RecruiterProfileUI" />
         <activity android:name=".CoverLetterActivity" />
         <activity android:name=".ViewRecruiterFollowersList" />
-        <activity android:name=".ApplyHere"></activity>
+        <activity android:name=".ApplyHere" />
+        <activity android:name=".RecruiterMainScreen.CandidatesApplicationManagement" />
+        <activity android:name=".RecruiterMainScreen.JobBoardFolder.AppliedCandidateProfileView" />
+        <activity android:name=".JobsOnWeb" />
+        <activity android:name=".RecruiterMainScreen.UpdatePostedJobVacancy" />
+        <activity android:name=".RecruiterMainScreen.MyFollwerListRecruiter"></activity>
     </application>
 
 </manifest>

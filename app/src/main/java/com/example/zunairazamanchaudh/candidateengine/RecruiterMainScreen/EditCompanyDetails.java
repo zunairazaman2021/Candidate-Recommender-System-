@@ -181,7 +181,7 @@ ProgressBar mProgress;
     private void showCompanyData(){
         Log.d(TAG, "getUserPreferenceData: getting the user's account information");
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
-        Query query1 = reference.child(getString(R.string.dbnode_Company))
+        Query query1 = reference.child("company")
                 .orderByKey()
                 .equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
         query1.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -190,8 +190,6 @@ ProgressBar mProgress;
                 if(dataSnapshot.getValue()!=null) {
                     //this loop will return a single result
                     for (DataSnapshot singleSnapshot : dataSnapshot.getChildren()) {
-                        Log.d(TAG, "onDataChange: (QUERY METHOD 1) found company: "
-                                + singleSnapshot.getValue(JobPreference.class).toString());
                         RecruiterCompany jpuser = singleSnapshot.getValue(RecruiterCompany.class);
                         companyName.setText(jpuser.getCompanyName());
                         CEO.setText(jpuser.getCeoName());
@@ -201,6 +199,7 @@ ProgressBar mProgress;
                         industryName.setText(jpuser.getIndustryName());
                         city.setText(jpuser.getCity());
                         String cc=jpuser.getCountry();
+                        /*
                         if(country.getItemAtPosition(0).toString()==cc){
                             country.setSelection(0);
                         }else if(country.getItemAtPosition(1).toString()==cc){
@@ -239,6 +238,7 @@ ProgressBar mProgress;
                             ownershipType.setSelection(6);
                         }
                         description.setText(jpuser.getCompanyDescription());
+                    */
                     }
 
                 }else{}

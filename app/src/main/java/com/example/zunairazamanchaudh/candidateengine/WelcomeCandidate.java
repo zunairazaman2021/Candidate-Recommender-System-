@@ -20,6 +20,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.zunairazamanchaudh.candidateengine.RecruiterMainScreen.MyFollwerListRecruiter;
 import com.example.zunairazamanchaudh.candidateengine.ResumeManager.CVDashBoard;
 import com.example.zunairazamanchaudh.candidateengine.ResumeManager.MainCVTitle;
 import com.example.zunairazamanchaudh.candidateengine.databinding.ActivityWelcomeCandidateBinding;
@@ -148,7 +149,12 @@ public class WelcomeCandidate extends AppCompatActivity
             ft.commit();
 
 
-        } else if (id == R.id.nav_manage) {
+        } else if(id==R.id.whoviewedcv){
+            Intent i=new Intent(WelcomeCandidate.this, MyFollwerListRecruiter.class);
+            i.putExtra("intent_id",FirebaseAuth.getInstance().getCurrentUser().getUid());
+            startActivity(i);
+        }
+        else if (id == R.id.nav_manage) {
             Intent ii=new Intent(WelcomeCandidate.this, MainCVTitle.class);
             startActivity(ii);
 
@@ -157,8 +163,11 @@ public class WelcomeCandidate extends AppCompatActivity
             Intent ii=new Intent(WelcomeCandidate.this, CoverLetterActivity.class);
             startActivity(ii);
         }else if(id==R.id.my_application){
-
+        }else if(id==R.id.help_circle){
+            Intent i=new Intent(WelcomeCandidate.this,JobsOnWeb.class);
+            startActivity(i);
         }
+
         else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {

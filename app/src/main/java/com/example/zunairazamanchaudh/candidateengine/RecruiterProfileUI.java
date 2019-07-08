@@ -71,6 +71,13 @@ String creatorid;
     private String country;
     private String state;
     private String zipcode;
+    private String rfirstname;
+    private String rlastname;
+    private String rphone;
+    private String remail;
+    private String rimage;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -299,7 +306,7 @@ String key;
         DatabaseReference mDatabase=FirebaseDatabase.getInstance().getReference();
         key=mDatabase.child("Followers").push().getKey();
         ja.setFollowid(key);
-        String user_id=FirebaseAuth.getInstance().getCurrentUser().getUid();
+        final String user_id=FirebaseAuth.getInstance().getCurrentUser().getUid();
         mDatabase.child("Followers")
                 .child(key)
                 .setValue(ja);
@@ -514,6 +521,96 @@ String key;
 
                     }
                 });
+                Query query3 = reference.child("RecruiterUser")
+                        .orderByKey()
+                        .equalTo(creatorid);
+                query3.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        if(dataSnapshot.getValue()!=null){
+                            //this loop will return a single result
+                            for(DataSnapshot singleSnapshot: dataSnapshot.getChildren()){
+                                RecruiterUser user=singleSnapshot.getValue(RecruiterUser.class);
+                                rfirstname=user.getFirstname();
+                                rlastname=user.getLastname();
+                                rphone=user.getPhone();
+                                remail=user.getEmail();
+                                rimage=user.getProfile_image();
+                                Map<String, Object> postValues = new HashMap<String,Object>();
+                                Map<String, Object> postValues1 = new HashMap<String,Object>();
+                                Map<String, Object> postValues2 = new HashMap<String,Object>();
+                                Map<String, Object> postValues3 = new HashMap<String,Object>();
+                                Map<String, Object> postValues4 = new HashMap<String,Object>();
+
+                                postValues.put("rfirstname",rfirstname);
+                                postValues1.put("rlastname",rlastname);
+                                postValues2.put("rphone",rphone);
+                                postValues3.put("remail",remail);
+                                postValues4.put("rimage",rimage);
+                                FirebaseDatabase.getInstance().getReference()
+                                        .child("RecruiterFollowers")
+                                        .child(creatorid)
+                                        .child(key)
+                                        .updateChildren(postValues);
+                                FirebaseDatabase.getInstance().getReference()
+                                        .child("Followers")
+                                        .child(key)
+                                        .updateChildren(postValues);
+
+
+                                FirebaseDatabase.getInstance().getReference()
+                                        .child("RecruiterFollowers")
+                                        .child(creatorid)
+                                        .child(key)
+                                        .updateChildren(postValues1);
+                                FirebaseDatabase.getInstance().getReference()
+                                        .child("Followers")
+                                        .child(key)
+                                        .updateChildren(postValues1);
+
+
+                                FirebaseDatabase.getInstance().getReference()
+                                        .child("RecruiterFollowers")
+                                        .child(creatorid)
+                                        .child(key)
+                                        .updateChildren(postValues2);
+                                FirebaseDatabase.getInstance().getReference()
+                                        .child("Followers")
+                                        .child(key)
+                                        .updateChildren(postValues2);
+
+
+                                FirebaseDatabase.getInstance().getReference()
+                                        .child("RecruiterFollowers")
+                                        .child(creatorid)
+                                        .child(key)
+                                        .updateChildren(postValues3);
+                                FirebaseDatabase.getInstance().getReference()
+                                        .child("Followers")
+                                        .child(key)
+                                        .updateChildren(postValues3);
+
+                                FirebaseDatabase.getInstance().getReference()
+                                        .child("RecruiterFollowers")
+                                        .child(creatorid)
+                                        .child(key)
+                                        .updateChildren(postValues4);
+                                FirebaseDatabase.getInstance().getReference()
+                                        .child("Followers")
+                                        .child(key)
+                                        .updateChildren(postValues4);
+
+
+                            }}else {}
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
+
+
                 imagebutton4followme.setImageResource(R.drawable.followed);
                 imagebutton4followme.setClickable(false);
                 Toast.makeText(RecruiterProfileUI.this,"Congratulations you are following this recruiter to get job updates",Toast.LENGTH_SHORT).show();

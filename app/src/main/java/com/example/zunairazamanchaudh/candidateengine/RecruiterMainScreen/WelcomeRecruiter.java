@@ -32,6 +32,7 @@ import com.example.zunairazamanchaudh.candidateengine.RecruiterMainScreen.JobBoa
 import com.example.zunairazamanchaudh.candidateengine.RecruiterMainScreen.JobBoardFolder.WelcomeAddJob;
 import com.example.zunairazamanchaudh.candidateengine.RecruiterMainScreen.modelRecruiter.CVsview;
 import com.example.zunairazamanchaudh.candidateengine.RecruiterMainScreen.modelRecruiter.JobPostedview;
+import com.example.zunairazamanchaudh.candidateengine.ViewRecruiterFollowersList;
 import com.example.zunairazamanchaudh.candidateengine.WelcomeCandidate;
 import com.example.zunairazamanchaudh.candidateengine.databinding.ActivityWelcomeRecruiterBinding;
 import com.example.zunairazamanchaudh.candidateengine.util.UniversalImageLoader;
@@ -108,7 +109,7 @@ public class WelcomeRecruiter extends AppCompatActivity implements IMainActivity
                     return true;
                 case R.id.navigation_cvfolder:
                     toolbar.setTitle("CV Folder");
-                   fragment2=new CVFolder();
+                   fragment2=new CVFolder2();
                     ft2 = getSupportFragmentManager().beginTransaction();
                     ft2.replace(R.id.main_contentRecruiter, fragment2);
                     ft2.addToBackStack(null);
@@ -208,6 +209,10 @@ public class WelcomeRecruiter extends AppCompatActivity implements IMainActivity
 
         } else if (id == R.id.nav_sendRecruiter) {
 
+        }else if(id==R.id.qrscan){
+            Intent i=new Intent(WelcomeRecruiter.this, ViewRecruiterFollowersList.class);
+            i.putExtra("intent_recruiterid",FirebaseAuth.getInstance().getCurrentUser().getUid());
+            startActivity(i);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layoutRecruiter);

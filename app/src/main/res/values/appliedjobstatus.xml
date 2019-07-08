@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="appliedjobstatus">
+        <item>submitted</item>
+        <item>Hired</item>
+        <item>Shortlisted</item>
+        <item>Under Evaluation</item>
+        <item>Not Interested</item>
+    </string-array>
+</resources>

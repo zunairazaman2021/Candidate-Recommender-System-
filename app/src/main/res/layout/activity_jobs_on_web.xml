@@ -2,10 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ViewRecruiterFollowersList">
+    tools:context=".JobsOnWeb">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbarfilterjob"
         android:layout_width="match_parent"
@@ -17,33 +17,43 @@
             android:layout_height="wrap_content"
             android:background="@color/white">
             <Button
-                android:id="@+id/keybackview"
+                android:id="@+id/key1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/keyboardbackmove"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="I am Following"
+                android:text="Jobs available on Web"
                 android:layout_gravity="center"
                 android:textColor="@color/darkblue"
                 android:textSize="18sp"
                 android:layout_marginLeft="30dp"
                 android:textStyle="bold"
-                android:id="@+id/toolbar_desctitle" />
-
+                android:id="@+id/toolbar_title" />
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/viewfollowersRecycler"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp">
+        <!-- <FrameLayout
+             android:layout_marginTop="20dp"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/somefilteration">
+         </FrameLayout> -->
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/mywebjob"
+            ></android.support.v7.widget.RecyclerView>
+
     </LinearLayout>
-</ScrollView>
+    </ScrollView>
 </LinearLayout>

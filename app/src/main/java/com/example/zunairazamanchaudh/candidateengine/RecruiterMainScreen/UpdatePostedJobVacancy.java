@@ -1,13 +1,12 @@
-
 package com.example.zunairazamanchaudh.candidateengine.RecruiterMainScreen;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -17,41 +16,46 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import jp.wasabeef.richeditor.RichEditor;
-
 import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.JobApplication;
 import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.JobPost;
-import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.RecruiterCompany;
 import com.example.zunairazamanchaudh.candidateengine.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
-public class JobPostVacancyActivity extends AppCompatActivity implements View.OnClickListener{
+import jp.wasabeef.richeditor.RichEditor;
+
+public class UpdatePostedJobVacancy extends AppCompatActivity implements View.OnClickListener{
     private RichEditor mEditor,mEditor1;
     private TextView mPreview,mPreview1;
     Spinner country,gender,experiencelevel,jobtype;
     TextInputEditText companyname,yourname,phone,jobtitle,city,noOfvacancies,salaryperMonth,
-    minDegree,maxDegree,skills,candidateNationality;
+            minDegree,maxDegree,skills,candidateNationality;
     Button btnpublish;
     String inputDescr;
     String inputCandidDescr;
     ProgressBar mProgressjob;
     String editjobid="null";
+    String keyappid="null";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_job_post_vacancy);
+        setContentView(R.layout.activity_update_posted_job_vacancy);
         setupFirebaseRecruiterAuth();
+        editjobid=getIntent().getStringExtra("edit_jobid");
+        getjobdata();
         btnpublish=(Button)findViewById(R.id.publishJob);
         btnpublish.setOnClickListener(this);
         mProgressjob=(ProgressBar)findViewById(R.id.progressbarPublishJob);
@@ -83,7 +87,7 @@ public class JobPostVacancyActivity extends AppCompatActivity implements View.On
         mEditor.setBackgroundColor(Color.BLUE);
         mEditor.setBackgroundResource(R.drawable.bg);
         mEditor.setPadding(10, 10, 10, 10);
-      //  mEditor.setBackground("https://raw.githubusercontent.com/wasabeef/art/master/chip.jpg");
+        //  mEditor.setBackground("https://raw.githubusercontent.com/wasabeef/art/master/chip.jpg");
         mEditor.setPlaceholder("Insert text here...");
         //mEditor.setInputEnabled(false);
 //////////////////// For Editor Desired candidate profile
@@ -102,14 +106,14 @@ public class JobPostVacancyActivity extends AppCompatActivity implements View.On
         mPreview = (TextView) findViewById(R.id.preview);
         mEditor.setOnTextChangeListener(new RichEditor.OnTextChangeListener() {
             @Override public void onTextChange(String text) {
-             // mPreview.setText(text);
-            inputDescr=text;
+                // mPreview.setText(text);
+                inputDescr=text;
             }
         });
         mPreview1 = (TextView) findViewById(R.id.preview1);
         mEditor1.setOnTextChangeListener(new RichEditor.OnTextChangeListener() {
             @Override public void onTextChange(String text) {
-           //     mPreview.setText(text);
+                //     mPreview.setText(text);
                 inputCandidDescr=text;
             }
         });
@@ -300,108 +304,149 @@ public class JobPostVacancyActivity extends AppCompatActivity implements View.On
                 mEditor.insertTodo();
             }
         });
-hideSoftKeyboard();
+        hideSoftKeyboard();
 
     }
+
+
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.publishJob:
                 if((!isEmpty(companyname.getText().toString())) &&
-                (!isEmpty(yourname.getText().toString())) && (!isEmpty(phone.getText().toString()))
+                        (!isEmpty(yourname.getText().toString())) && (!isEmpty(phone.getText().toString()))
                         &&(!isEmpty(jobtitle.getText().toString())) && (!isEmpty(city.getText().toString()))
                         && (!isEmpty(noOfvacancies.getText().toString())) && (!isEmpty(salaryperMonth.getText().toString()))
                         && (!isEmpty(minDegree.getText().toString())) && (!isEmpty(maxDegree.getText().toString()))
                         && (!isEmpty(skills.getText().toString())) && (!isEmpty(candidateNationality.getText().toString()))
                         ){
-                    saveJobPostVacancy();
+                    updateJobPostVacancy();
                 }else{
-                    Toast.makeText(JobPostVacancyActivity.this,"Fields cannot be null",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UpdatePostedJobVacancy.this,"Fields cannot be null",Toast.LENGTH_SHORT).show();
                 }
                 break;
         }
     }
+
+    private void getjobdata(){
+        DatabaseReference reference=FirebaseDatabase.getInstance().getReference()
+                .child("jobPost")
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .child(editjobid);
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
+                    JobPost post=dataSnapshot1.getValue(JobPost.class);
+                    companyname.setText(post.getCompanyName());
+                    jobtitle.setText(post.getJobtitle());
+                    yourname.setText(post.getYourName());
+                    phone.setText(post.getPhone());
+                    city.setText(post.getCity());
+                    noOfvacancies.setText(post.getNoOfvacancie());
+                    salaryperMonth.setText(String.valueOf(post.getSalary()));
+                            minDegree.setText(post.getMinDegree());
+                            maxDegree.setText(post.getMaxDegree());
+                            skills.setText(post.getSkills());
+                            candidateNationality.setText(post.getNationality());
+                            mEditor.setPlaceholder(post.getJobdescription());
+                            mEditor1.setPlaceholder(post.getCandidateDescription());
+                    Toast.makeText(UpdatePostedJobVacancy.this,"Job data displayed",Toast.LENGTH_SHORT).show();
+                }
+                           }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                Toast.makeText(UpdatePostedJobVacancy.this,"Could not load job data",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
     String key;
-    private void saveJobPostVacancy(){
-         JobPost sauser=new JobPost();
-         sauser.setCompanyName(companyname.getText().toString());
-         sauser.setYourName(yourname.getText().toString());
-         sauser.setJobtitle(jobtitle.getText().toString());
-         sauser.setCity(city.getText().toString());
-         sauser.setCountry(country.getSelectedItem().toString());
-         if(experiencelevel.getSelectedItem().toString()=="Select experience level required"){
-             sauser.setExperience("none");
-         }else {
-             sauser.setExperience(experiencelevel.getSelectedItem().toString());
-         }
-         sauser.setJobdescription(inputDescr);
-         sauser.setCandidateDescription(inputCandidDescr);
-         if(gender.getSelectedItem().toString()=="Select Gender"){
-             sauser.setGenderPreference("none");
-         }else {
-             sauser.setGenderPreference(gender.getSelectedItem().toString());
-         }
+    private void updateJobPostVacancy(){
+        JobPost sauser=new JobPost();
+        sauser.setCompanyName(companyname.getText().toString());
+        sauser.setYourName(yourname.getText().toString());
+        sauser.setJobtitle(jobtitle.getText().toString());
+        sauser.setCity(city.getText().toString());
+        sauser.setCountry(country.getSelectedItem().toString());
+        if(experiencelevel.getSelectedItem().toString()=="Select experience level required"){
+            sauser.setExperience("none");
+        }else {
+            sauser.setExperience(experiencelevel.getSelectedItem().toString());
+        }
+        sauser.setJobdescription(inputDescr);
+        sauser.setCandidateDescription(inputCandidDescr);
+        if(gender.getSelectedItem().toString()=="Select Gender"){
+            sauser.setGenderPreference("none");
+        }else {
+            sauser.setGenderPreference(gender.getSelectedItem().toString());
+        }
         Calendar calendar = Calendar.getInstance();
         SimpleDateFormat mdformat = new SimpleDateFormat("yyyy / MM / dd ");
         String strDate = mdformat.format(calendar.getTime());
-         sauser.setCreatedOn(strDate);
-         if(jobtype.getSelectedItem().toString()=="Select job type"){
-             sauser.setJobtype("Not specified");
-         }else {
-             sauser.setJobtype(jobtype.getSelectedItem().toString());
-         }
-         sauser.setPhone(phone.getText().toString());
-         sauser.setMinDegree(minDegree.getText().toString());
-         sauser.setMaxDegree(maxDegree.getText().toString());
-         sauser.setSkills(skills.getText().toString());
-         sauser.setNationality(candidateNationality.getText().toString());
-         sauser.setNoOfvacancie(Integer.valueOf(noOfvacancies.getText().toString()));
-         sauser.setSalary(Double.valueOf(salaryperMonth.getText().toString()));
-         sauser.setStatus(true);
-         sauser.setCreator_id(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        sauser.setCreatedOn(strDate);
+        if(jobtype.getSelectedItem().toString()=="Select job type"){
+            sauser.setJobtype("Not specified");
+        }else {
+            sauser.setJobtype(jobtype.getSelectedItem().toString());
+        }
+        sauser.setPhone(phone.getText().toString());
+        sauser.setMinDegree(minDegree.getText().toString());
+        sauser.setMaxDegree(maxDegree.getText().toString());
+        sauser.setSkills(skills.getText().toString());
+        sauser.setNationality(candidateNationality.getText().toString());
+        sauser.setNoOfvacancie(Integer.valueOf(noOfvacancies.getText().toString()));
+        sauser.setSalary(Double.valueOf(salaryperMonth.getText().toString()));
+        sauser.setStatus(true);
+        sauser.setCreator_id(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
-        DatabaseReference mDatabase=FirebaseDatabase.getInstance().getReference();
-        key=mDatabase.child("Posts").push().getKey();
+        DatabaseReference mDatabase= FirebaseDatabase.getInstance().getReference();
+    //    key=mDatabase.child("Posts").push().getKey();
         sauser.setJobpost_id(key);
         String user_id=FirebaseAuth.getInstance().getCurrentUser().getUid();
-          mDatabase.child("Posts")
-                  .child(key)
-                  .setValue(sauser);
+        mDatabase.child("Posts")
+                .child(editjobid)
+                .setValue(sauser);
         FirebaseDatabase.getInstance().getReference()
                 .child("JobPost")
                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                .child(key)
+                .child(editjobid)
                 .setValue(sauser).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 String id=FirebaseAuth.getInstance().getCurrentUser().getUid();
-               JobApplication jb=new JobApplication();
-               jb.setCv_id("000");
-               jb.setJob_id(key);
-               jb.setRecruiter_id(FirebaseAuth.getInstance().getCurrentUser().getUid());
-                String keyapp=FirebaseDatabase.getInstance().getReference().child("AllApplications").push().getKey();
-                jb.setApplication_id(key);
-                jb.setStatus("none");
-                final String user_id=FirebaseAuth.getInstance().getCurrentUser().getUid();
-                FirebaseDatabase.getInstance().getReference().child("AllApplications")
-                        .child(keyapp)
-                        .setValue(jb);
+               // JobApplication jb=new JobApplication();
+               // jb.setCv_id("000");
+               // jb.setJob_id(editjobid);
+               // jb.setRecruiter_id(FirebaseAuth.getInstance().getCurrentUser().getUid());
+               // FirebaseDatabase.getInstance().getReference().child("AllApplications").orderByChild("");
 
+                //jb.setApplication_id(editjobid);
+                //jb.setStatus("true");
+                //final String user_id=FirebaseAuth.getInstance().getCurrentUser().getUid();
+               /*Map<String, Object> updates = new HashMap<String,Object>();
+                   updates.put("status","true");
+                FirebaseDatabase.getInstance().getReference().child("AllApplications")
+                        .child(keyappid)
+                        .updateChildren(updates);
                 FirebaseDatabase.getInstance().getReference()
                         .child("jobApplication")
                         .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                        .child(key).child(keyapp).setValue(jb);
+                        .child(editjobid).child(keyappid).updateChildren(updates);
+               */
                 //   redirectjbpreferenceFragment();
-                Intent i=new Intent(JobPostVacancyActivity.this,WelcomeRecruiter.class);
+                Intent i=new Intent(UpdatePostedJobVacancy.this,WelcomeRecruiter.class);
                 startActivity(i);
-                Toast.makeText(JobPostVacancyActivity.this,"New Job has been published!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(UpdatePostedJobVacancy.this,"Job updated!",Toast.LENGTH_SHORT).show();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
 
-                Toast.makeText(JobPostVacancyActivity.this,"something went wrong",Toast.LENGTH_SHORT).show();
+                Toast.makeText(UpdatePostedJobVacancy.this,"something went wrong",Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -427,8 +472,8 @@ hideSoftKeyboard();
                 } else {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged:signed_out");
-                    Toast.makeText(JobPostVacancyActivity.this, "Signed out", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(JobPostVacancyActivity.this, LoginRecruiter.class);
+                    Toast.makeText(UpdatePostedJobVacancy.this, "Signed out", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(UpdatePostedJobVacancy.this, LoginRecruiter.class);
                     startActivity(intent);
                     finish();
                 }
@@ -470,4 +515,5 @@ hideSoftKeyboard();
     private boolean isEmpty(String string){
         return string.equals("");
     }
+
 }

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/webgotoURL"
+        android:layout_width="120dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button_round"
+        android:textColor="@color/white"
+        android:text="Apply for Job" />
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_marginTop="15dp"
+        android:id="@+id/webtitle"
+        android:textSize="18sp"
+        android:paddingLeft="4dp"
+        android:textColor="@color/darkblue"/>
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:drawableLeft="@drawable/room"
+        android:layout_marginTop="4dp"
+        android:id="@+id/weblocation"
+        android:layout_below="@+id/webtitle"
+        android:textSize="18sp"
+        android:paddingLeft="4dp"
+        android:textColor="@color/darkblue"/>
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:drawableLeft="@drawable/access_time"
+        android:layout_marginTop="4dp"
+        android:id="@+id/webtime"
+        android:layout_below="@+id/weblocation"
+        android:textSize="18sp"
+        android:paddingLeft="4dp"
+        android:textColor="@color/darkblue"/>
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_width="150dp"
+        android:layout_height="10dp"
+        android:text=""
+        android:drawableLeft="@drawable/publicglobe"
+        android:layout_marginTop="4dp"
+        android:id="@+id/webURL"
+        android:visibility="invisible"
+        android:layout_below="@+id/webtime"
+        android:textSize="18sp"
+        android:textColor="@color/darkblue"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/webURL"
+        android:layout_marginTop="4dp"
+        android:paddingLeft="10dp"
+        android:text="Job Description"
+        android:id="@+id/jdsv"
+        android:textColor="@color/darkblue"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:maxLines="5"
+        android:paddingRight="10dp"
+        android:layout_below="@+id/jdsv"
+        android:drawableLeft="@drawable/bulletedlist"
+        android:layout_marginTop="2dp"
+        android:text=""
+        android:id="@+id/webdescription"/>
+    <!--
+    <ImageButton
+        android:id="@+id/show2v"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textdescripv"
+        android:background="@drawable/arrowdown"
+        android:clickable="true" />
+     -->
+    <View
+        android:id="@+id/view2v"
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:layout_below="@+id/textdescripv"
+        android:layout_marginTop="5dp"
+        android:background="@color/darkgray" />
+<!--
+    <ImageButton
+        android:id="@+id/hide2v"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textdescripv"
+        android:background="@drawable/arrowup"
+        android:clickable="true"
+        android:visibility="invisible" />
+-->
+
+</RelativeLayout>

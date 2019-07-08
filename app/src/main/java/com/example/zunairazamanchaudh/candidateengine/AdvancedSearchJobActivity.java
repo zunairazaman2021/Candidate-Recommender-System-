@@ -40,7 +40,7 @@ Button backtofilter,filtersearch;
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.backToFilterJob:
-                Intent b=new Intent(this,FilterJobs.class);
+                Intent b=new Intent(this,WelcomeCandidate.class);
                 startActivity(b);
                 finish();
                 break;

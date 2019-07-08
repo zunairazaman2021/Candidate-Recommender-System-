@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RecruiterMainScreen.CandidatesApplicationManagement">
+    <LinearLayout
+        android:background="@color/lightGrey"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:id="@+id/pjdTitle"
+            android:text="Android Developer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/darkgray"
+            android:textSize="15sp"
+            android:id="@+id/pjdCity"
+            android:text="Gujrat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:layout_marginTop="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:id="@+id/pjdViewJobDetail"
+                android:textColor="@color/blue"
+                android:text="View job details"
+                android:textSize="15sp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/pjdPostSimilarJob"
+                android:textSize="15sp"
+                android:textColor="@color/blue"
+                android:text="Post a similar job"
+                android:layout_width="150dp"
+                android:layout_toEndOf="@+id/pjdViewJobDetail"
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/pjdViewJobDetail" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/pjdStatus"
+            android:textColor="@color/darkgray"
+            android:text="View Applications by Evaluation Status: "
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/pjdspinJobStatus"
+            android:layout_marginTop="1dp"
+            style="@android:style/Widget.Holo.Light.Spinner"
+            android:layout_width="match_parent"
+            android:spinnerMode="dialog"
+            android:entries="@array/appliedjobstatus"
+            android:layout_height="wrap_content">
+        </Spinner>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:id="@+id/linearview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/bluelike1"
+                    android:id="@+id/viewCandidate"
+                    android:layout_marginLeft="10dp"
+                    android:text="View Job Applicants"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycleJobApplicants"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

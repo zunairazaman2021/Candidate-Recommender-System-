@@ -32,7 +32,7 @@
     <item
         android:id="@+id/qrscanRecruiter"
         android:icon="@drawable/qrcodescan"
-        android:title="QR Scanner"
+        android:title="My Followers List"
         />
     <item
         android:id="@+id/ChangePasswordRecruiter"

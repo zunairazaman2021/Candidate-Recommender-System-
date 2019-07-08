@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ViewRecruiterFollowersList">
+    tools:context=".RecruiterMainScreen.MyFollwerListRecruiter">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbarfilterjob"
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="I am Following"
+                android:text="Following recruiters"
                 android:layout_gravity="center"
                 android:textColor="@color/darkblue"
                 android:textSize="18sp"
@@ -34,16 +34,16 @@
 
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/viewfollowersRecycler"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
-    </LinearLayout>
-</ScrollView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/viewfollowersRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/viewfollowing"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/view2v"
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:layout_marginTop="5dp"
+        android:layout_toLeftOf="@+id/showv"
+        android:background="@color/darkgray" />
+   <de.hdodenhof.circleimageview.CircleImageView
+       android:src="@drawable/crs2icon"
+       android:layout_width="82dp"
+       android:layout_marginLeft="10dp"
+       android:layout_marginTop="10dp"
+       android:layout_below="@+id/view2v"
+       android:id="@+id/image"
+       android:layout_height="82dp" />
+    <TextView
+    android:layout_marginLeft="10dp"
+    android:textColor="@color/purple1"
+    android:text="Name"
+    android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
+    android:id="@+id/name"
+        android:drawableLeft="@drawable/baseline_perm_identity"
+        android:drawableTint="@color/bluelike1"
+    android:layout_marginTop="20dp"
+    android:layout_width="wrap_content"
+    android:layout_toRightOf="@+id/image"
+    android:layout_height="wrap_content" />
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/purple1"
+        android:text="loc"
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
+        android:id="@+id/loc"
+        android:layout_below="@+id/name"
+        android:layout_marginTop="4dp"
+        android:layout_width="wrap_content"
+        android:drawableTint="@color/bluelike1"
+        android:drawableLeft="@drawable/phonecall"
+        android:layout_toRightOf="@+id/image"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/purple1"
+        android:text="email"
+        android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
+        android:id="@+id/email"
+        android:layout_below="@+id/loc"
+        android:layout_marginTop="4dp"
+        android:drawableTint="@color/bluelike1"
+        android:layout_width="wrap_content"
+        android:drawableLeft="@drawable/emailview"
+        android:layout_toRightOf="@+id/image"
+        android:layout_height="wrap_content" />
+<TextView
+    android:layout_below="@+id/image"
+    android:id="@+id/recruiterid"
+    android:layout_marginTop="7dp"
+    android:visibility="invisible"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+</RelativeLayout>

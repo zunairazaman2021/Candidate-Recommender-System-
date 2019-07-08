@@ -165,8 +165,8 @@ public class ApplyHere extends AppCompatActivity {
         ja.setJob_id(jobid);
         ja.setUseridd(FirebaseAuth.getInstance().getCurrentUser().getUid());
         ja.setRecruiter_id(creatorid);
-      //  key=mDatabase.child("AllApplications").push().getKey();
-        key=FirebaseAuth.getInstance().getCurrentUser().getUid();
+        key=mDatabase.child("AllApplications").push().getKey();
+      //  key=FirebaseAuth.getInstance().getCurrentUser().getUid();
         ja.setApplication_id(FirebaseAuth.getInstance().getCurrentUser().getUid());
         final String user_id=FirebaseAuth.getInstance().getCurrentUser().getUid();
         mDatabase.child("AllApplications")
@@ -426,7 +426,6 @@ public class ApplyHere extends AppCompatActivity {
                                         .child(jobid)
                                         .child(key)
                                         .updateChildren(postValues);
-
                                 FirebaseDatabase.getInstance().getReference()
                                         .child("AllApplications")
                                         .child(key)

@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-</android.support.constraint.ConstraintLayout>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/relivefolder"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+        <ImageButton
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/cvfoldimage2"
+            android:tint="@color/darkblue"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/foldericon"/>
+        <TextView
+            android:text="@{cv.cvTitle}"
+            android:id="@+id/cvfolderTitle2"
+            android:layout_marginLeft="10dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_toEndOf="@+id/cvfoldimage2"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="4dp"
+            android:layout_toRightOf="@+id/cvfoldimage2" />
+        <TextView
+            android:id="@+id/cvfolderNumberofCVs2"
+            android:text="0 CVs"
+            android:layout_marginLeft="10dp"
+            android:textSize="15sp"
+            android:layout_below="@+id/cvfolderTitle2"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/darkgray"
+            android:layout_toEndOf="@+id/cvfoldimage2"
+            android:layout_alignParentRight="true"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/cvfoldimage2" />
+    <TextView
+        android:id="@+id/jobid"
+        android:text="under job"
+        android:visibility="invisible"
+        android:layout_below="@+id/cvfoldimage2"
+        android:textColor="@color/lightGrey"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content" />
+    </RelativeLayout>

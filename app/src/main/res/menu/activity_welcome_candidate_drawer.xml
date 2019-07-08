@@ -13,8 +13,8 @@
         />
     <item
         android:id="@+id/whoviewedcv"
-        android:icon="@drawable/eyeview"
-        android:title="Who viewed my CV"
+        android:icon="@drawable/followed"
+        android:title="Following Recuiters"
         />
     <item
         android:id="@+id/nav_gallery"
@@ -51,8 +51,8 @@
         />
     <item
         android:id="@+id/help_circle"
-        android:icon="@drawable/helpcircle"
-        android:title="Help and Feedback"
+        android:icon="@drawable/publicglobe"
+        android:title="Jobs on Web"
         />
 
     <item

@@ -58,7 +58,7 @@ public class PostedJobs2Fragment extends Fragment {
 
         progressDialog.setMessage("Loading Data from Firebase Database");
 
-        progressDialog.show();
+//        progressDialog.show();
         databaseReference = FirebaseDatabase.getInstance().getReference()
                 .child("JobPost").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -76,13 +76,13 @@ public class PostedJobs2Fragment extends Fragment {
 
                 recyclerView.setAdapter(adapter);
 
-                progressDialog.dismiss();
+  //              progressDialog.dismiss();
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
-                progressDialog.dismiss();
+    //            progressDialog.dismiss();
 
             }
         });

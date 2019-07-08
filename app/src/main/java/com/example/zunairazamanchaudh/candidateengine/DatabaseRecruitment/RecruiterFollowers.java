@@ -19,12 +19,20 @@ public class RecruiterFollowers {
     private String state;
     private String zipcode;
 
+    private String rfirstname;
+    private String rlastname;
+    private String rphone;
+    private String remail;
+    private String rimage;
+
     public RecruiterFollowers(){}
 
-    public RecruiterFollowers(String recruiterid, String followeddate, String followingstatus, String followid,
-                              String firstname, String lastname, String profile_image, String security_level,
-                              String dob, String phone, String email, String nationality,
-                              String user_id, String city, String country, String state, String zipcode) {
+    public RecruiterFollowers(String recruiterid, String followeddate, String followingstatus,
+                              String followid, String firstname, String lastname, String profile_image,
+                              String security_level, String dob, String phone, String email,
+                              String nationality, String user_id, String city, String country,
+                              String state, String zipcode, String rfirstname,
+                              String rlastname, String rphone, String remail, String rimage) {
         this.recruiterid = recruiterid;
         this.followeddate = followeddate;
         this.followingstatus = followingstatus;
@@ -42,6 +50,51 @@ public class RecruiterFollowers {
         this.country = country;
         this.state = state;
         this.zipcode = zipcode;
+        this.rfirstname = rfirstname;
+        this.rlastname = rlastname;
+        this.rphone = rphone;
+        this.remail = remail;
+        this.rimage = rimage;
+    }
+
+    public String getRfirstname() {
+        return rfirstname;
+    }
+
+    public String getRlastname() {
+        return rlastname;
+    }
+
+    public String getRphone() {
+        return rphone;
+    }
+
+    public String getRemail() {
+        return remail;
+    }
+
+    public String getRimage() {
+        return rimage;
+    }
+
+    public void setRfirstname(String rfirstname) {
+        this.rfirstname = rfirstname;
+    }
+
+    public void setRlastname(String rlastname) {
+        this.rlastname = rlastname;
+    }
+
+    public void setRphone(String rphone) {
+        this.rphone = rphone;
+    }
+
+    public void setRemail(String remail) {
+        this.remail = remail;
+    }
+
+    public void setRimage(String rimage) {
+        this.rimage = rimage;
     }
 
     public void setCity(String city) {
