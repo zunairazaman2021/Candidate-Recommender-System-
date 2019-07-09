@@ -77,7 +77,13 @@
         <activity android:name=".RecruiterMainScreen.JobBoardFolder.AppliedCandidateProfileView" />
         <activity android:name=".JobsOnWeb" />
         <activity android:name=".RecruiterMainScreen.UpdatePostedJobVacancy" />
-        <activity android:name=".RecruiterMainScreen.MyFollwerListRecruiter"></activity>
+        <activity android:name=".RecruiterMainScreen.MyFollwerListRecruiter" />
+        <activity android:name=".SearchWebScrappedJobs" />
+        <activity android:name=".JobFilterationWebScrapping" />
+        <activity android:name=".EditPersonalInfoJobseeker" />
+        <activity android:name=".JobAlertsJobseeker" />
+        <activity android:name=".SkillsEdit" />
+        <activity android:name=".languagesKnow"></activity>
     </application>
 
 </manifest>

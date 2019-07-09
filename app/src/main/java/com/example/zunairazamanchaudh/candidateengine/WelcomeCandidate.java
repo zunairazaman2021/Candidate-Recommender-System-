@@ -19,7 +19,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
+import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.users;
 import com.example.zunairazamanchaudh.candidateengine.RecruiterMainScreen.MyFollwerListRecruiter;
 import com.example.zunairazamanchaudh.candidateengine.ResumeManager.CVDashBoard;
 import com.example.zunairazamanchaudh.candidateengine.ResumeManager.MainCVTitle;
@@ -31,6 +33,15 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class WelcomeCandidate extends AppCompatActivity
         implements IMainActivity,NavigationView.OnNavigationItemSelectedListener  {
@@ -57,6 +68,34 @@ public class WelcomeCandidate extends AppCompatActivity
 
     }
 
+    private void getbasic(){
+        DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference();
+        Query query=databaseReference.child("users").orderByKey()
+                .equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
+                    users users=dataSnapshot1.getValue(users.class);
+                    nameJobseeker.setText(users.getFirstname()+" "+users.getLastname());
+                    textView.setText(users.getEmail());
+                    if(users.getProfile_image().equals("")){
+
+                    }else{
+                        Picasso.get().load(users.getProfile_image()).into(imageView);
+
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+    TextView textView,nameJobseeker;
+    CircleImageView imageView;
   ActivityWelcomeCandidateBinding mBinding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,9 +103,12 @@ public class WelcomeCandidate extends AppCompatActivity
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_welcome_candidate);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        textView=(TextView)findViewById(R.id.textView);
+        nameJobseeker=(TextView)findViewById(R.id.nameJobseeker);
+        imageView=(CircleImageView)findViewById(R.id.imageView);
 
         setupFirebaseAuth();
+        getbasic();
 //getUserDetails();
     //    setUserDetails();
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -74,12 +116,7 @@ public class WelcomeCandidate extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
         Log.d(TAG, "onCreate: started.");
-
-
-
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     setFragment(new DataFragment());
@@ -143,11 +180,13 @@ public class WelcomeCandidate extends AppCompatActivity
             ft.commit();
 
         } else if (id == R.id.nav_slideshow) {
-            Fragment fragment=new ViewRecommendJobDetail();
+          /*  Fragment fragment=new ViewRecommendJobDetail();
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.main_content, fragment);
             ft.commit();
-
+*/
+          Intent i=new Intent(WelcomeCandidate.this,SearchWebScrappedJobs.class);
+          startActivity(i);
 
         } else if(id==R.id.whoviewedcv){
             Intent i=new Intent(WelcomeCandidate.this, MyFollwerListRecruiter.class);
@@ -157,8 +196,6 @@ public class WelcomeCandidate extends AppCompatActivity
         else if (id == R.id.nav_manage) {
             Intent ii=new Intent(WelcomeCandidate.this, MainCVTitle.class);
             startActivity(ii);
-
-
         }else if (id == R.id.qrscan) {
             Intent ii=new Intent(WelcomeCandidate.this, CoverLetterActivity.class);
             startActivity(ii);

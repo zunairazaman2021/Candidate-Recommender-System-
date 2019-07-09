@@ -10,6 +10,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.MediaStore;
+import android.renderscript.Sampler;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -160,12 +161,10 @@ DatabaseReference ref;
         // Required empty public constructor
     }
 
-    private void initImageLoaderr(){
-        UniversalImageLoader imageLoader = new UniversalImageLoader(getActivity());
-        ImageLoader.getInstance().init(imageLoader.getConfig());
-    }
     public static final int  GALLERY_INTENT = 5467;//random number
     public static final int CAMERA_REQUEST_CODE = 8352;//random number
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -186,7 +185,6 @@ DatabaseReference ref;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        initImageLoaderr();
 
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_profile, container, false);
@@ -264,25 +262,29 @@ DatabaseReference ref;
 //      loadWithGlide();
     //    showUploadedImage();
 //downloadURL();
-  picpic();
+//  picpic();
+        displayprofilephoto();
         hideSoftKeyboard();
         return view;
     }
-
+private  void displayprofilephoto(){
+        DatabaseReference databaseReference=FirebaseDatabase.getInstance().getReference();
+}
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.button26:
-              JobAlerts jobAlerts=new JobAlerts();
-              jobAlerts.show(getFragmentManager(),"dilog_job_alerts");
+             Intent i=new Intent(getActivity(),JobAlertsJobseeker.class);
+             startActivity(i);
                 break;
             case R.id.button24:
-                SkillsDialog skilly=new SkillsDialog();
-                skilly.show(getActivity().getSupportFragmentManager(),"skill_add_alerts");
+                Intent ii=new Intent(getActivity(),SkillsEdit.class);
+                startActivity(ii);
                 break;
             case R.id.button25:
-                LanguageDialog lang=new LanguageDialog();
-                lang.show(getFragmentManager(),"language_add_alerts");
+                Intent iil=new Intent(getActivity(),languagesKnow.class);
+                startActivity(iil);
+
                 break;
             case R.id.button22P:
                 Intent intent=new Intent(Intent.ACTION_PICK);
@@ -290,27 +292,26 @@ DatabaseReference ref;
                 startActivityForResult(intent,GALLERY_INTENT);
                 break;
             case R.id.editpersonalinfo:
-                EditPersonalInfoDialog langeidt=new EditPersonalInfoDialog();
-                langeidt.show(getFragmentManager(),"language_eidt_alerts");
-
+                Intent ei=new Intent(getActivity(),EditPersonalInfoJobseeker.class);
+                startActivity(ei);
                 break;
             case R.id.editcontactinfo:
                 break;
             case R.id.editlanguageinfo:
-                LanguageDialog langeiidt=new LanguageDialog();
-                langeiidt.show(getFragmentManager(),"language_eidt_alerts");
+                Intent iil1=new Intent(getActivity(),languagesKnow.class);
+                startActivity(iil1);
                 break;
             case R.id.editpreferedjobinfo:
                 Jobpreferencedialog jobpreferencedialog=new Jobpreferencedialog();
                 jobpreferencedialog.show(getFragmentManager(),"dialog_job_preferences");
                 break;
             case R.id.editskillinfo:
-                SkillsDialog skillsDialog=new SkillsDialog();
-                skillsDialog.show(getFragmentManager(),"dialog_skills_jobseeker");
+                Intent iei=new Intent(getActivity(),SkillsEdit.class);
+                startActivity(iei);
                 break;
             case R.id.editrecomendinfo:
-                JobAlerts jobAlertts=new JobAlerts();
-                jobAlertts.show(getActivity().getSupportFragmentManager(),"dilog_edit_job_alerts");
+                Intent iir=new Intent(getActivity(),SearchWebScrappedJobs.class);
+                startActivity(iir);
                 break;
             case R.id.editexperienceinfo:
                 break;
@@ -404,47 +405,17 @@ DatabaseReference ref;
         });
     }
 Uri uriimage;
-    public void downloadURL(){
-        final StorageReference storageRef = FirebaseStorage.getInstance()
-                .getReference("Profile").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
-        storageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                uriimage=uri;
-                //imageView21P.setImageURI(uriimage);
-                Task<Uri> urlTask = storageRef.getDownloadUrl();
-                Uri firebaseURL = storageRef.getDownloadUrl().getResult();
-
-                ImageLoader.getInstance().displayImage(firebaseURL.toString(), imageView21P);
-
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception exception) {
-                // Handle any errors
-                Toast.makeText(getActivity(),"Could not load image : "+exception,Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 
     private void executeUploadTask(){
         showDialog();
-       // FilePaths filePaths = new FilePaths();
-//specify where the photo will be stored
-        final StorageReference storageReference = imagepath.child(System.currentTimeMillis()
+      final StorageReference storageReference = imagepath.child(System.currentTimeMillis()
                 + "." + getFileExtension(mSelectedImageUri));
 
         if(mBytes.length/MB < MB_THRESHHOLD) {
 
-            // Create file metadata including the content type
             StorageMetadata metadata = new StorageMetadata.Builder()
                     .setContentType("image/jpg")
                     .setContentLanguage("en") //see nodes below
-                    /*
-                    Make sure to use proper language code ("English" will cause a crash)
-                    I actually submitted this as a bug to the Firebase github page so it might be
-                    fixed by the time you watch this video. You can check it out at https://github.com/firebase/quickstart-unity/issues/116
-                     */
                     .setCustomMetadata("Mitch's special meta data", "JK nothing special here")
                     .setCustomMetadata("location", "Iceland")
                     .build();
@@ -452,25 +423,34 @@ Uri uriimage;
             UploadTask uploadTask = null;
 //            uploadTask = storageReference.putBytes(mBytes, metadata);
             uploadTask = storageReference.putBytes(mBytes); //without metadata
-            storageReference.putFile(mSelectedImageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+
+            storageReference.putFile(mSelectedImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
-                public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
-                 if(task.isSuccessful()){
-                         //Now insert the download url into the firebase database
-                       //  Task<Uri> urlTask = task.getResult().getStorage().getDownloadUrl();
-                         //Uri firebaseURL = urlTask.getResult();
-                         String urll=task.getResult().getStorage().getDownloadUrl().toString();
-                         Toast.makeText(getActivity(), "Upload Success", Toast.LENGTH_SHORT).show();
-                        // Log.d(TAG, "onSuccess: firebase download url : " + firebaseURL.toString());
-                         FirebaseDatabase.getInstance().getReference()
-                                 .child("uploadFoto")
-                                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                 .child("profile_image")
-                                 .setValue(urll);
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                    DatabaseReference imagestore=FirebaseDatabase.getInstance().getReference().child("uploadFoto")
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                    HashMap<String,String> hashMap=new HashMap<>();
+                    hashMap.put("profile_image",String.valueOf(uri));
+                    imagestore.setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                       Toast.makeText(getActivity(),"Image Uploaded",Toast.LENGTH_LONG).show();
+                        }
+                    });
 
-                         hideDialog();
+                    //users table
+                            DatabaseReference imagestore1=FirebaseDatabase.getInstance().getReference().child("users")
+                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                            HashMap<String,Object> hashMap1=new HashMap<>();
+                            hashMap1.put("profile_image",String.valueOf(uri));
+                            imagestore1.updateChildren(hashMap1);
+                      ///////
 
-                 }
+                        }
+                    });
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
@@ -492,45 +472,8 @@ Uri uriimage;
 
                 }
             });
-/*
-            uploadTask.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    //Now insert the download url into the firebase database
-                    Task<Uri> urlTask = taskSnapshot.getStorage().getDownloadUrl();
-                    Uri firebaseURL = urlTask.getResult();
-                    Toast.makeText(getActivity(), "Upload Success", Toast.LENGTH_SHORT).show();
-                    Log.d(TAG, "onSuccess: firebase download url : " + firebaseURL.toString());
-                    FirebaseDatabase.getInstance().getReference()
-                            .child("uploadFoto")
-                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                            .child("profile_image")
-                            .setValue(firebaseURL.toString());
 
-                    hideDialog();
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception exception) {
-                    Toast.makeText(getActivity(), "could not upload photo", Toast.LENGTH_SHORT).show();
-
-                    hideDialog();
-
-                }
-            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                    double currentProgress = (100 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
-                    if(currentProgress > (progress + 15)){
-                        progress = (100 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
-                        Log.d(TAG, "onProgress: Upload is " + progress + "% done");
-                        Toast.makeText(getActivity(), progress + "%", Toast.LENGTH_SHORT).show();
-                    }
-
-                }
-            })
-            ;
-  */      }else{
+          }else{
             Toast.makeText(getActivity(), "Image is too Large", Toast.LENGTH_SHORT).show();
         }
 
@@ -545,8 +488,8 @@ Uri uriimage;
             Uri selectedImageUri = data.getData();
             mSelectedImageUri=data.getData();
             //Log.d(TAG, "onActivityResult: image: " + selectedImageUri);
-           // imageView21P.setImageURI(selectedImageUri);
-                        ImageLoader.getInstance().displayImage(selectedImageUri.toString(),imageView21P);
+            imageView21P.setImageURI(selectedImageUri);
+           //             ImageLoader.getInstance().displayImage(selectedImageUri.toString(),imageView21P);
      uploadNewPhoto(selectedImageUri);
         //    Picasso.with(this).load(selectedImageUri).into(imageView21P);
                       //  StorageReference fileReference = imagepath.child(System.currentTimeMillis()
@@ -664,7 +607,13 @@ if(dataSnapshot.getValue()!=null){
                     national.setText(user.getNationality());
                     editPhoneP.setText(user.getPhone());
                     editEmailP.setText(user.getEmail());
-                    }}else {}
+//                    imageView21P.setImageURI(user.getProfile_image().toString());
+                     if(user.getProfile_image().equals("")){
+
+                     }else {
+                         Picasso.get().load(user.getProfile_image()).into(imageView21P);
+                     }
+                }}else {}
             }
 
             @Override

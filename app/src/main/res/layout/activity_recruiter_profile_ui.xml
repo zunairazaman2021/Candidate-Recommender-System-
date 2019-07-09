@@ -253,19 +253,18 @@
             app:srcCompat="@drawable/ic_twitter"
             tools:ignore="VectorDrawableCompat" />
 
-        <ImageButton
+        <Button
             android:id="@+id/imageButton4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="172dp"
-            android:background="@android:color/transparent"
+            android:background="@drawable/btnn_bg"
             app:layout_constraintEnd_toStartOf="@+id/imageButton5"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/imageButton3"
             app:layout_constraintTop_toTopOf="@+id/view2"
-            android:tint="@color/white"
-            app:srcCompat="@drawable/followme"
-            tools:ignore="VectorDrawableCompat" />
+            android:text="Follow me"
+            />
 
         <ImageButton
             android:id="@+id/imageButton5"

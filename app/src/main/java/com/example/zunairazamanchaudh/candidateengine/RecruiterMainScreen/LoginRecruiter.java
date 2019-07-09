@@ -115,6 +115,9 @@ Button btnlog,signup,forgetpass;
                             @Override
                             public void onDataChange(DataSnapshot dataSnapshot) {
                                 if(dataSnapshot.getValue()!=null){
+
+
+
                                     Intent intent = new Intent(LoginRecruiter.this, WelcomeRecruiter.class);
                                      intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                      startActivity(intent);
@@ -218,4 +221,5 @@ Button btnlog,signup,forgetpass;
 
         }
     }
+
 }

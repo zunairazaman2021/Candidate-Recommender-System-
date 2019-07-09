@@ -19,6 +19,7 @@ import com.example.zunairazamanchaudh.candidateengine.R;
 import com.example.zunairazamanchaudh.candidateengine.RecruiterMainScreen.JobBoardFolder.UserProfileView2;
 import com.example.zunairazamanchaudh.candidateengine.RecruiterMainScreen.UserProfileView;
 import com.example.zunairazamanchaudh.candidateengine.ResumeManager.AcademicAdapter;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,6 +51,11 @@ public class SearchCV2Adapter extends RecyclerView.Adapter<SearchCV2Adapter.View
         holder.designation2.setText(job.getCv_title());
         holder.citycountry.setText(job.getCity()+", "+job.getCountry());
         holder.expfrom.setText(String.valueOf(job.getCreatedon()));
+        if(job.getProfile_image().equals("")){
+
+        }else{
+            Picasso.get().load(job.getProfile_image()).into(holder.image2owner);
+        }
         holder.userid.setText(job.getUseridd());
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,8 +92,8 @@ public class SearchCV2Adapter extends RecyclerView.Adapter<SearchCV2Adapter.View
             citycountry = (TextView) itemView.findViewById(R.id.ownerCity2);
             expfrom = (TextView) itemView.findViewById(R.id.ownerExperienceFrom2);
             userid = (TextView) itemView.findViewById(R.id.userid);
-           imageButton=(ImageButton) itemView.findViewById(R.id.favorite_button2);
-           relativeLayout=(RelativeLayout)itemView.findViewById(R.id.reltiveClick);
+            imageButton=(ImageButton) itemView.findViewById(R.id.favorite_button2);
+            relativeLayout=(RelativeLayout)itemView.findViewById(R.id.reltiveClick);
 
         }
     }

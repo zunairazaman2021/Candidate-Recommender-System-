@@ -55,9 +55,9 @@ RecyclerView recyclerView;
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
 
                     RecruiterFollowers mjobs = dataSnapshot.getValue(RecruiterFollowers.class);
+                        list.add(mjobs);
+                    }
 
-                    list.add(mjobs);
-                }
                 listoffollowersAdapter adapter = new listoffollowersAdapter(getApplicationContext(), list);
 
                 recyclerView.setAdapter(adapter);

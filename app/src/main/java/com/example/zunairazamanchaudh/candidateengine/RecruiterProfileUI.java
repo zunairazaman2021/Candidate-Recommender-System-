@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -25,6 +26,7 @@ import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.users;
 import com.example.zunairazamanchaudh.candidateengine.RecruiterMainScreen.AdaptersRecruiter.detailjobposted2Adapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -33,6 +35,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
@@ -45,7 +48,9 @@ import java.util.Map;
 
 public class RecruiterProfileUI extends AppCompatActivity {
 ImageView imageView;
-ImageButton imagebutton4followme,imagebutton5listFollowers;
+int iz=0;
+Button imagebutton4followme;
+ImageButton imagebutton5listFollowers;
 TextView textViewName,textView2place;
 TextView textView3posts,textView4answers;
 TextView textView7profession,textView9company,textView11phone;
@@ -102,17 +107,32 @@ String creatorid;
         textView9company=(TextView)findViewById(R.id.textView9);
         textView11phone=(TextView)findViewById(R.id.textView11);
         recyclerView=(RecyclerView)findViewById(R.id.RecyclePostedJobs);
-        imagebutton4followme=(ImageButton)findViewById(R.id.imageButton4);
+        imagebutton4followme=(Button)findViewById(R.id.imageButton4);
         imagebutton4followme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-           // followForJob();
-            alreadyfollowing();
+          //    if(imagebutton4followme.getText().toString().equals("Follow me")){
+            DatabaseReference ref=FirebaseDatabase.getInstance().getReference().child(creatorid);
+
+            Query q  = ref.orderByKey().equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
+            q.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                unfollowRecruiter();
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            });
+                  followForJob();
+            //  }else if(imagebutton4followme.getText().toString().equals("Following")){
+                //  unfollowRecruiter();
+             // }
             }
         });
         showSpecificJobs();
         showsimpleDetails();
-        alreadyfollowinginit();
+       // alreadyfollowinginit();
         getfollowerdata();
         getNoofFollowers();
     }
@@ -131,6 +151,11 @@ String creatorid;
                     RecruiterUser mjobs = dataSnapshot1.getValue(RecruiterUser.class);
                     textViewName.setText(mjobs.getFirstname()+" "+mjobs.getLastname());
                     textView11phone.setText(mjobs.getPhone());
+                    if(mjobs.getProfile_image().equals("")){
+
+                    }else{
+                        Picasso.get().load(mjobs.getProfile_image()).into(imageView);
+                    }
                 }
             }
 
@@ -206,6 +231,7 @@ private void getNoofFollowers(){
         DatabaseReference databaseReference;
     databaseReference = FirebaseDatabase.getInstance().getReference()
             .child("RecruiterFollowers").child(creatorid);
+           Query q= databaseReference.orderByChild("followingstatus").equalTo("true");
     databaseReference.addValueEventListener(new ValueEventListener() {
         @Override
         public void onDataChange(DataSnapshot snapshot) {
@@ -279,15 +305,15 @@ DatabaseReference reference=FirebaseDatabase.getInstance().getReference();
     });
 
 }
-
+String key1;
 String key;
     private void followForJob(){
         RecruiterFollowers ja=new RecruiterFollowers();
-        getfollowerdata();
+      //  getfollowerdata();
         ja.setRecruiterid(creatorid);
         Calendar calendar = Calendar.getInstance();
         SimpleDateFormat mdformat = new SimpleDateFormat("yyyy / MM / dd ");
-        String strDate = mdformat.format(calendar.getTime());
+        final String strDate = mdformat.format(calendar.getTime());
         ja.setFolloweddate(strDate);
         ja.setFollowingstatus("true");
       //  ja.setProfile_image(profile_image);
@@ -304,11 +330,12 @@ String key;
         //ja.setZipcode(zipcode);
         ja.setUser_id(FirebaseAuth.getInstance().getCurrentUser().getUid());
         DatabaseReference mDatabase=FirebaseDatabase.getInstance().getReference();
-        key=mDatabase.child("Followers").push().getKey();
-        ja.setFollowid(key);
+       key1=mDatabase.child("Followers").push().getKey();
+        // ja.setFollowid(key);
+        key=FirebaseAuth.getInstance().getCurrentUser().getUid();
         final String user_id=FirebaseAuth.getInstance().getCurrentUser().getUid();
         mDatabase.child("Followers")
-                .child(key)
+                .child(key1)
                 .setValue(ja);
         FirebaseDatabase.getInstance().getReference()
                 .child("RecruiterFollowers")
@@ -358,11 +385,10 @@ String key;
                                         .child(creatorid)
                                         .child(key)
                                         .updateChildren(postValues);
-                                FirebaseDatabase.getInstance().getReference()
+                         FirebaseDatabase.getInstance().getReference()
                                         .child("Followers")
-                                        .child(key)
+                                        .child(key1)
                                         .updateChildren(postValues);
-
                                 FirebaseDatabase.getInstance().getReference()
                                         .child("RecruiterFollowers")
                                         .child(creatorid)
@@ -370,7 +396,7 @@ String key;
                                         .updateChildren(postValues1);
                                 FirebaseDatabase.getInstance().getReference()
                                         .child("Followers")
-                                        .child(key)
+                                        .child(key1)
                                         .updateChildren(postValues1);
 
                                 FirebaseDatabase.getInstance().getReference()
@@ -378,12 +404,10 @@ String key;
                                         .child(creatorid)
                                         .child(key)
                                         .updateChildren(postValues2);
-                                FirebaseDatabase.getInstance().getReference()
+                               FirebaseDatabase.getInstance().getReference()
                                         .child("Followers")
-                                        .child(key)
+                                        .child(key1)
                                         .updateChildren(postValues2);
-
-
                                 FirebaseDatabase.getInstance().getReference()
                                         .child("RecruiterFollowers")
                                         .child(creatorid)
@@ -391,7 +415,7 @@ String key;
                                         .updateChildren(postValues3);
                                 FirebaseDatabase.getInstance().getReference()
                                         .child("Followers")
-                                        .child(key)
+                                        .child(key1)
                                         .updateChildren(postValues3);
 
 
@@ -402,7 +426,7 @@ String key;
                                         .updateChildren(postValues4);
                                 FirebaseDatabase.getInstance().getReference()
                                         .child("Followers")
-                                        .child(key)
+                                        .child(key1)
                                         .updateChildren(postValues4);
 
 
@@ -413,18 +437,17 @@ String key;
                                         .updateChildren(postValues5);
                                 FirebaseDatabase.getInstance().getReference()
                                         .child("Followers")
-                                        .child(key)
+                                        .child(key1)
                                         .updateChildren(postValues5);
 
-
                                 FirebaseDatabase.getInstance().getReference()
                                         .child("RecruiterFollowers")
                                         .child(creatorid)
                                         .child(key)
                                         .updateChildren(postValues6);
-                                FirebaseDatabase.getInstance().getReference()
+                               FirebaseDatabase.getInstance().getReference()
                                         .child("Followers")
-                                        .child(key)
+                                        .child(key1)
                                         .updateChildren(postValues6);
 
 
@@ -433,10 +456,11 @@ String key;
                                         .child(creatorid)
                                         .child(key)
                                         .updateChildren(postValues7);
-                                FirebaseDatabase.getInstance().getReference()
+                               FirebaseDatabase.getInstance().getReference()
                                         .child("Followers")
-                                        .child(key)
+                                        .child(key1)
                                         .updateChildren(postValues7);
+
                             }}else {}
                     }
 
@@ -475,7 +499,7 @@ String key;
                                         .updateChildren(postValues);
                                 FirebaseDatabase.getInstance().getReference()
                                         .child("Followers")
-                                        .child(key)
+                                        .child(key1)
                                         .updateChildren(postValues);
 
 
@@ -484,9 +508,9 @@ String key;
                                         .child(creatorid)
                                         .child(key)
                                         .updateChildren(postValues1);
-                                FirebaseDatabase.getInstance().getReference()
+                                 FirebaseDatabase.getInstance().getReference()
                                         .child("Followers")
-                                        .child(key)
+                                        .child(key1)
                                         .updateChildren(postValues1);
 
 
@@ -495,9 +519,9 @@ String key;
                                         .child(creatorid)
                                         .child(key)
                                         .updateChildren(postValues2);
-                                FirebaseDatabase.getInstance().getReference()
+                                  FirebaseDatabase.getInstance().getReference()
                                         .child("Followers")
-                                        .child(key)
+                                        .child(key1)
                                         .updateChildren(postValues2);
 
 
@@ -508,11 +532,8 @@ String key;
                                         .updateChildren(postValues3);
                                 FirebaseDatabase.getInstance().getReference()
                                         .child("Followers")
-                                        .child(key)
+                                        .child(key1)
                                         .updateChildren(postValues3);
-
-
-
                             }}else {}
                     }
 
@@ -554,7 +575,7 @@ String key;
                                         .updateChildren(postValues);
                                 FirebaseDatabase.getInstance().getReference()
                                         .child("Followers")
-                                        .child(key)
+                                        .child(key1)
                                         .updateChildren(postValues);
 
 
@@ -563,9 +584,9 @@ String key;
                                         .child(creatorid)
                                         .child(key)
                                         .updateChildren(postValues1);
-                                FirebaseDatabase.getInstance().getReference()
+                             FirebaseDatabase.getInstance().getReference()
                                         .child("Followers")
-                                        .child(key)
+                                        .child(key1)
                                         .updateChildren(postValues1);
 
 
@@ -574,12 +595,11 @@ String key;
                                         .child(creatorid)
                                         .child(key)
                                         .updateChildren(postValues2);
-                                FirebaseDatabase.getInstance().getReference()
+                               FirebaseDatabase.getInstance().getReference()
                                         .child("Followers")
-                                        .child(key)
+                                        .child(key1)
                                         .updateChildren(postValues2);
 
-
                                 FirebaseDatabase.getInstance().getReference()
                                         .child("RecruiterFollowers")
                                         .child(creatorid)
@@ -587,7 +607,7 @@ String key;
                                         .updateChildren(postValues3);
                                 FirebaseDatabase.getInstance().getReference()
                                         .child("Followers")
-                                        .child(key)
+                                        .child(key1)
                                         .updateChildren(postValues3);
 
                                 FirebaseDatabase.getInstance().getReference()
@@ -597,11 +617,77 @@ String key;
                                         .updateChildren(postValues4);
                                 FirebaseDatabase.getInstance().getReference()
                                         .child("Followers")
-                                        .child(key)
+                                        .child(key1)
                                         .updateChildren(postValues4);
+
+                                Map<String,Object> map=new HashMap<String ,Object>();
+                                Map<String,Object> map1=new HashMap<String ,Object>();
+                                Map<String,Object> map2=new HashMap<String ,Object>();
+                                Map<String,Object> map3=new HashMap<String ,Object>();
+                                Map<String,Object> map4=new HashMap<String ,Object>();
+                                map.put("recruiterid",creatorid);
+                                Calendar calendar = Calendar.getInstance();
+                                SimpleDateFormat mdformat = new SimpleDateFormat("yyyy / MM / dd ");
+                                String strDatee = mdformat.format(calendar.getTime());
+                                map1.put("followeddate",strDatee);
+                                map2.put("followingstatus","true");
+                                map3.put("followid",FirebaseAuth.getInstance().getCurrentUser().getUid());
+                                map4.put("user_id",FirebaseAuth.getInstance().getCurrentUser().getUid());
+                                FirebaseDatabase.getInstance().getReference()
+                                        .child("RecruiterFollowers")
+                                        .child(creatorid)
+                                        .child(key)
+                                        .updateChildren(map);
+                                FirebaseDatabase.getInstance().getReference()
+                                        .child("Followers")
+                                        .child(key1)
+                                        .updateChildren(map);
+                                FirebaseDatabase.getInstance().getReference()
+                                        .child("RecruiterFollowers")
+                                        .child(creatorid)
+                                        .child(key)
+                                        .updateChildren(map1);
+                                FirebaseDatabase.getInstance().getReference()
+                                        .child("Followers")
+                                        .child(key1)
+                                        .updateChildren(map1);
+                                FirebaseDatabase.getInstance().getReference()
+                                        .child("RecruiterFollowers")
+                                        .child(creatorid)
+                                        .child(key)
+                                        .updateChildren(map2);
+                                FirebaseDatabase.getInstance().getReference()
+                                        .child("Followers")
+                                        .child(key1)
+                                        .updateChildren(map2);
+                                FirebaseDatabase.getInstance().getReference()
+                                        .child("RecruiterFollowers")
+                                        .child(creatorid)
+                                        .child(key)
+                                        .updateChildren(map3);
+                                FirebaseDatabase.getInstance().getReference()
+                                        .child("Followers")
+                                        .child(key1)
+                                        .updateChildren(map3);
+                                FirebaseDatabase.getInstance().getReference()
+                                        .child("RecruiterFollowers")
+                                        .child(creatorid)
+                                        .child(key)
+                                        .updateChildren(map4);
+                                FirebaseDatabase.getInstance().getReference()
+                                        .child("Followers")
+                                        .child(key1)
+                                        .updateChildren(map4);
+
+
+
+
 
 
                             }}else {}
+
+                        imagebutton4followme.setText("Following");
+                        iz=1;
                     }
 
                     @Override
@@ -610,9 +696,8 @@ String key;
                     }
                 });
 
-
-                imagebutton4followme.setImageResource(R.drawable.followed);
-                imagebutton4followme.setClickable(false);
+                //imagebutton4followme.setImageResource(R.drawable.followed);
+                //imagebutton4followme.setClickable(false);
                 Toast.makeText(RecruiterProfileUI.this,"Congratulations you are following this recruiter to get job updates",Toast.LENGTH_SHORT).show();
             }
         }).addOnFailureListener(new OnFailureListener() {
@@ -630,7 +715,8 @@ String key;
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot!=null){
-                    imagebutton4followme.setImageResource(R.drawable.followed);
+                    imagebutton4followme.setText("Following");
+                    //imagebutton4followme.setImageResource(R.drawable.followed);
                     unfollowRecruiter();
                     Toast.makeText(RecruiterProfileUI.this,"You are already following this recruiter",Toast.LENGTH_SHORT).show();
                 }else if(dataSnapshot==null){
@@ -646,19 +732,20 @@ String key;
 
     private void alreadyfollowinginit(){
         DatabaseReference mDatabase=FirebaseDatabase.getInstance().getReference();
-        Query query= mDatabase.child("RecruiterFollowers").child(creatorid).orderByChild("user_id")
-                .equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        Query query= mDatabase.child("RecruiterFollowers")
+                .child(creatorid).orderByKey().equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot!=null){
-                    imagebutton4followme.setImageResource(R.drawable.followed);
-                    Toast.makeText(RecruiterProfileUI.this,"You are already following him",Toast.LENGTH_SHORT).show();
-                }if(dataSnapshot==null){
-
-                    imagebutton4followme.setImageResource(R.drawable.followme);
-                }
-            }
+                    for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
+                      imagebutton4followme.setText("Following");
+                      iz=1;
+                      Toast.makeText(RecruiterProfileUI.this,"You are already following this recruiter"
+                              ,Toast.LENGTH_SHORT).show();
+                      }
+                    }
+                    }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
@@ -666,10 +753,10 @@ String key;
         });
     }
     private void unfollowRecruiter(){
-        DatabaseReference mDatabase=FirebaseDatabase.getInstance().getReference();
-        Query query= mDatabase.child("RecruiterFollowers").child(creatorid).orderByChild("user_id")
-                .equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
-        Query query1=mDatabase.child("Followers").orderByChild("user_id")
+        final DatabaseReference mDatabase=FirebaseDatabase.getInstance().getReference();
+        Query query= mDatabase.child("RecruiterFollowers").child(creatorid)
+                .orderByKey().equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        final Query query1=mDatabase.child("Followers").orderByChild("user_id")
                 .equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -677,9 +764,21 @@ String key;
                 if(dataSnapshot!=null){
                     for (DataSnapshot appleSnapshot: dataSnapshot.getChildren()) {
                            appleSnapshot.getRef().removeValue();
-                        imagebutton4followme.setImageResource(R.drawable.followme);
-                        Toast.makeText(RecruiterProfileUI.this, "Unfollowed successfully", Toast.LENGTH_SHORT).show();
-                    }
+                    /*    Map<String,Object> map=new HashMap<>();
+                        map.put("followingstatus","false");
+                        mDatabase.child("Followers").updateChildren(map);
+
+                        mDatabase.child("RecruiterFollowers").child(creatorid)
+                                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                .updateChildren(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                iz=0;
+                                imagebutton4followme.setText("Follow me");
+                                Toast.makeText(RecruiterProfileUI.this, "Unfollowed successfully", Toast.LENGTH_SHORT).show();
+                            }
+                        });*/
+                       }
                 }if(dataSnapshot==null){
                 }
             }
@@ -704,7 +803,5 @@ String key;
 
             }
         });
-
-
     }
 }

@@ -83,6 +83,11 @@ String cv_id;
                             dob.setText(user.getDob());
                             mobilenumber.setText(user.getPhone());
                             email.setText(user.getEmail());
+                             if(user.getProfile_image().equals("")){
+
+                             }else{
+                                 Picasso.get().load(user.getProfile_image()).into(profile);
+                             }
                             //setimage later IA
                         }}else {}
                 }

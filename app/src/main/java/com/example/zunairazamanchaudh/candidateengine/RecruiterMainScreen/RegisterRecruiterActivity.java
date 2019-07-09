@@ -12,16 +12,29 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.AdressJobseeker;
+import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.RecruiterFollowers;
 import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.RecruiterUser;
 import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.users;
 import com.example.zunairazamanchaudh.candidateengine.R;
+import com.example.zunairazamanchaudh.candidateengine.RecruiterProfileUI;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 public class RegisterRecruiterActivity extends AppCompatActivity {
     private static final String TAG ="RegisterRecruiter";
@@ -132,6 +145,7 @@ public class RegisterRecruiterActivity extends AppCompatActivity {
                                     .child(getString(R.string.dbnode_Recruiterusers))
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     FirebaseAuth.getInstance().signOut();
@@ -215,4 +229,46 @@ public class RegisterRecruiterActivity extends AppCompatActivity {
     private void hideSoftKeyboard(){
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
+
+
+
+/*
+    private void followForJob(String recruiter){
+        RecruiterFollowers ja=new RecruiterFollowers();
+        ja.setRecruiterid(recruiter);
+        ja.setFolloweddate("");
+        ja.setFollowingstatus("false");
+        ja.setUser_id("000");
+        ja.setFollowid("000");
+        ja.setFirstname("");
+        ja.setLastname("");
+        ja.setDob("");
+        ja.setNationality("");
+        ja.setPhone("");
+        ja.setEmail("");
+        ja.setSecurity_level("");
+        ja.setCountry("");
+        ja.setCity("");
+        ja.setZipcode("");
+        ja.setState("");
+        ja.setProfile_image("");
+        ja.setRimage("");
+        ja.setRfirstname("");
+        ja.setRlastname("");
+        ja.setRemail("");
+        ja.setRphone("");
+        FirebaseDatabase.getInstance().getReference()
+                .child("RecruiterFollowers")
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .child("000")
+                .setValue(ja).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+     }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+            }
+        });
+    }*/
 }

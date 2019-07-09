@@ -21,8 +21,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.RecruiterUser;
+import com.example.zunairazamanchaudh.candidateengine.DatabaseRecruitment.users;
 import com.example.zunairazamanchaudh.candidateengine.Jobs;
 import com.example.zunairazamanchaudh.candidateengine.LoginJobSeeker;
 import com.example.zunairazamanchaudh.candidateengine.R;
@@ -38,7 +41,16 @@ import com.example.zunairazamanchaudh.candidateengine.databinding.ActivityWelcom
 import com.example.zunairazamanchaudh.candidateengine.util.UniversalImageLoader;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class WelcomeRecruiter extends AppCompatActivity implements IMainActivityPostedJob, IMainActivityRecruiter, NavigationView.OnNavigationItemSelectedListener{
     Toolbar toolbar;
@@ -47,7 +59,8 @@ public class WelcomeRecruiter extends AppCompatActivity implements IMainActivity
 
     //Firebase
     private FirebaseAuth.AuthStateListener mAuthListener;
-
+    CircleImageView imageViewRecruiter;
+    TextView recruiterName,emailRecruiter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +68,9 @@ public class WelcomeRecruiter extends AppCompatActivity implements IMainActivity
         mBinding= DataBindingUtil.setContentView(this,R.layout.activity_welcome_recruiter);
         toolbar = (Toolbar) findViewById(R.id.toolbarRecruiter);
         setSupportActionBar(toolbar);
+        imageViewRecruiter=(CircleImageView)findViewById(R.id.imageViewRecruiter);
+        recruiterName=(TextView)findViewById(R.id.recruiterName);
+        emailRecruiter=(TextView)findViewById(R.id.emailRecruiter);
         toolbar.setTitle("Recruiter Recommeder");
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layoutRecruiter);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -62,6 +78,7 @@ public class WelcomeRecruiter extends AppCompatActivity implements IMainActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         setupFirebaseAuth();
+        getbasic();
     BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
     navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     // attaching bottom sheet behaviour - hide / show on scroll
@@ -74,6 +91,34 @@ public class WelcomeRecruiter extends AppCompatActivity implements IMainActivity
 
 
     }
+
+    private void getbasic(){
+        DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference();
+        Query query=databaseReference.child("RecruiterUser").orderByKey()
+                .equalTo(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
+                    RecruiterUser users=dataSnapshot1.getValue(RecruiterUser.class);
+                    recruiterName.setText(users.getFirstname()+" "+users.getLastname());
+                    emailRecruiter.setText(users.getEmail());
+                    if(users.getProfile_image().equals("")){
+
+                    }else{
+                        Picasso.get().load(users.getProfile_image()).into(imageViewRecruiter);
+
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
